@@ -1,0 +1,120 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+Create Forum Topic
+{% endblock title %}
+
+{% block content %}
+			
+            <main>
+                <div class="vd jd tto vv oq">
+
+                    <!-- Page content -->
+                    <div class="ao ri flex fh tej tez tnb">
+
+                        <!-- Cart items -->
+                        <div class="rb teu">
+                            
+							
+                            <ul>
+							
+                             <div class="bg-white vl by rounded-sm border " style="margin-left: 150px;width: 642px;">
+							 <form method  = "POST" enctype= "multipart/form-data">
+							 {% csrf_token %}
+							 <center>
+							 <h2 ><b>Create Forum Topic</b></h2>
+								
+							 </center>
+                            <div class="ln">
+							
+							
+							
+							<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Topic Title<span class="yl">*</span></label>
+                                     <input id="card-cvc" class="tn oq" type="text" placeholder="" name = "topic_tittle">
+                                </div>
+								
+						          
+								  <style>
+								.upload-box{
+								font-size:12px;
+								background:white;
+								border-radius:5px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								width:400px;
+								height: 30px;
+								outline:none;
+								
+								}
+								
+								::-webkit-file-upload-button{
+								
+								color:white;
+								background:#416093;
+								padding:5px;
+								border:none;
+								border-radius:6px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								outline:none;
+								}
+								::-webkit-file-upload-button:hover{
+								background:#344868;
+								}
+								</style>
+								<div class="block text-sm gk rx" >
+								<label class="block text-sm gk rx" for="card-expiry">Topic Thubnail Image<span class="yl"></span></label>
+								<input type ="file" class="
+								upload-box
+								" style="width: 501px;" name = "thumb_image">
+
+                                        </input>
+								</div>
+								  
+								  
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Topic Status<span class="yl">*</span></label>
+                                    <select id="card-expiry" class="tn oq" type="text"   name = "topic_type">
+										
+										<option value = "ACTIVE">Active</option>
+										<option value = "CLOSED">Closed</option>  
+										
+										
+										
+										</select>
+                                </div>
+								
+								
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Description <span class="yl">*</span></label>
+                                     <textarea id="card-cvc" class="tn oq" type="text" placeholder=""
+									  style="height: 108px;"
+									 name = "description"
+									 ></textarea>
+                                </div>
+								
+								
+                            </div>
+                            <!-- Form footer -->
+                            <div class="ir">
+                                <div class="rw">
+                                    <button class="btn oq hb xs yo" type = "submit" style="background:#2563eb;">Save Topic</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+
+</form>
+						</div>
+
+                         </div>
+
+                </div>
+            </main>
+{% endblock content %}

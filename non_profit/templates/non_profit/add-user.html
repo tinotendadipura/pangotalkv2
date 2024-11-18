@@ -1,0 +1,87 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Add Users
+{% endblock title %}
+
+{% block content %}
+			
+            <main>
+                <div class="vd jd tto vv oq">
+
+                    <!-- Page content -->
+                    <div class="ao ri flex fh tej tez tnb">
+
+                        <!-- Cart items -->
+                        <div class="rb teu">
+                            
+							
+                            <ul>
+							
+                             <div class="bg-white vl by rounded-sm border " style="margin-left: 150px; ">
+							 <form method = "POST">
+							 {% csrf_token %}
+							 <center>
+							 <div class="text-slate-800 g_ in">Account Manager 
+								</div>
+							 </center>
+							 <hr>
+							 <br>
+                            <div class="ln">
+							
+							<div class="flex lr">
+                                    <div class="ac">
+                                        <label class="block text-sm gk rx" for="card-expiry">First Name <span class="yl">*</span></label>
+                                       <input id="card-expiry" class="tn oq" type="text" placeholder="" name="firstname">
+                                    </div>
+                                    <div class="ac">
+                                        <label class="block text-sm gk rx" for="card-cvc">Last Name <span class="yl">*</span></label>
+                                        <input id="card-cvc" class="tn oq" type="text" placeholder="" name = "lastname">
+                                    </div>
+                                </div>
+							
+                                <!-- Card Number -->
+                                <div>
+                                    <label class="block text-sm gk rx" for="card-nr">Email <span class="yl">*</span></label>
+                                    <input id="card-nr" class="tn oq" type="email" placeholder="john@company.com" name="email">
+                                </div>
+                                <!-- Expiry and CVC -->
+                                
+                                <!-- Name on Card -->
+                                <div>
+                                    <label class="block text-sm gk rx" for="card-name">Phone Number <span class="yl">*</span></label>
+                                    <input id="card-name" class="tn oq" type="text" placeholder="" name ="phone">
+                                </div>
+                                <!-- Email -->
+                                <div>
+                                    <label class="block text-sm gk rx" for="card-email">Role<span class="yl">*</span></label>
+                                    <select  class="ts" style="padding-right: 152px; width: 501px;" name ="role">
+                                    <option>Admin</option>
+                                    <option>Agent</option>
+                                    
+                                </select>
+                                </div>
+                            </div>
+                            <!-- Form footer -->
+                            <div class="ir">
+                                <div class="rw">
+                                    <button class="btn oq hb xs yo"  type="submit" style="background:#2563eb;">Send Invite</button>
+                                </div>
+                                
+                            </div>
+							</form>
+                        </div>
+
+
+
+						</div>
+
+                         </div>
+
+                </div>
+            </main>
+{% endblock content %}

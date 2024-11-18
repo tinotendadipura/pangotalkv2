@@ -1,0 +1,251 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Edit Event
+{% endblock title %}
+
+{% block content %}
+			
+            <main>
+                <div class="vd jd tto vv oq">
+
+                    <!-- Page content -->
+                    <div class="ao ri flex fh tej tez tnb">
+
+                        <!-- Cart items -->
+                        <div class="rb teu">
+                            
+							
+                            <ul>
+							
+                             <div class="bg-white vl by rounded-sm border " style="margin-left: 150px;width: 642px;">
+							 <form method  = "POST" enctype= "multipart/form-data">
+							 {% csrf_token %}
+							 <center>
+							 <h2 ><b>Edit Event</b></h2>
+								
+							 </center>
+                            <div class="ln">
+							
+							
+							
+							<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Event Title<span class="yl">*</span></label>
+                                     <input id="card-cvc" class="tn oq" type="text" placeholder="" name = "event_tittle" value = "{{eventInfo.event_Name}}">
+                                </div>
+								
+							
+                                <!-- Card Number -->
+                                
+                                
+                                <!-- Name on Card -->
+                                <div class="flex lr">
+								
+								<br>
+								
+								
+								    <div class="ac">
+									
+                                        <label class="block text-sm gk rx" for="card-expiry">
+										Week Day<span class="yl"
+										
+										>*</span></label>
+                                        <select id="card-expiry" class="tn oq" type="text" placeholder="Monday" style="width: 100px;" name = "week_day">
+										       
+										       <option value = "Monday">Monday</option>
+										       <option value = "Tuesday">Tuesday</option>
+											   <option value = "Wednesday">Wednesday</option>
+											   <option value = "Thursday">Thursday</option>
+											   <option value = "Friday" >Friday</option>
+											   <option value = "Saturday">Saturday</option>
+											   <option value = "Sunday">Sunday</option>
+										</select>
+                                    </div>
+								
+								
+								
+								    
+									<div class="ac">
+									
+                                        <label class="block text-sm gk rx" for="card-expiry">
+										Day<span class="yl"
+										
+										>*</span></label>
+                                        <select id="card-expiry" class="tn oq" type="text" placeholder="Monday" style="width: 100px;" name = "event_day">
+										
+										<option value = "1">01</option>
+										<option value = "2">02</option>
+										<option value = "3">03</option>
+										<option value = "4">04</option>
+										<option value = "5">05</option>
+										<option value = "6">06</option>
+										<option value = "7">07</option>
+										<option value = "8">08</option>
+										<option value = "9">09</option>
+										<option value = "10">10</option>
+										<option value = "11">11</option>
+										<option value = "12">12</option>
+										<option value = "13">13</option>
+										<option value = "14">14</option>
+										<option value = "15">15</option>
+										<option value = "16">16</option>
+										<option value = "17">17</option>
+										<option value = "18">18</option>
+										<option value = "19">19</option>
+										<option value = "20">20</option>
+										<option value = "21">21</option>
+										<option value = "22">22</option>
+										<option value = "23">23</option>
+										<option value = "24">24</option>
+										<option value = "25">25</option>
+										<option value = "26">26</option>
+										<option value = "27">27</option>
+										<option value = "28">28</option>
+										<option value = "29">29</option>
+										<option value = "30">30</option>
+										<option value = "31">31</option>
+										</select>
+                                    </div>
+									
+									
+								
+								
+                                    
+                                    <div class="ac">
+                                        <label class="block text-sm gk rx" for="card-cvc">Month<span class="yl">*</span></label>
+                                        <select id="card-expiry" class="tn oq" type="text"  style="width: 100px;" name = "event_month">
+										
+										<option value = "1">January</option>
+										<option value = "2">February</option>  
+										<option value = "3">March</option> 
+										<option value = "4">April</option> 
+                                        <option value = "5">May</option>  
+										<option value = "6">June</option>  
+										<option value = "7">July</option>  
+										<option value = "8">August</option>  
+										<option value = "9">September</option> 
+                                         <option value ="10">October</option>  
+										 <option value ="11">November</option>  
+										 <option value ="12">December</option>
+										
+										
+										</select>
+                                    </div>
+									
+									
+<div class="ac">
+									
+                                        <label class="block text-sm gk rx" for="card-expiry">
+										Year<span class="yl"
+										
+										>*</span></label>
+                                        <select id="card-expiry" class="tn oq" type="text"  style="width: 100px;" name = "event_year">
+										
+										<option>2022</option>
+										</select>
+                                    </div>
+                                    <div class="ac">
+                                        <label class="block text-sm gk rx" for="card-cvc">Time<span class="yl">*</span></label>
+                                        
+                                        <select id="card-expiry" class="tn oq" type="text" placeholder="" style="width: 100px;" name = "event_time">
+										
+										       {% include 'app/clock.html' %}
+										</select>
+                                    </div>
+									
+									
+									
+									
+                                </div>
+								
+								
+								
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Event Type<span class="yl">*</span></label>
+                                    <select id="card-expiry" class="tn oq" type="text"   name = "event_type">
+										
+										<option value = "online">Online</option>
+										<option value = "offline">Offline</option>  
+										
+										
+										
+										</select>
+                                </div>
+								
+								
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Description <span class="yl">*</span></label>
+                                     <textarea id="card-cvc" class="tn oq" type="text" placeholder="" 
+									  style="height: 108px;"
+									 name = "description"
+									 >{{eventInfo.event_Description}}</textarea>
+                                </div>
+								
+								<style>
+								.upload-box{
+								font-size:12px;
+								background:white;
+								border-radius:5px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								width:400px;
+								height: 30px;
+								outline:none;
+								
+								}
+								
+								::-webkit-file-upload-button{
+								
+								color:white;
+								background:#416093;
+								padding:5px;
+								border:none;
+								border-radius:6px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								outline:none;
+								}
+								::-webkit-file-upload-button:hover{
+								background:#344868;
+								}
+								</style>
+								<div class="block text-sm gk rx" >
+								<label class="block text-sm gk rx" for="card-expiry">Event Image<span class="yl"></span></label>
+								<input type ="file" class="
+								upload-box
+								" style="width: 501px;" name = "event_image">
+
+                                        </input>
+								</div>
+								
+								<div class="items-center">
+                                                                <img class=" rq" src="
+																{% if eventInfo.eventimage %}
+																{{eventInfo.eventimage.url}}
+																{% endif %}
+																" width="120" height="120" alt="User 01">
+                                                            </div>
+								
+                            </div>
+                            <!-- Form footer -->
+                            <div class="ir">
+                                <div class="rw">
+                                    <button class="btn oq hb xs yo" type = "submit" style="background:#2563eb;">Save Event</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+
+</form>
+						</div>
+
+                         </div>
+
+                </div>
+            </main>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Dashboard
+{% endblock title %}
+
+{% block content %}
+
+
+			
+			
+			
+            <main style = "height:400px; width:1100px;">
+                <iframe src="
+				
+				{% url 'home/dashboard/ecomm_layer' %}
+				
+				
+				" scrolling="no" height="500" width="1000px;" style="border:none;" title="Iframe Example">
+				</iframe>
+
+			
+			
+			</main>
+
+
+
+
+{% endblock content %}

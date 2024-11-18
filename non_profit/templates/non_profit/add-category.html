@@ -1,0 +1,149 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Add Category
+{% endblock title %}
+
+{% block content %}
+			
+            <main>
+                <div class="vd jd tto vv oq ar ri">
+
+                    <!-- Page header -->
+                    <div class="_y js jn ry">
+
+                        <!-- Left: Title -->
+                        <div class="rw _a">
+                            <h1 class="gg zj text-slate-800 font-bold">Products Categories ✨</h1>
+                        </div>
+
+                        <!-- Right: Actions -->
+                        <div class="sq fa _j fm ji fy"> <div class="table-items-action hidden">
+						<div class="flex items-center"> <div class="hidden tnn text-sm gz mr-2 co"><span class="table-items-count">
+						</span> items selected</div> <button class="btn bg-white border-slate-200 hover--border-slate-300 yl xb">Delete</button> 
+						</div> </div> 
+						
+						<div class="td" x-data="{ open: false, selected: 2 }"> 
+						</div>
+						  <div class="nz">
+                                        <!-- Start -->
+                                        <div x-data="{ modalOpen: false }">
+                                            <button class="btn hb xs yo" @click.prevent="modalOpen = true" aria-controls="feedback-modal">Add Category</button>
+                                            <!-- Modal backdrop -->
+                                            <div class="th tm bg-slate-900 pb nm wi" x-show="modalOpen" x-transition:enter="wr wh wf" x-transition:enter-start="opacity-0" x-transition:enter-end="bv" x-transition:leave="wr wh wa" x-transition:leave-start="bv" x-transition:leave-end="opacity-0" aria-hidden="true" x-cloak=""></div>
+                                            <!-- Modal dialog -->
+                                            <div id="feedback-modal" class="th tm nm lq flex items-center rf justify-center fe vd jd" role="dialog" aria-modal="true" x-show="modalOpen" x-transition:enter="wr wc wf" x-transition:enter-start="opacity-0 a_" x-transition:enter-end="bv ax" x-transition:leave="wr wc wf" x-transition:leave-start="bv ax" x-transition:leave-end="opacity-0 a_" x-cloak="">
+                                                <div class="bg-white rounded by lj aa oq ok" @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                                                    <!-- Modal header -->
+                                                    <div class="mn vm cx border-slate-200">
+                                                        <div class="flex fg items-center">
+                                                            <div class="g_ text-slate-800">Add Category</div>
+                                                            <button class="yu xm" @click="modalOpen = false">
+                                                                <div class="tc">Close</div>
+                                                                <svg class="ue on db">
+                                                                    <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal content -->
+                                                    <div class="mn mr">
+                                                        
+                                                        <div class="ls">
+														<form method ="POST" >
+														{% csrf_token %}
+                                                            <div>
+                                                                <label class="block text-sm gk rx" for="name">Category <span class="yl">*</span></label>
+                                                                <input id="name" class="tn oq v_ mt" type="text" required="" name = "category">
+                                                            </div>
+                                                            <div>
+                                                                <label class="block text-sm gk rx" for="feedback">Description <span class="yl">*</span></label>
+                                                                <textarea id="feedback" class="tr oq v_ mt" rows="4" required="" name = "description"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="mn mr ck border-slate-200">
+                                                        <div class="flex flex-wrap justify-end lt">
+                                                            <button class="tt border-slate-200 hover--border-slate-300 ys" @click="modalOpen = false">Cancel</button>
+                                                            <button class="tt hb xs yo" type="Submit">Save Category</button>
+                                                        </div>
+                                                    </div>
+													</form>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <!-- End -->
+                                    </div>
+                                    
+                                  
+						</div>
+
+                    </div>
+
+                    <!-- Table -->
+                    <div class="bg-white by rounded-sm border border-slate-200"> <header class="mn mr"> </header> 
+					
+					<div x-data="handleSelect"> <div class="lz"> 
+					<table class="av oq"> 
+					<thead class="gb g_ gq text-slate-500 hq ck cx border-slate-200"> 
+					
+					<tr> 
+					<th class="v_ wk xe vm co ut"> <span class="g_ gh">Category</span> </th> 
+					<th class="v_ wk xe vm co ut"> <span class="g_ gh">Description</span> </th> 
+					<th class="v_ wk xe vm co"> <div class="g_ gh">Action</div> </th> 
+					
+					
+					
+					</tr> 
+					</thead> 
+					
+					<tbody class="text-sm lg lb">
+                  {% for category in all_category %}					
+					<tr>
+					
+					
+					
+					
+					
+					<td class="v_ wk xe vm co"> 
+					<div class="flex items-center">
+					  <div class="gk text-slate-800">{{category.category}}</div> 
+					</div>
+					</td> 
+					
+					<td class="v_ wk xe vm co"> 
+					<div class="flex items-center">
+					  <div class="gk text-slate-800">{{category.description|truncatechars:100}}</div> 
+					</div>
+					</td> 
+					
+					
+					<td class="v_ wk xe vm co"> 
+					<div class="flex items-center">
+				   <button class="yl xb rounded-full"> <span class="tc">Delete</span>
+					<svg class="uu of db" viewBox="0 0 32 32"> <path d="M13 15h2v6h-2zM17 15h2v6h-2z"></path>
+					<path d="M20 9c0-.6-.4-1-1-1h-6c-.6 0-1 .4-1 1v2H8v2h1v10c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V13h1v-2h-4V9zm-6 1h4v1h-4v-1zm7 3v9H11v-9h10z"></path>
+					</svg> 
+					</button>
+					</div>
+					</td> 
+					</tr>
+					{% endfor %}
+					
+					</tbody> </table> </div> </div> </div> <script>document.addEventListener("alpine:init",()=>{Alpine.data("handleSelect",()=>({selectall:!1,selectAction(){countEl=document.querySelector(".table-items-action"),countEl&&(checkboxes=document.querySelectorAll("input.table-item:checked"),document.querySelector(".table-items-count").innerHTML=checkboxes.length,checkboxes.length>0?countEl.classList.remove("hidden"):countEl.classList.add("hidden"))},toggleAll(){this.selectall=!this.selectall,checkboxes=document.querySelectorAll("input.table-item"),[...checkboxes].map(e=>{e.checked=this.selectall}),this.selectAction()},uncheckParent(){this.selectall=!1,document.getElementById("parent-checkbox").checked=!1,this.selectAction()}}))})</script>
+                    
+                   
+
+                </div>
+				
+				<!-- Send Feedback -->
+                                    
+				
+				
+            </main>
+{% endblock content %}

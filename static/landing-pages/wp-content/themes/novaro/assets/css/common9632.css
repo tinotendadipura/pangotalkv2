@@ -1,0 +1,678 @@
+/*
+  Template Name: Novaro - App Landing Page Template
+  Theme URL: http://jthemes.com/wp/novaro
+  Description: Novaro - App Landing Page Template
+  Author: Jthemes
+  Author URL: http://themeforest.net/user/jthemes
+  Version: 1.0.0
+  Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready
+*/
+
+/* ==========================================================================
+  01. Monster widgets
+  =========================================================================== */
+
+/*Widgets lists*/
+
+.single-widget.widget_pages ul > li:first-child,
+.single-widget.widget_archive ul > li:first-child,
+.single-widget.widget_meta ul > li:first-child,
+.single-widget.widget_recent_comments ul > li:first-child,
+.single-widget.widget_recent_entries ul > li:first-child,
+.single-widget.widget_rss ul > li:first-child,
+.single-widget.widget_nav_menu ul > li:first-child,
+.single-widget.widget_categories ul > li:first-child,
+ul.blog-category-list > li:first-child {
+  padding: 0 0 10px;
+}
+
+.single-widget.widget_pages ul > li,
+.single-widget.widget_archive ul > li,
+.single-widget.widget_meta ul > li,
+.single-widget.widget_recent_comments ul > li,
+.single-widget.widget_recent_entries ul > li,
+.single-widget.widget_rss ul > li,
+.single-widget.widget_nav_menu ul > li,
+.single-widget.widget_categories ul > li,
+ul.blog-category-list > li {
+  padding: 10px 0;
+  border-bottom: 1px dashed #c0c0c0;
+  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+}
+
+.single-widget.widget_pages ul > li a:before,
+.single-widget.widget_archive ul > li a:before,
+.single-widget.widget_meta ul > li a:before,
+.single-widget.widget_recent_entries ul > li a:before,
+.single-widget.widget_nav_menu ul > li a:before,
+.single-widget.widget_categories ul > li a:before {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.single-widget.widget_pages ul > li:last-child,
+.single-widget.widget_archive ul > li:last-child,
+.single-widget.widget_meta ul > li:last-child,
+.single-widget.widget_recent_comments ul > li:last-child,
+.single-widget.widget_recent_entries ul > li:last-child,
+.single-widget.widget_rss ul > li:last-child,
+.single-widget.widget_nav_menu ul > li:last-child,
+.single-widget.widget_categories ul > li:last-child,
+ul.blog-category-list > li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.single-widget.widget_categories ul > li > ul,
+.single-widget.widget_pages ul > li > ul,
+.single-widget.widget_nav_menu ul > li > ul {
+  margin-left: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #c0c0c0;
+  margin-top: 10px;
+}
+
+/*Calendar widgets*/
+
+#calendar_wrap table #today {
+  font-weight: 600;
+}
+table {
+  width: 100%;
+}
+
+/*Images*/
+
+.single-widget img,
+.single-widget iframe,
+.single-widget embed,
+.single-widget video,
+.single-widget audio {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+  02. Blog List
+  =========================================================================== */
+
+.blog-2-post.no-post-thumbnail h5 {
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   Block: Button
+  =========================================================================== */
+
+.single-post-txt .wp-block-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.formatted-content .is-style-squared .wp-block-button__link {
+  border-radius: 0;
+}
+
+/* ==========================================================================
+  Block: Cover
+  =========================================================================== */
+
+.single-blog-post .single-post-txt .alignleft {
+  max-width: 290px;
+  margin-right: calc(2 * 1rem);
+}
+
+.single-blog-post .has-pale-pink-background-color {
+  background-color: #000;
+}
+
+.single-post-txt .wp-block-cover {
+  margin-bottom: 2rem;
+}
+
+.single-post-txt .wp-block-cover.aligncenter {
+  display: flex;
+}
+
+.single-post-txt .wp-block-cover .wp-block-cover-text {
+  font-size: 31px;
+  max-width: 600px;
+}
+
+.single-post-txt .alignfull .wp-block-cover-text {
+  max-width: 610px;
+}
+
+/* ==========================================================================
+  White color
+  =========================================================================== */
+
+.single-post-txt .wp-block-button,
+.single-post-txt .wp-block-cover p {
+  color: #fff;
+}
+
+/* ==========================================================================
+  Link
+  =========================================================================== */
+
+.single-post-txt nav span a,
+.single-post-txt table tr td a,
+.single-post-txt .wp-block-image figure figcaption a,
+.page-content p a,
+.formatted-content p a,
+.page-content dl dd a,
+.formatted-content dl dd a,
+.wp-caption-text a,
+.single-post-txt p a,
+.single-post-txt .wp-block-embed a,
+.single-post-txt .wp-block-file a,
+.single-post-txt .wp-block-cover .wp-block-cover-text a,
+.single-post-txt ol li a,
+.single-post-txt ul li a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+code {
+  padding: 5px;
+  border-radius: 2px;
+  font-family: Menlo, Consolas, monaco, monospace;
+  font-size: 14px;
+  margin: 0 1px;
+  background-color: #e4ecf4;
+}
+
+/* ==========================================================================
+  Block: Columns
+  =========================================================================== */
+
+.single-post-txt .wp-block-columns {
+  flex-wrap: nowrap;
+}
+.single-post-txt .alignwide {
+  margin-left: -50px;
+  margin-right: -50px;
+}
+p img,
+figure img,
+.wp-caption img,
+.single-widget img,
+.footer-widget img,
+video {
+  height: auto;
+}
+
+/* ==========================================================================
+  Block: Quote
+  =========================================================================== */
+
+.single-post-txt blockquote,
+.comment-list blockquote,
+.page-content blockquote,
+.single-post-txt .wp-block-quote {
+  border-left: 4px solid #000;
+  margin: 0 0 30px;
+  padding-left: 1em;
+}
+
+.single-post-txt .wp-block-quote p {
+  font-size: 1.25rem;
+}
+.single-post-txt .wp-block-quote cite {
+  font-size: calc(1rem / (1.25 * 1.125));
+}
+.single-post-txt .is-style-large cite {
+  text-align: right;
+  display: block;
+}
+.wp-block-quote.has-text-align-right {
+  border-right: 4px solid #000;
+  padding-right: 1em;
+  border-left: none;
+}
+.single-post-txt .is-style-large {
+  border-left: none;
+}
+.wp-block-pullquote {
+  border-top: 4px solid #555d66;
+  border-bottom: 4px solid #555d66;
+  color: #40464d;
+}
+.wp-block-pullquote__citation,
+.wp-block-pullquote cite,
+.wp-block-pullquote footer {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+}
+.single-post-txt > *,
+.entry-summary > *,
+.entry-summary > .wp-block-group > .wp-block-group__inner-container > *,
+.single-post-txt > .wp-block-group > .wp-block-group__inner-container > * {
+  margin: 0 0 30px;
+}
+
+/* ==========================================================================
+  Block category: Common
+  =========================================================================== */
+
+.page-content ol li ol .formatted-content ol li ol,
+.single-post-txt ol li ol {
+  margin-left: 0;
+}
+
+.single-post-txt ul li ol,
+.single-post-txt ol li ol {
+  padding-left: 20px;
+}
+
+.single-post-txt .wp-block-file .wp-block-file__button {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+  Block category: Widgets
+  =========================================================================== */
+
+#gallery-1 .gallery-item,
+#gallery-2 .gallery-item,
+#gallery-4 .gallery-item,
+#gallery-5 .gallery-item,
+#gallery-6 .gallery-item,
+#gallery-7 .gallery-item,
+#gallery-8 .gallery-item,
+#gallery-9 .gallery-item,
+#gallery-3 .gallery-item {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.gallery-item {
+  position: relative;
+  margin-bottom: 30px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+p img,
+figure img,
+.wp-caption img,
+.single-widget img,
+.footer-widget img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+.single-post-txt #gallery-1 {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.single-post-txt .gallery {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: calc(1.5 * 1rem);
+}
+
+.single-post-txt .gallery-columns-3 .gallery-item {
+  width: 33% !important;
+}
+
+.single-post-txt .gallery-columns-4 .gallery-item {
+  width: 25% !important;
+}
+
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+
+.single-post-txt .gallery-columns-2 .gallery-item {
+  max-width: calc((100% - 15px * 1) / 2);
+}
+
+/*.gallery-item { margin-right: 15px; }*/
+
+.single-post-txt .gallery-caption {
+  display: block;
+  font-size: 0.81111em;
+  line-height: 1.6;
+  padding: 0.5rem;
+  color: var(--grey_color);
+  font-style: italic;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+  Block : Gallery
+  =========================================================================== */
+
+.single-post-txt .blocks-gallery-grid .blocks-gallery-item {
+  margin-right: 5px;
+}
+
+/* ==========================================================================
+  Block category: Layout Elements
+  =========================================================================== */
+
+.single-post-txt .wp-block-group.has-background {
+  padding: 20px 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.single-post-txt .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  max-width: 100px;
+}
+
+.single-post-txt .wp-block-separator {
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-bottom: 2px solid #8f98a1;
+}
+.single-post-txt .wp-block-separator.is-style-wide {
+  border-bottom-width: 1px;
+}
+
+.single-post-txt .wp-block-separator.is-style-dots {
+  background: none !important;
+  border: none;
+  text-align: center;
+  max-width: none;
+  line-height: 1;
+  height: auto;
+}
+
+/* ==========================================================================
+  Block category: Formatting
+  =========================================================================== */
+
+.single-post-txt .wp-block-code {
+  font-family: Menlo, Consolas, monaco, monospace;
+  font-size: 14px;
+  color: #23282d;
+  padding: 0.8em 1em;
+  border: 1px solid #e2e4e7;
+  border-radius: 4px;
+}
+
+.page-content table:not(.shop_table) th,
+.page-content table:not(.shop_table) td,
+.formatted-content table:not(.shop_table) th,
+.formatted-content table:not(.shop_table) td,
+.single-post-txt thead th,
+.single-post-txt table td,
+.single-post-txt tbody th,
+.single-post-txt .wp-block-table td {
+  border-color: #767676;
+  border: 1px solid;
+}
+
+.page-content table tbody tr th,
+.page-content table tbody tr td,
+.formatted-content table tbody tr th,
+.formatted-content table tbody tr td,
+.single-post-txt table thead tr th,
+.single-post-txt table tbody tr th,
+.single-post-txt table thead,
+.single-post-txt table tbody tr td {
+  padding: 1rem;
+}
+
+.page-content table {
+  margin-bottom: 20px;
+}
+
+.post-tags-list span a {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* ==========================================================================
+ Markup: Image Alignment
+  =========================================================================== */
+
+.single-post-txt .alignfull {
+  margin-left: calc(-100vw / 2 + 100% / 2);
+  margin-right: calc(-100vw / 2 + 100% / 2);
+  max-width: 100vw;
+  width: auto;
+  padding: 0 8px;
+}
+
+.single-post-txt .wp-block-columns.alignfull {
+  padding: 0 16px;
+}
+
+.single-page-comments {
+  clear: both;
+}
+.page-content .aligncenter,
+.single-post-txt .aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.page-content .alignright,
+.single-post-txt .alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+  text-align: right;
+  clear: right;
+}
+
+.page-content .wp-caption .wp-caption-text,
+.single-post-txt .wp-caption .wp-caption-text {
+  color: #999;
+  font-style: italic;
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.page-content .alignleft,
+.single-post-txt > .alignleft {
+  max-width: 290px;
+  margin-right: calc(2 * 1rem);
+  float: left;
+  max-width: calc(5 * (100vw / 12));
+  margin: 0 1rem 20px 0;
+}
+
+.single-post-txt .wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption,
+.gallery-caption {
+  color: var(--grey_color);
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-style: italic;
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+.post-nav-links,
+.page-content .single-page-comments {
+  clear: both;
+}
+
+p img,
+figure img,
+.wp-caption img,
+.single-widget img,
+.footer-widget img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+.single-post-txt > *,
+.entry-summary > *,
+.entry-summary > .wp-block-group > .wp-block-group__inner-container > *,
+.single-post-txt > .wp-block-group > .wp-block-group__inner-container > * {
+  max-width: 100%;
+}
+
+/* ==========================================================================
+ This is for stiky CSS
+  =========================================================================== */
+
+span.sticky-post {
+  margin-right: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  letter-spacing: 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 5px 12px 3px;
+  background-color: #f0f1f3;
+  border: 1px solid #e5e5e5;
+  font-family: "Roboto";
+}
+
+/* ==========================================================================
+ Template: Comments
+  =========================================================================== */
+
+.media-list .comment .media-body {
+  max-width: 100%;
+}
+
+.formatted-content table {
+  margin-bottom: 25px;
+}
+
+.comment-list .thread-odd .media .media-body {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+.wp-block-image .alignright > figcaption,
+.wp-block-image .aligncenter > figcaption {
+  display: block;
+}
+
+.single-post-txt .wp-block-image figure figcaption {
+  font-size: 0.71111em;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.single-post-txt .alignleft,
+.single-post-wrapper > .alignleft {
+  float: left !important;
+  max-width: calc(5 * (100vw / 12));
+  margin-top: 0;
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+/* ==========================================================================
+ post and pagination
+  =========================================================================== */
+
+.post-nav-links .post-page-numbers:hover,
+.post-nav-links .post-page-numbers.current,
+.formatted-content .post-nav-links .post-page-numbers:hover,
+.formatted-content .post-nav-links .post-page-numbers.current {
+  background-color: #e5e5e5;
+  color: #333;
+  border-color: #e5e5e5;
+  box-shadow: 0 0 0 1px rgba(56, 60, 67, 0.05),
+    0 1px 3px 0 rgba(56, 60, 67, 0.15);
+  font-weight: 600;
+  padding: 8px 15px;
+  margin: 0 3px;
+}
+
+.post-nav-links .post-page-numbers,
+.formatted-content .post-nav-links .post-page-numbers {
+  color: var(--grey_color);
+  font-weight: 600;
+  padding: 8px 15px;
+  margin: 0 3px;
+  background-color: transparent;
+  border-color: transparent;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.comment-body > h2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.comment-body > ul,
+.comment-body ul li ul {
+  padding-left: 40px;
+  list-style: disc;
+}
+
+.entry-content ul,
+.page-content > ul {
+  list-style: disc;
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+
+.entry-content > ol ul,
+.entry-content > ul ul,
+.page-content > ol ul,
+.page-content > ul ul {
+  margin-bottom: 0;
+  list-style: initial;
+  list-style-type: circle;
+  margin-left: 30px;
+  padding-left: initial;
+}
+
+.wp-block-embed-wordpress-tv figcaption {
+  text-align: center;
+}
+
+.blog-post-img img {
+  width: 100%;
+}
+
+.single-post-txt > ul {
+  margin-left: 20px;
+}

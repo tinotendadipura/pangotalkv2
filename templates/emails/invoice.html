@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+{% load static %}
+
+<head>
+    <title>INVO - Invoice </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- External CSS libraries -->
+    <link type="text/css" rel="stylesheet" href="{%static './invoice/assets/css/bootstrap.min.css'%}">
+    <link type="text/css" rel="stylesheet" href="{%static './invoice/assets/fonts/font-awesome/css/font-awesome.min.css'%}">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" >
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="{%static './invoice/assets/css/style.css'%}">
+</head>
+<body>
+
+<!-- Invoice 9 start -->
+<div class="invoice-9 invoice-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="invoice-inner" id="invoice_wrapper">
+                    <div class="invoice-top">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="logo">
+                                    <img src="{%static './app/icons/pango.svg'%}" style="height: 120px;" alt="logo">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="invoice text-end">
+								{% if all_invoice.invoice_status == 'PAID' %}
+								 <h1>Invoice <span style = "color:#29b675;"><b> PAID</b></span></h1>
+								 
+								{% elif all_invoice.invoice_status == 'OVERDUE' %}
+
+                                    <h1>Invoice <span style = "color:#cc0000;"><b> OVERDUE</b></span></h1>
+									
+								{% elif all_invoice.invoice_status == 'PENDING' %}
+
+                                    <h1>Invoice <span style = "color:#ffc107;"><b> PENDING</b></span></h1>
+									
+									{% else %}
+									
+									{% endif %}
+									<br>
+									{% if all_invoice.invoice_status == 'OVERDUE' %}
+								 <p class="inv-from-1"><a href="{% url 'account/billing/make-payment' all_invoice.Invoice_ID %}" class="btn btn-sm btn-download btn-theme" style = "color:#ffffff;">Pay Overdue Invoice</a></p>
+								 {% elif all_invoice.invoice_status == 'PENDING' %}
+								 
+								 {% else %}
+									
+									{% endif %}
+								 
+								</div>
+								<div>
+                    
+                    
+                </div>
+                            </div>
+							
+                        </div>
+                    </div>
+                    <div class="invoice-titel">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="invoice-number">
+                                    <h3>Invoice Number: #{{all_invoice.Invoice_ID}}</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 text-end">
+                                <div class="invoice-date">
+                                    <h3>Invoice Date: {{all_invoice.date.date}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invoice-info">
+                        <div class="row">
+                            <div class="col-sm-6 mb-30">
+                                <div class="invoice-number">
+                                    <h4 class="inv-title-1">Invoice From:</h4>
+                                    <p class="invo-addr-1">
+                                        PangoTalk <br/>
+                                        info@pangotalk.com <br/>
+                                        Harare MountPleasant ,Meadobank 11 <br/>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-30">
+                                <div class="invoice-number text-end">
+                                    <h4 class="inv-title-1">Bill To</h4>
+                                    <p class="invo-addr-1">
+                                        {{businessInfo.BusinessName}}  <br/>
+                                        {{businessInfo.email}} <br/>
+                                        {{businessInfo.Business_adress}} <br/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 mb-30">
+                                <h4 class="inv-title-1">Date</h4>
+                                <p class="inv-from-1">Due Date: {{all_invoice.due_date.date}}</p>
+                            </div>
+                            <div class="col-sm-6 text-end mb-30">
+                                <h4 class="inv-title-1">Payment Method</h4>
+                                <p class="inv-from-1">{{all_invoice.payment_method}}</p>
+								
+								
+                            </div>
+							                
+                        </div>
+
+                    </div>
+                    <div class="order-summary">
+                        <div class="table-responsive">
+                            <table class="table invoice-table">
+                                <thead class="bg-active">
+                                <tr>
+                                    <th>Item Item</th>
+                                    <th class="text-center">Price</th>
+                                    <th class="text-center">Quantity</th>
+                                    <th class="text-right">Totals</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="item-desc-1">
+                                            <span>INV-{{all_invoice.Invoice_ID}}</span>
+                                            <small>Current Plan {{all_invoice.Plan_Name}} - Monthly / ({{all_invoice.date}} - {{all_invoice.due_date}})</small>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">${{all_invoice.amount}}</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-right">${{all_invoice.amount}}</td>
+                                </tr>
+                                
+                                
+                                <tr>
+                                    <td colspan="3" class="text-end">SubTotal</td>
+                                    <td class="text-right">${{all_invoice.amount}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end">Tax</td>
+                                    <td class="text-right">$0.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end fw-bold">Grand Total</td>
+                                    <td class="text-right fw-bold">${{all_invoice.amount}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="invoice-informeshon">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="payment-info mb-30">
+                                    <h3 class="inv-title-1">Bank Payment Info</h3>
+                                    <ul class="bank-transfer-list-1">
+									    <li><strong>Bank Name:</strong> CABS</li>
+                                        <li><strong>Account Name:</strong> Cardava Technologies</li>
+                                        <li><strong>Account Number:</strong> 002318901</li>
+                                        <li><strong>Branch Name:</strong> Mount Pleasant</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="terms-and-condistions mb-30">
+                                    <h3 class="inv-title-1">Terms and Condistions</h3>
+                                    <p class="mb-0">All overdue invoices should be payed in time failure to do so might result in service suspension.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="nates mb-30">
+                                    <h4 class="inv-title-1">Notes</h4>
+                                    <p class="text-muted">If payment was  a bank transfer ,Remember to send confirmation on WhatsApp to <b>+263 771 624 904</b>
+                                    Reference Number: {{all_invoice.Invoice_ID}}</p>
+                                </div>
+                            </div>
+							
+							
+							
+							
+                        </div>
+                    </div>
+
+                    <div class="invoice-contact clearfix">
+                        <div class="row g-0">
+                            <div class="col-lg-9 col-md-11 col-sm-12">
+                                <div class="contact-info">
+                                    <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i> +263 773 620 978</a>
+                                    <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i> info@pangotalk.com</a>
+                                    <a href="tel:info@themevessel.com" class="mr-0 d-none-580"><i class="fa fa-map-marker"></i> MountPleasant ,Meadobank 11</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="invoice-btn-section clearfix d-print-none">
+                    <a href="javascript:window.print()" class="btn btn-lg btn-print">
+                        <i class="fa fa-print"></i> Print Invoice
+                    </a>
+                    <a id="invoice_download_btn" class="btn btn-lg btn-download btn-theme">
+                        <i class="fa fa-download"></i> Download Invoice
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Invoice 9 end -->
+
+<script src="{%static './invoice/assets/js/jquery.min.js'%}"></script>
+<script src="{%static './invoice/assets/js/jspdf.min.js'%}"></script>
+<script src="{%static './invoice/assets/js/html2canvas.js'%}"></script>
+<script src="{%static './invoice/assets/js/app.js'%}"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,309 @@
+{% extends 'default/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Manage  | Accounts Suspended
+
+{% endblock title %}
+
+
+		{% block content %}
+        <div class="page-wrapper">
+
+            <!-- Page Content-->
+            <div class="page-content-tab">
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-end">
+                                    
+                                </div>
+                                <h4 class="page-title">Payments Manager</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- end page title end breadcrumb -->
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-9">
+                                                    <p class="text-dark mb-0 fw-semibold">Bank Transfer</p>
+                                                    <h3 class="my-1 font-20 fw-bold">{{totalproofOfpayment}}</h3>
+                                                    <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span> New Sessions Today</p>
+                                                </div><!--end col-->
+                                                <div class="col-3 align-self-center">
+                                                    <div class="d-flex justify-content-center align-items-center thumb-md bg-light-alt rounded-circle mx-auto">
+                                                        <i class="ti ti-building-bank font-24 align-self-center text-muted"></i>
+                                                    </div>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body--> 
+                                    </div><!--end card--> 
+                                </div> <!--end col--> 
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">                                                
+                                                <div class="col-9">
+                                                    <p class="text-dark mb-0 fw-semibold">OverDue</p>
+                                                    <h3 class="my-1 font-20 fw-bold">${{amount_topay}}0</h3>
+                                                    <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>1.5%</span> Weekly Avg.Sessions</p>
+                                                </div><!--end col-->
+                                                <div class="col-3 align-self-center">
+                                                    <div class="d-flex justify-content-center align-items-center thumb-md bg-light-alt rounded-circle mx-auto">
+                                                        <i class="ti ti-clock font-24 align-self-center text-muted"></i>
+                                                    </div>
+                                                </div> <!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body--> 
+                                    </div><!--end card--> 
+                                </div> <!--end col--> 
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">                                                
+                                                <div class="col-9">
+                                                    <p class="text-dark mb-0 fw-semibold">Disk Sold</p>
+                                                    <h3 class="my-1 font-20 fw-bold">$0.00</h3>
+                                                    <p class="mb-0 text-truncate text-muted"><span class="text">54G /</span> Month</p>
+                                                </div><!--end col-->
+                                                <div class="col-3 align-self-center">
+                                                    <div class="d-flex justify-content-center align-items-center thumb-md bg-light-alt rounded-circle mx-auto">
+                                                        <i class="ti ti-activity font-24 align-self-center text-muted"></i>
+                                                    </div>
+                                                </div> <!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body--> 
+                                    </div><!--end card--> 
+                                </div> <!--end col--> 
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-9">  
+                                                    <p class="text-dark mb-0 fw-semibold">Revenue</p>                                         
+                                                    <h3 class="my-1 font-20 fw-bold">${{total_revenue}}0</h3>
+                                                    <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>
+                                                </div><!--end col-->
+                                                <div class="col-3 align-self-center">
+                                                    <div class="d-flex justify-content-center align-items-center thumb-md bg-light-alt rounded-circle mx-auto">
+                                                        <i class="ti ti-receipt-2 font-24 align-self-center text-muted"></i>
+                                                    </div>
+                                                </div><!--end col--> 
+                                            </div><!--end row-->
+                                        </div><!--end card-body--> 
+                                    </div><!--end card--> 
+                                </div> <!--end col-->                               
+                            </div><!--end row-->
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">                      
+                                            <h4 class="card-title">Transaction History</h4>                      
+                                        </div><!--end col-->
+                                        <div class="col-auto"> 
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   This Year<i class="las la-angle-down ms-1"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Today</a>
+                                                    <a class="dropdown-item" href="#">Last Week</a>
+                                                    <a class="dropdown-item" href="#">Last Month</a>
+                                                    <a class="dropdown-item" href="#">This Year</a>
+                                                </div>
+                                            </div>               
+                                        </div><!--end col-->
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                                <div class="card-body">
+                                     <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="thead-light">
+                                            <tr>
+                                                <th>Invoice #</th>
+                                                <th>Company</th>
+												<th>Billing Plan</th>
+                                                <th>Amount</th>
+                                                <th>Payment Method</th>
+                                                <th>Date</th>                                                
+                                                
+                                            </tr><!--end tr-->
+                                            </thead>
+        
+                                            <tbody>
+                                         {% for payment in transaction_history %}
+                                            <tr>
+                                                <td>{{payment.Invoice_ID}}</td>
+                                                <td>{{payment.Business_Name}}</td>
+                                                <td>{{payment.Plan_Name}}</td>
+                                                <td>${{payment.amount}}</td>
+                                                <td>{{payment.payment_method }}</td> 
+                                                <td>{{payment.date}}</td>
+												                                              
+                                                
+                                            </tr><!--end tr-->
+                                            {% endfor %}                             
+                                            </tbody>
+                                        </table>                    
+                                    </div>    
+                                    <div class="row">
+                                        <div class="col">
+                                           
+                                        </div><!--end col-->      
+                                        <div class="col-auto">
+                                            <nav aria-label="...">
+                                                <ul class="pagination pagination-sm mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                    </li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                         </div> <!--end col-->                               
+                                    </div><!--end row-->                                              
+                                </div><!--end card-body--> 
+                            </div><!--end card--> 
+                        </div> <!--end col-->                               
+                    </div><!--end row--> 
+
+                
+                                </div><!--end card-body--> 
+                            </div><!--end card--> 
+                        </div><!--end col-->
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">                      
+                                            <h4 class="card-title">Sessions Device</h4>                      
+                                        </div><!--end col-->
+                                        <div class="col-auto"> 
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   All<i class="las la-angle-down ms-1"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Purchases</a>
+                                                    <a class="dropdown-item" href="#">Emails</a>
+                                                </div>
+                                            </div>         
+                                        </div><!--end col-->
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <div id="ana_device" class="apex-charts"></div>
+                                        <h6 class="bg-light-alt py-3 px-2 mb-0">
+                                            <i data-feather="calendar" class="align-self-center icon-xs me-1"></i>
+                                            01 January 2020 to 31 December 2020
+                                        </h6>
+                                    </div>  
+                                    <div class="table-responsive mt-2">
+                                        <table class="table border-dashed mb-0">
+                                            <thead>
+                                            <tr>
+                                                <th>Device</th>
+                                                <th class="text-end">Sassions</th>
+                                                <th class="text-end">Day</th>
+                                                <th class="text-end">Week</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Dasktops</td>
+                                                <td class="text-end">1843</td>
+                                                <td class="text-end">-3</td>
+                                                <td class="text-end">-12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tablets</td>
+                                                <td class="text-end">2543</td>
+                                                <td class="text-end">-5</td>
+                                                <td class="text-end">-2</td>                                                 
+                                            </tr>
+                                            <tr>
+                                                <td>Mobiles</td>
+                                                <td class="text-end">3654</td>
+                                                <td class="text-end">-5</td>
+                                                <td class="text-end">-6</td>
+                                            </tr>
+                                            
+                                            </tbody>
+                                        </table><!--end /table-->
+                                    </div><!--end /div-->                                 
+                                </div><!--end card-body--> 
+                            </div><!--end card--> 
+                        </div> <!--end col--> 
+                    </div><!--end row-->
+
+                   
+                </div><!-- container -->
+
+                <!--Start Rightbar-->
+                <!--Start Rightbar/offcanvas-->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="Appearance" aria-labelledby="AppearanceLabel">
+                    <div class="offcanvas-header border-bottom">
+                      <h5 class="m-0 font-14" id="AppearanceLabel">Appearance</h5>
+                      <button type="button" class="btn-close text-reset p-0 m-0 align-self-center" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">  
+                        <h6>Account Settings</h6>
+                        <div class="p-2 text-start mt-3">
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="settings-switch1">
+                                <label class="form-check-label" for="settings-switch1">Auto updates</label>
+                            </div><!--end form-switch-->
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="settings-switch2" checked>
+                                <label class="form-check-label" for="settings-switch2">Location Permission</label>
+                            </div><!--end form-switch-->
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="settings-switch3">
+                                <label class="form-check-label" for="settings-switch3">Show offline Contacts</label>
+                            </div><!--end form-switch-->
+                        </div><!--end /div-->
+                        <h6>General Settings</h6>
+                        <div class="p-2 text-start mt-3">
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="settings-switch4">
+                                <label class="form-check-label" for="settings-switch4">Show me Online</label>
+                            </div><!--end form-switch-->
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="settings-switch5" checked>
+                                <label class="form-check-label" for="settings-switch5">Status visible to all</label>
+                            </div><!--end form-switch-->
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="settings-switch6">
+                                <label class="form-check-label" for="settings-switch6">Notifications Popup</label>
+                            </div><!--end form-switch-->
+                        </div><!--end /div-->               
+                    </div><!--end offcanvas-body-->
+                </div>
+                <!--end Rightbar/offcanvas-->
+                 <!--end Rightbar-->
+                 
+                
+            </div>
+            <!-- end page content -->
+        </div>
+      {% endblock content %}

@@ -1,0 +1,270 @@
+/*
+  Template Name: Novaro - App Landing Page Template
+  Theme URL: http://jthemes.com/wp/novaro
+  Description: Novaro - App Landing Page Template
+  Author: Jthemes
+  Author URL: http://themeforest.net/user/jthemes
+  Version: 1.0.0
+  Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready
+*/
+
+body {
+  word-wrap: break-word;
+}
+.footer-links-column-2 .widget_nav_menu {
+  width: 50%;
+  display: inline-block;
+}
+.single-blog-post img {
+  max-width: 100%;
+}
+
+.single-widget {
+  margin-left: 20px;
+}
+
+.single-widget .textwidget form select {
+  width: 100%;
+}
+
+.single-widget .tagcloud a {
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 7px 7px;
+  display: inline-block;
+  margin: 1px;
+}
+
+.single-widget .tagcloud a:hover {
+  color: #fff;
+  background-color: #555;
+}
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  word-break: normal;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  -webkit-clip-path: none;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+.comment-list .thread-even .media .media-body,
+.comment-list .parent .media .media-body {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+.single-blog-post .post-share-links {
+  clear: both;
+}
+
+.search-widget .search-form .input-group .form-control {
+  height: auto !important;
+}
+
+.novaro-megamenu-nav-item .wp-block-columns .wp-block-column .link-list li {
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.novaro-megamenu-nav-item {
+  padding: 15px;
+}
+
+.novaro-megamenu-nav-item ul li a {
+  color: #606060;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 7px 15px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  display: inherit;
+}
+
+#hero-13 .stores-badge {
+  margin-top: 30px;
+}
+
+.menu-item-object-megamenu .nav-link:after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+aside .single-widget .popular-posts .no-thumb {
+  margin-bottom: 20px;
+}
+
+aside .single-widget .popular-posts .has-thumb {
+  margin-bottom: 20px;
+}
+
+aside .single-widget .popular-posts .has-thumb .wp-post-image {
+  margin-right: 20px;
+  border-radius: 4px;
+}
+
+.page-content ul li {
+  list-style: disc;
+}
+
+.post-content .post-comments > .h4-xs {
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.bottom-footer .bottom-footer-list li:last-child:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.parallax {
+  position: relative;
+}
+
+.parallax .parallax-inner {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-attachment: scroll;
+  background-color: transparent;
+  background-image: inherit;
+  background-size: cover;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.novaro-megamenu-nav-item .footer-links li {
+  margin-bottom: 10px;
+}
+
+.novaro-megamenu-nav-item .wpb_content_element {
+  margin-bottom: 0px;
+}
+
+.wp-calendar-nav .wp-calendar-nav-next {
+  float: right;
+}
+.wp-calendar-table caption {
+  caption-side: top;
+  font-weight: 400;
+}
+
+.single-post-txt .wp-block-pullquote > blockquote {
+  border-left: none;
+}
+
+.single-post-txt ul li {
+  list-style: disc;
+  margin-left: 16px;
+}
+
+.no-post-thumbnail .blog-post-txt {
+  padding-top: 0;
+}
+
+.sticky-form.open {
+  bottom: 34px;
+}
+
+.navbar-nav {
+  text-transform: capitalize;
+}
+
+.wp-block-gallery .blocks-gallery-caption {
+  text-align: center;
+}
+
+/********************************/
+/* Default widget CSS */
+/********************************/
+
+.single-widget h2 {
+  font-size: 1.1875rem;
+  margin-bottom: 30px;
+}
+
+.single-widget ol li:first-child {
+  padding: 0 0 15px;
+}
+.single-widget ol li {
+  margin-bottom: 0;
+  border-bottom: 1px dashed #c0c0c0;
+  padding: 15px 0;
+}
+.single-widget.widget_block ul > li {
+  border-bottom: 1px dashed #c0c0c0;
+  padding: 10px 0;
+}
+
+.single-widget.widget_block ul > li:first-child {
+  padding: 0 0 10px;
+}
+.single-widget .wp-block-latest-comments {
+  padding-left: 0;
+}
+.single-widget.widget_recent_comments ul li span a,
+.single-widget ol li .wp-block-latest-comments__comment-author {
+  font-weight: bold;
+}
+
+.single-widget.widget_nav_menu ul > li > ul,
+.single-widget.widget_pages ul > li > ul,
+.single-widget.widget_categories ul > li > ul {
+  margin-left: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #c0c0c0;
+  margin-top: 10px;
+}
+
+.single-widget.widget_nav_menu ul > li ul li:last-child,
+.single-widget.widget_pages ul > li ul li:last-child,
+.single-widget.widget_categories ul > li ul li:last-child {
+  padding-top: 0;
+}
+
+.single-widget.widget_text p strong {
+  margin-bottom: -5px;
+  display: block;
+}

@@ -1,0 +1,116 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Account Storage
+{% endblock title %}
+
+{% block content %}
+
+
+
+
+            <main>
+                <div class="vd jd tto vv oq ar ri">
+
+                    <!-- Page header -->
+                    <div class="ry">
+
+                        <!-- Title -->
+                        <h1 class="gg zj text-slate-800 font-bold">Account Storage ✨</h1>
+
+                    </div>
+
+                    <div class="bg-white by rounded-sm ry">
+                        <div class="flex fh zt qo">
+
+                            <!-- Sidebar -->
+                            <div class="flex fp cn ta qh zp me mu cx zm zg border-slate-200 uz zh"> 
+							<div> <div class="gb g_ yu gq it">Business Manager</div> 
+							
+                               {% include 'app/partials/_settings_nav.html' %}							
+
+							</div>
+
+							
+							</div>
+
+                            <!-- Panel -->
+                            <div class="ad">
+                                <form method = "POST" enctype= "multipart/form-data">
+								
+								{% csrf_token %}
+                                <!-- Panel body -->
+                                <div class="vs fz">
+                                    
+                                    <!-- Picture -->
+                                    
+
+                                    <!-- Business Profile -->
+                                    <section>
+									
+                                        <h3 class = "row">
+										Storage Disk</h3>
+										<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#94a3b8" class="bi bi-hdd-fill" viewBox="0 0 16 16">
+  <path d="M0 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-1zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM.91 7.204A2.993 2.993 0 0 1 2 7h12c.384 0 .752.072 1.09.204l-1.867-3.422A1.5 1.5 0 0 0 11.906 3H4.094a1.5 1.5 0 0 0-1.317.782L.91 7.204z"/>
+</svg>
+                                        
+                                         <style>
+											
+										  
+											.container {
+												background-color: #e6e6e6;
+												width: 80%;
+													border-radius: 15px;
+											}
+										  
+											.skill {
+												background-color: #1580ec;
+												color: white;
+												padding: 1%;
+												text-align: right;
+												font-size: 10px;
+													border-radius: 1px;
+											}
+										  
+											.html {
+												width: 0%;
+											}
+										  
+											
+										</style>
+										
+																		
+									
+									<div class="container">
+										<div class="skill html"></div>
+									</div>
+								  
+								  
+									
+                                    
+                                        <div class="text-sm">0 bytes of 10GB Used</div>
+                                        <div class="ig">
+                                            <a href= "#" class="btn border-slate-200 bw text-indigo-500">Buy Storage</a>
+                                        </div>
+                                    </section>
+
+                                    <!-- Smart Sync -->
+                                    
+                                </div>
+
+                                <!-- Panel footer -->
+                                
+
+                            </div>
+                         </form>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+      {% endblock content %}

@@ -1,0 +1,458 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block tittle %}
+		
+	{{all_features.feature  }}
+		
+{% endblock tittle %}
+
+{% block content %}
+			<!-- CONTENT-1
+			============================================= -->
+			<section id="content-1" class="content-1 wide-60 inner-page-hero content-section division">
+				<div class="container">
+					<div class="row d-flex align-items-center">
+
+
+						<!-- TEXT BLOCK -->	
+						<div class="col-md-7 col-lg-6 order-last order-md-2">
+							<div class="txt-block left-column wow fadeInRight">
+
+								<!-- Section ID -->	
+					 			<span class="section-id txt-upcase">{{all_features.tittle_tag_1 }}</span>
+
+								<!-- Title -->	
+								<h2 class="h2-xs">{{all_features.tittle_section_1 }}</h2>
+
+								<!-- List -->	
+								<ul class="simple-list">
+
+									<li class="list-item">
+										<p class="p-lg">
+										{{all_features.description_section_1 }}
+										</p>
+									</li>
+
+
+
+								</ul>														
+
+							</div>
+						</div>	<!-- END TEXT BLOCK -->	
+
+
+						<!-- IMAGE BLOCK -->
+						<div class="col-md-5 col-lg-6 order-first order-md-2">
+							<div class="rel img-block right-column wow fadeInLeft">
+								<img class="img-fluid" src="{{all_features.image_section_1.url}}" alt="content-image">
+							</div>
+						</div>
+
+
+					</div>	   <!-- End row -->
+				</div>	   <!-- End container -->
+			</section>	<!-- END CONTENT-1 -->
+
+
+
+
+			<!-- CONTENT-3
+			============================================= -->
+			<section id="content-3" class="bg-snow content-3 wide-60 content-section division">
+				<div class="container">
+
+
+					<!-- TOP ROW -->
+					<div class="top-row pb-50">
+						<div class="row d-flex align-items-center">
+
+
+							<!-- IMAGE BLOCK -->
+							<div class="col-md-5 col-lg-6">
+								<div class="img-block left-column wow fadeInRight">
+									<img class="img-fluid" src="{{all_features.image_section_2.url}}" alt="content-image">
+								</div>
+							</div>
+
+
+							<!-- TEXT BLOCK -->	
+							<div class="col-md-7 col-lg-6">
+								<div class="txt-block right-column wow fadeInLeft">
+
+									<!-- Section ID -->	
+					 				<span class="section-id txt-upcase">{{all_features.tittle_tag_2}}</span>
+
+									<!-- Title -->	
+									<h2 class="h2-xs">{{all_features.tittle_section_2}}</h2>
+
+									<!-- Text -->	
+									<p class="p-lg">
+									{{all_features.description_section_2}}
+									
+									</p>
+
+									<!-- Tools List -->
+
+
+								</div>
+							</div>	<!-- END TEXT BLOCK -->	
+
+
+						</div>
+					</div>	<!-- END TOP ROW -->
+
+
+					<!-- BOTTOM ROW -->
+					<div class="bottom-row">
+						<div class="row d-flex align-items-center">
+
+
+							<!-- TEXT BLOCK -->	
+							<div class="col-lg-6 order-last order-lg-2">
+								<div class="txt-block slim-column left-column wow fadeInRight">
+
+									<!-- TEXT BOX -->	
+									<div class="txt-box mb-20">
+
+										<!-- Title -->	
+										<h5 class="h5-lg">{{all_features.tittle_section_3}}</h5>
+
+										<!-- Text -->	
+										<p class="p-lg">
+										
+										{{all_features.description_section_3}}
+										</p>
+
+									</div>
+
+									<!-- TEXT BOX -->	
+									<div class="txt-box">
+
+										<!-- Title -->	
+										<h5 class="h5-lg">{{all_features.tittle2_section_3}}</h5>
+
+										<!-- List -->	
+										<ul class="simple-list">
+
+											<li class="list-item">
+												<p class="p-lg">
+												
+												{{all_features.description2_section_3}}
+												
+												</p>
+											</li>
+
+											
+
+										</ul>
+
+									</div>	<!-- END TEXT BOX -->
+
+								</div>
+							</div>	<!-- END TEXT BLOCK -->	
+
+
+							<!-- CB WRAPPER -->
+							<div class="col-lg-6 order-first order-lg-2">
+								<div class="cb-wrapper">
+
+									<!-- CB HOLDER -->	
+									<div class="cb-holder wow fadeInLeft">
+
+										<!-- CB BOX #1 -->
+										<div class="cb-single-box">
+											<p class="p-lg cb-header">New Customers</p>
+											<h2 class="h2-title-xs statistic-number"><sup>+</sup><span class="count-element">184</span></h2>
+											<p class="p-md mt-5 ico-10">
+												<span class="green-color"><span class="flaticon-"></span> 4.6%</span> vs last 7 days
+											</p>		
+										</div>
+
+										<hr class="divider">
+
+										<!-- CB BOX #2 -->
+										<div class="cb-single-box">
+											<ul class="simple-list">
+												<li class="list-item">
+													<p class="p-md">We are enabling business of all sizes.</p>
+												</li>
+
+												<li class="list-item">
+													<p class="p-md">PangoTalk is a global solution for business that wants to scale.</p>
+												</li>
+											</ul>
+										</div>
+
+										<!-- CB BOX #3 -->
+										<div class="cb-single-box cb-box-rounded bg-green white-color mt-25">
+											<h4 class="h4-lg">99.9%</h4>
+											<p class="p-lg">Customer engagement.</p>
+										</div>
+
+									</div>	<!-- END CB HOLDER -->	
+
+
+									<!-- CB SHAPE -->
+									<div class="cb-shape-1">
+										<img class="img-fluid" src="{%static './home/images/back-to-top.png'%}" alt="content-image">
+									</div>
+
+									<!-- CB SHAPE -->
+									<div class="cb-shape-2">
+										<img class="img-fluid" src="{%static './home/images/back-to-top.png' %}" alt="content-image">
+									</div>
+
+
+								</div>	
+							</div>	<!-- END CB WRAPPER -->	
+
+
+						</div>
+					</div>	<!-- END BOTTOM ROW -->
+
+
+				</div>	   <!-- End container -->
+			</section>	<!-- END CONTENT-3 -->
+
+
+
+
+			
+
+
+			<!-- CONTENT-2
+			============================================= -->
+			<section id="content-2" class="content-2 bg-04 wide-60 content-section division">
+				<div class="container">
+					<div class="row d-flex align-items-center">
+
+
+						<!-- IMAGE BLOCK -->
+						<div class="col-md-5 col-lg-6">
+							<div class="rel img-block left-column video-preview wow fadeInRight">
+								
+								
+
+								<!-- Preview Image --> 
+			 					<img class="img-fluid" src="{{all_features.image_section_4.url}}" alt="video-preview">
+
+							</div>
+						</div>
+
+
+						<!-- TEXT BLOCK -->	
+						<div class="col-md-7 col-lg-6">
+							<div class="txt-block right-column white-color wow fadeInLeft">
+
+								<!-- Section ID -->	
+					 			<span class="section-id txt-upcase">{{all_features.tittle_tag_4}}</span>
+
+								<!-- Title -->	
+								<h2 class="h2-xs">{{all_features.tittle_section_4}}</h2>
+
+								<!-- List -->	
+								<ul class="simple-list">
+
+									<li class="list-item">
+										<p class="p-lg">
+										
+										{{all_features.description_section_4}}
+										</p>
+									</li>
+
+									
+
+									
+
+								</ul>
+
+							</div>
+						</div>	<!-- END TEXT BLOCK -->	
+
+
+					</div>	   <!-- End row -->
+				</div>	   <!-- End container -->
+			</section>	<!-- END CONTENT-2 -->
+
+
+
+
+			<!-- TABS-2
+			============================================= -->
+			<section id="tabs-2" class="wide-60 tabs-section division">
+			 	<div class="container">
+			 		<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+
+
+			 			<!-- TABS NAVIGATION -->	
+			 			<div class="col">
+							<div class="tabs-nav clearfix">
+								<ul class="tabs-1">
+
+
+									<!-- TAB-1 LINK -->
+								    <li class="tab-link current" data-tab="tab-1">
+
+							    		<!-- Title -->
+										<h5 class="h5-md">{{all_features.tittle_1_section_5}}</h5>
+
+							    		<!-- Text -->
+										<p class="p-lg">
+										
+										{{all_features.description_1_section_5}}
+										
+										</p>
+
+								    </li>
+
+								    <!-- TAB-2 LINK -->
+								    <li class="tab-link" data-tab="tab-2">
+
+							    		<!-- Title -->
+										<h5 class="h5-md">{{all_features.tittle_2_section_5}}</h5>
+
+							    		<!-- Text -->
+										<p class="p-lg">
+										{{all_features.description_2_section_5}}
+										
+										</p>
+
+								     </li>
+
+								    <!-- TAB-3 LINK -->
+								    <li class="tab-link" data-tab="tab-3">
+
+							    		<!-- Title -->
+										<h5 class="h5-md">{{all_features.tittle_3_section_5}}</h5>
+
+							    		<!-- Text -->
+										<p class="p-lg">
+										{{all_features.description_3_section_5}}
+										
+										</p>
+
+									</li>
+
+
+								</ul>
+							</div>   							
+			 			</div>	<!-- END TABS NAVIGATION -->	
+
+
+			 			<!-- IMAGE BLOCK -->
+			 			<div class="col">
+			 				<div class="img-block right-column wow fadeInLeft">
+								<div class="tabs-content">
+
+									<!-- TAB #1 IMAGE -->
+									<div id="tab-1" class="tab-content current">
+									    <img class="img-fluid" src="{{all_features.image_section_5.url}}" alt="tab-image" />	
+									</div>
+
+								    <!-- TAB #2 IMAGE -->
+								    <div id="tab-2" class="tab-content">
+										<img class="img-fluid" src="{%static './home/images/img-10.png'%}" alt="tab-preview">
+								    </div>
+
+								   <!-- TAB #3 IMAGE -->
+								   <div id="tab-3" class="tab-content">
+								    	<img class="img-fluid" src="{%static './home/images/img-14.png'%}" alt="tab-image" />
+								   </div>
+
+
+								</div>   
+							</div>
+			 			</div>	<!-- END IMAGE BLOCK -->
+
+
+			 		</div>	   <!-- End row -->
+			 	</div>	    <!-- End container -->
+			</section>	 <!-- END TABS-2 -->
+
+
+
+
+			
+
+			
+
+			
+			<!-- DIVIDER LINE -->
+			<hr class="divider">
+
+
+
+
+			
+
+
+			<!-- DIVIDER LINE -->
+			<hr class="divider">
+
+
+
+
+			
+			<!-- CONTENT-2A
+			============================================= -->
+			<section id="content-2a" class="content-2 bg-lightgrey wide-60 content-section division">
+				<div class="container">
+					<div class="row d-flex align-items-center">
+
+
+						<!-- IMAGE BLOCK -->
+						<div class="col-md-5 col-lg-6">
+							<div class="rel img-block left-column wow fadeInRight">
+								<img class="img-fluid" src="{%static './home/images/img-05.png'%}" alt="content-image">
+							</div>
+						</div>
+
+
+						<!-- TEXT BLOCK -->	
+						<div class="col-md-7 col-lg-6">
+							<div class="txt-block right-column wow fadeInLeft">
+
+								<!-- Section ID -->	
+					 			<span class="section-id txt-upcase">Handling With Ease</span>	
+
+								<!-- Title -->	
+								<h2 class="h2-xs">The WhatsApp channel</h2>
+
+								<!-- List -->	
+								<ul class="simple-list">
+
+									<li class="list-item">
+										<p class="p-lg">Reach your customers on the world’s most popular messaging app. Support was never so personal – or so easy.
+										</p>
+									</li>
+
+									
+
+									<li class="list-item">
+										<p class="p-lg">PangoTalk is your business layer on top of WhatsApp that equips you with professional support and sales features like routing, assignment, 
+										status and topic tagging, notes, live translation, analytics and much more. 
+										</p>
+									</li>
+
+								</ul>
+
+							</div>
+						</div>	<!-- END TEXT BLOCK -->	
+
+
+					</div>	   <!-- End row -->
+				</div>	   <!-- End container -->
+			</section>	<!-- END CONTENT-2A -->
+<br>
+
+
+
+			
+
+
+			<!-- FAQs-2
+			============================================= -->
+			
+
+{% endblock content %}

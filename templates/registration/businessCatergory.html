@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>PangoTalk | Business Profile</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="{%static './app/style.a49749f4fb5cff923e10.css'%}" rel="stylesheet">
+
+</head>
+
+<body class="gm bf hy ys">
+
+    <script>
+        if (localStorage.getItem('sidebar-expanded') == 'true') {
+            document.querySelector('body').classList.add('sidebar-expanded');
+        } else {
+            document.querySelector('body').classList.remove('sidebar-expanded');
+        }
+    </script>
+
+    <main class="bg-white">
+
+        <div class="td flex">
+
+            <!-- Content -->
+            <div class="oq qw">
+
+                <div class="oj or flex fh wd">
+
+                    <div class="ac">
+
+                        <!-- Header -->
+                        <div class="flex items-center fg op vd jd tto">
+                            <!-- Logo -->
+                            <a class="block" href="/">
+                                <img  src="{%static './app/icons/icon-logo.png'%}" style="height:60px;padding-top: 10px;" alt="User upload"/>
+                            </a>
+                            <div class="text-sm">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Progress bar -->
+                        <div class="vd mz ge">
+                            <div class="al ri oq">
+                                <div class="td">
+                                    <div class="tp tb tx iz oq om hw" aria-hidden="true"></div>
+                                    <ul class="td flex fg oq">
+                                        <li>
+                                            <a class="flex items-center justify-center ur oo rounded-full gb g_ hb yo" href="/">1</a>
+                                        </li>
+                                        <li>
+                                            <a class="flex items-center justify-center ur oo rounded-full gb g_ hb yo " href="/">2</a>
+                                        </li>
+                                        <li>
+                                            <a class="flex items-center justify-center ur oo rounded-full gb g_ hy text-slate-500" href="/">3</a>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vd vv">
+                        <div class="al ri">
+    
+                            <h1 class="text-3xl text-slate-800 font-bold rb">Business Type or Category ✨</h1>
+                            <!-- Form -->
+							
+							<form method = "POST">
+						
+						{% csrf_token %}
+                            <div class="ln">
+                                <div>
+                                    <label class="block text-sm gk rx" for="email">Business Industry <span class="yl">*</span></label>
+                                    <select id="ind" class="form-control" required="required" name="business_category" aria-required="true" style="width: 444px;">
+									                                      <option value="" disabled="" selected="">Industry</option>
+                                                                          <option value="Automotive">Automotive</option>
+                                                                          <option value="Education">Education</option>
+                                                                          <option value="Energy">Energy</option>
+                                                                          <option value="Engineering">Engineering</option>
+                                                                          <option value="Financial &amp; Insurance Services">Financial &amp; Insurance Services</option>
+                                                                          <option value="Government &amp; Non-Profit">Government &amp; Non-Profit</option>
+                                                                          <option value="Healthcare">Healthcare</option>
+                                                                          <option value="IT-Services &amp; Consultancy">IT-Services &amp; Consultancy</option>
+                                                                          <option value="Manufacturing">Manufacturing</option>
+                                                                          <option value="Marketing &amp; Advertising">Marketing &amp; Advertising</option>
+                                                                          <option value="Media &amp; Telecommunications">Media &amp; Telecommunications</option>
+                                                                          <option value="Professional &amp; Business Support Services">Professional &amp; Business Support Services</option>
+                                                                          <option value="Retail">Retail</option>
+                                                                          <option value="Software">Software</option>
+                                                                          <option value="Transport &amp; Logistics">Transport &amp; Logistics</option>
+                                                                          <option value="Travel, Hospitality &amp; Tourism">Travel, Hospitality &amp; Tourism</option>
+                                                                          <option value="Other">Other</option>
+
+                                                           
+                                                        </select>
+                                </div>
+								
+								
+								
+                                <div>
+                                    <label class="block text-sm gk rx" for="password">Website (Optional) </label>
+                                     <input  class="tn oq" type="text" name = "website" placeholder = "www.mywebsite.com">
+															</div>
+								<div>
+                                    <label class="block text-sm gk rx" for="password">Facebook (Optional) </label>
+                                     <input  class="tn oq" type="text" name = "facebook" placeholder = "www.facebook.com/PangoTalk">
+															</div>
+								
+                            </div>
+                            <br>
+							
+							 <div class="flex items-center fg">
+                                    <a class="text-sm bu xz" href="{% url 'account/user/business/profile' %}">&lt;- Back</a>
+                                    <button class="btn hb xs yo rz" type="submit">Next Step -&gt;</button>
+                                </div>
+							
+							
+                        </form>
+							
+							
+							
+							
+                        
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Image -->
+            <div class="hidden qh tp tk ty tw qw" aria-hidden="true">
+                <img class="vr vi oq or" src="{%static './app/images/asset-13.png'%}" width="760" height="1024" alt="Authentication image">
+                <img class="tp ns tb fe ag st hidden tea" src="{%static './app/images/auth-decoration.png'%}" width="218" height="224" alt="Authentication decoration">
+            </div>
+
+        </div>
+
+    </main>
+
+<script src="{%static './app/main.f640b348fcfd37dfcd91.js'%}"></script>
+
+<script async src='https://www.googletagmanager.com/gtag/js?id=UA-125021779-1'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-125021779-1', { 'anonymize_ip': true });</script>
+
+</body>
+
+
+</html>

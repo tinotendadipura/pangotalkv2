@@ -1,0 +1,167 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+
+
+{% block title %}
+
+PangoTalk | Account Billing Plans
+{% endblock title %}
+
+{% block content %}
+            <main>
+                <div class="vd jd tto vv oq ar ri">
+            
+                    <!-- Page header -->
+                    <div class="ry">
+            
+                        <!-- Title -->
+                        <h1 class="gg zj text-slate-800 font-bold">Account Settings ✨</h1>
+            
+                    </div>
+            
+                    <div class="bg-white by rounded-sm ry">
+                        <div class="flex fh zt qo">
+            
+                            <!-- Sidebar -->
+                            
+
+
+							<!-- Panel -->
+                                <div class="ad">
+            
+                                    <!-- Panel body -->
+                                    <div class="vs fz">
+                                        <div>
+                                            <h2 class="gg text-slate-800 font-bold rw">Billing &amp; Invoices</h2>
+                                            <div class="text-sm">This workspace’s Billing Plan is set to <strong class="gk">${{current_plan.Price}}</strong> per month and will renew on <strong class="gk">{{businessInfo.next_billing_date}}</strong>.</div>
+                                        </div>
+            
+                                        <!-- Billing Information -->
+                                        <section>
+                                            <h3 class="gy yt text-slate-800 font-bold rx">Billing Information</h3>
+                                            <ul>
+                                                <li class="qd zo zr vm cx border-slate-200">
+                                                    <!-- Left -->
+                                                    <div class="text-sm text-slate-800 gk">Payment Method</div>
+                                                    <!-- Right -->
+                                                    <div class="text-sm text-slate-800ml-4">
+                                                        <span class="rk">Bank Transfer</span>
+                                                        <a class="gk text-indigo-500 xd" href="#0">Edit</a>
+                                                    </div>
+                                                </li>
+                                                <li class="qd zo zr vm cx border-slate-200">
+                                                    <!-- Left -->
+                                                    <div class="text-sm text-slate-800 gk">Billing Interval</div>
+                                                    <!-- Right -->
+                                                    <div class="text-sm text-slate-800ml-4">
+                                                        <span class="rk">Monthly</span>
+                                                        <a class="gk text-indigo-500 xd" href="#0">Edit</a>
+                                                    </div>
+                                                </li>
+                                                
+                                                
+                                                <li class="qd zo zr vm cx border-slate-200">
+                                                    <!-- Left -->
+                                                    <div class="text-sm text-slate-800 gk">Billing Address</div>
+                                                    <!-- Right -->
+                                                    <div class="text-sm text-slate-800ml-4">
+                                                        <span class="rk">{{businessInfo.Business_adress}}</span>
+                                                        <a class="gk text-indigo-500 xd" href="#0">Edit</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </section>
+            
+                                        <!-- Invoices -->
+                                        <section>
+                                            <h3 class="gy yt text-slate-800 font-bold rx">Invoices</h3>
+                                            <!-- Table -->
+                                            <table class="av oq">
+                                                <!-- Table header -->
+                                                <thead class="gb gq yu">
+                                                    <tr class="flex flex-wrap qm md:flex-no-wrap">
+                                                        <th class="oq block qb qv vg">
+                                                            <div class="g_ gh">Invoice #</div>
+                                                        </th>
+														
+														<th class="oq hidden qb qv vg">
+                                                            <div class="g_ gh">Billing Plan</div>
+                                                        </th>
+														
+                                                        <th class="oq hidden qb qv vg">
+                                                            <div class="g_ gh">Invoice Date</div>
+                                                        </th>
+                                                        <th class="oq hidden qb qv vg">
+                                                            <div class="g_ gh">Due Date</div>
+                                                        </th>
+														 
+														 <th class="oq hidden qb qv vg">
+                                                            <div class="g_ gh">Total</div>
+                                                        </th>
+														
+														<th class="oq hidden qb qv vg">
+                                                            <div class="g_ gh">Status</div>
+                                                        </th>
+														
+                                                        
+                                                    </tr>
+                                                </thead>
+                                                <!-- Table body -->
+                                                <tbody class="text-sm">
+												{% for invoice in invoice_info %}
+                                                    <!-- Row -->
+                                                    <tr class="flex flex-wrap qm md:flex-no-wrap cx border-slate-200 vg zy">
+                                                        <td class="oq block qb qv vy zb">
+                                                            <div class="gh gk text-slate-800">{{invoice.Invoice_ID}}</div>
+                                                        </td>
+														
+														<td class="oq block qb qv vy zb">
+                                                            <div class="gh">{{invoice.Plan_Name}} Plan</div>
+                                                        </td>
+														
+                                                        <td class="oq block qb qv vy zb">
+                                                            <div class="gh">{{invoice.date.date}}</div>
+                                                        </td>
+                                                        <td class="oq block qb qv vy zb">
+                                                            <div class="gh gk">{{invoice.due_date.date}}</div>
+                                                        </td>
+														
+														<td class="oq block qb qv vy zb">
+                                                            <div class="gh gk">${{invoice.amount}}</div>
+                                                        </td>
+														
+                                                        <td class="oq block qb qv vy zb">
+														{% if invoice.invoice_status == 'PAID' %}
+                                                            <a href="{% url 'account/billing-invoices/invoice-detail' invoice.Invoice_ID %}" class="btn border-slate-200 hover--border-slate-300 ys" ><span style = "color:#169631;">Invoice Paid</span></a>
+                                                        
+														{% elif invoice.invoice_status == 'OVERDUE'  %}
+														<a href="{% url 'account/billing-invoices/invoice-detail' invoice.Invoice_ID %}" class="btn border-slate-200 hover--border-slate-300 ys" ><span style = "color:#ea1313;">Invoice Overdue</span></a>
+                                                        {% elif invoice.invoice_status == 'PENDING'  %}
+														
+														<a href="{% url 'account/billing-invoices/invoice-detail' invoice.Invoice_ID %}" class="btn border-slate-200 hover--border-slate-300 ys" ><span style = "color:#ed8d07;">Invoice Pending...</span></a>
+                                                        
+														{% else %}
+														 
+														{% endif %}
+														</td>
+                                                    </tr>
+                                                    <!-- Row -->
+													{% endfor %}
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    </div>
+            
+                                    <!-- Panel footer -->
+                                    
+            
+                                </div>
+            
+                        </div>
+                    </div>
+            
+                </div>
+            </main>
+
+{% endblock content %}

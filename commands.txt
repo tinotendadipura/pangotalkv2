@@ -1,0 +1,3 @@
+#Celery Beat
+
+celery -A django.pangotalk beat -l INFO

@@ -1,0 +1,33 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Dashboard
+{% endblock title %}
+
+{% block content %}
+
+
+			
+			
+			
+            <main style = "height:500px; width:1400px;">
+                <iframe src="
+				
+				{% url 'main/home/non-profit/layer' %}
+				
+				
+				" scrolling="no" height="500" width="1200px;" style="border:none;" title="Iframe Example">
+				</iframe>
+
+			
+			
+			</main>
+
+
+
+
+{% endblock content %}

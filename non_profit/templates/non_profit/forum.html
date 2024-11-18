@@ -1,0 +1,217 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+{% block title %}
+PangoTalk | All Members
+{% endblock title %}
+{% block content %}
+<main>
+   <div class="vd jd tto vv zy oq ar ri">
+      <div class="tnr">
+         <!-- Left + Middle content -->
+         <div class="qd ac">
+            <!-- Left content -->
+            <div class="oq qk ry qf">
+               <div class="jq qt qy zv zd ta">
+                  <div class="zw">
+                     <div class="flex fg items-center qh">
+                        <header class="rb">
+                           <h1 class="gg zj text-slate-800 font-bold">Forum ✨</h1>
+                        </header>
+                        <div class="tni rb">
+                           <button  id="create-topic-btn"  aria-controls="feedback-modal" class=" q_ hb xs yo">Create Topic</button>
+                           <script>
+                              document.getElementById('create-topic-btn').addEventListener('click', function() {
+                              // Set this to the URL you want to navigate to
+                              window.location.href = '{% url 'main/non-profit/account/create_forum/topic' %}';
+                              });
+                              
+                           </script>
+                        </div>
+                     </div>
+                     <div class="flex fp cn ta qh zp vd zh rl">
+                        <div>
+                           <div class="gb g_ yu gq it j_">Menu</div>
+                           <ul class="flex fp qh rk ql">
+                              <li class="sa ql qc">
+                                 <a class="flex items-center vk vg rounded co bg-white" href="#0">
+                                    <svg class="ue on ap db text-indigo-500 mr-2" viewBox="0 0 16 16">
+                                       <path d="M10 16h4c.6 0 1-.4 1-.998V6.016c0-.3-.1-.6-.4-.8L8.6.226c-.4-.3-.9-.3-1.3 0l-6 4.992c-.2.2-.3.5-.3.799v8.986C1 15.6 1.4 16 2 16h4c.6 0 1-.4 1-.998v-2.996h2v2.996c0 .599.4.998 1 .998Zm-4-5.99c-.6 0-1 .399-1 .998v2.995H3V6.515L8 2.32l5 4.194v7.488h-2v-2.995c0-.6-.4-.999-1-.999H6Z"></path>
+                                    </svg>
+                                    <span class="text-sm gk text-indigo-500">Home</span> 
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Middle content -->
+            <div class="ac qu ttz 2xl:mx-8">
+               <div class="zw">
+                  <!-- Buttons group -->
+                  <div class="rw">
+                     <div class="oq flex flex-wrap le">
+                        <button class="btn ad bg-white border-slate-200 text-indigo-500 cu ww wq">Newest</button>
+                        <button class="btn ad bg-white border-slate-200 xo ys cu ww wq"> Popular</button>
+                        <button class="btn ad bg-white border-slate-200 xo ys cu ww wq">Following</button>
+                     </div>
+                  </div>
+                  <!-- Forum entries -->
+                  <div class="li">
+                     {% for post in forum_info %}
+                     <article class="bg-white shadow-md rounded border border-slate-200 vl">
+                        <div class="flex flex-start lr">
+                           <div class="ap sl"> <img class="uu of rounded-full" src="
+						   {% if  post.topic_thubnail %}
+						   
+						   {{post.topic_thubnail.url}}
+						   {% else %}
+						   
+						   {%static './app/images/user-avatar-32.png'%}
+						   
+						   {% endif %}
+						   " width="32" height="32" alt="User avatar"> </div>
+                           <div class="ad">
+                              <h2 class="g_ text-slate-800 in"> <a href="{% url 'main/non-profit/account/forum-topic-detail/open' post.topic_ID  %}">{{post.topic_title}}</a> </h2>
+                              <footer class="flex flex-wrap text-sm">
+                                 <div class="flex items-center wp wb xr wm wg wv">
+                                    <div class="nz">
+                                        <!-- Start -->
+                                        <div class="gb inline-flex gk hz yf rounded-full gp vk mt">Topic Active</div>
+                                        <!-- End -->
+                                    </div>
+                                 </div>
+                                 <div class="flex items-center wp wb xr wm wg wv"> <span class="text-slate-500">7d</span> </div>
+                                 <div class="flex items-center wp wb xr wm wg wv"> <span class="text-slate-500">{{post.total_comments}} Comments</span> </div>
+                              </footer>
+                           </div>
+						   
+						   
+						   
+						   <div class="flex flex-wrap items-center nq">
+                                    
+                                    
+                                    <div class="nz">
+                                        <!-- Start -->
+										<a href ="{% url 'main/non-profit/account/forum/delete' post.topic_ID %}" >
+                                        <button class="btn border-slate-200 hover--border-slate-300 yl">
+                                            <svg class="ue on db ap" viewBox="0 0 16 16">
+                                                <path d="M5 7h2v6H5V7zm4 0h2v6H9V7zm3-6v2h4v2h-1v10c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1V5H0V3h4V1c0-.6.4-1 1-1h6c.6 0 1 .4 1 1zM6 2v1h4V2H6zm7 3H3v9h10V5z"></path>
+                                            </svg>
+                                            <span class="r_">Close Topic</span>
+                                        </button>
+										</a>
+                                        <!-- End -->
+                                    </div>
+                                </div>
+						   
+						   
+						   
+                           <div class="ap">
+                              <button class="gb g_ gp od up border ha rounded-sm flex fh justify-center items-center bk b_ bj">
+                                 <svg class="inline-flex dz sl sc" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m0 6 6-6 6 6z"></path>
+                                 </svg>
+                                 <div>{{post.total_comments}}</div>
+                              </button>
+                           </div>
+						   
+						   
+                        </div>
+                     </article>
+                     {% endfor %} 
+                  </div>
+                  <!-- Pagination -->
+                  <div class="ir gd">
+                     <nav class="inline-flex" role="navigation" aria-label="Navigation">
+                        <ul class="flex justify-center">
+                           <li class="ml-3 first--ml-0">
+                              <a class="btn bg-white border-slate-200 yv fr" href="#0" disabled="disabled">&lt;- Previous</a>
+                           </li>
+                           <li class="ml-3 first--ml-0">
+                              <a class="btn bg-white border-slate-200 hover--border-slate-300 text-indigo-500" href="#0">Next -&gt;</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Right content -->
+         <div class="oq hidden tnn tnf">
+            <div class="tee tet tep ttr ttn ta">
+               <div class="zw">
+                  <div class="rb">
+                     <div x-data="{ modalOpen: false }">
+                        <button class="btn oq hb xs yo" @click.prevent="modalOpen = true" aria-controls="feedback-modal">Create Post</button>
+                        <!-- Modal backdrop -->
+                        <div class="th tm bg-slate-900 pb nm wi" x-show="modalOpen" x-transition:enter="wr wh wf" x-transition:enter-start="opacity-0" x-transition:enter-end="bv" x-transition:leave="wr wh wa" x-transition:leave-start="bv" x-transition:leave-end="opacity-0" aria-hidden="true" style="display: none;"></div>
+                        <!-- Modal dialog -->
+                        <div id="feedback-modal" class="th tm nm lq flex items-center rf justify-center fe vd jd" role="dialog" aria-modal="true" x-show="modalOpen" x-transition:enter="wr wc wf" x-transition:enter-start="opacity-0 a_" x-transition:enter-end="bv ax" x-transition:leave="wr wc wf" x-transition:leave-start="bv ax" x-transition:leave-end="opacity-0 a_" style="display: none;">
+                           <div class="bg-white rounded by lj aa oq ok" @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                              <!-- Modal header -->
+                              <div class="mn vm cx border-slate-200">
+                                 <div class="flex fg items-center">
+                                    <div class="g_ text-slate-800">Create Topic</div>
+                                    <button class="yu xm" @click="modalOpen = false">
+                                       <div class="tc">Close</div>
+                                       <svg class="ue on db">
+                                          <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z"></path>
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <!-- Modal content -->
+                              <form method = "POST">
+                                 {% csrf_token %}
+                                 <div class="mn mr">
+                                    <div class="ls">
+                                       <div>
+                                          <label class="block text-sm gk rx" for="feedback">Discussion Topic <span class="yl">*</span></label>
+                                          <textarea id="feedback" class="tr oq v_ mt" name = "forum_topic" rows="4" required=""></textarea>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- Modal footer -->
+                                 <div class="mn mr ck border-slate-200">
+                                    <div class="flex flex-wrap justify-end lt">
+                                       <button class="tt border-slate-200 hover--border-slate-300 ys" @click="modalOpen = false">Cancel</button>
+                                       <button class="tt hb xs yo"type ="submit">Create Post</button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="ln">
+                     <div class="hq va rounded border border-slate-200">
+                        <div class="gb g_ yu gq rw">Forum Meetups</div>
+                        <div class="ij"> <button class="tt oq bg-white border-slate-200 hover--border-slate-300 text-indigo-500 bb">View All</button> 
+                        </div>
+                     </div>
+                     <div class="hq va rounded border border-slate-200">
+                        <div class="gb g_ yu gq rw">Popular Stories</div>
+                        <ul class="ls">
+                           <li>
+                              <div class="text-sm rx"> 
+                                 <a class="gk text-slate-800" href="#0">I built and sold 2 small SaaS products and quit my job in the last two years — AMA</a>
+                              </div>
+                              <div class="gb text-slate-500">
+                                 <a class="gk text-indigo-500 xd" href="#0">markusj</a> · 2d · 312 comments
+                              </div>
+                           </li>
+                        </ul>
+                        <div class="ij"> 
+                           <button class="tt oq bg-white border-slate-200 hover--border-slate-300 text-indigo-500 bb">View All</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+{% endblock content %}

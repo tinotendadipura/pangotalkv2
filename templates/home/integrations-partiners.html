@@ -1,0 +1,96 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block tittle %}
+		
+	PangoTalk | Integration
+		
+{% endblock tittle %}
+
+{% block content %}
+
+			<!-- TEAM-1
+			============================================= -->
+			<section id="team-1" class="wide-50 inner-page-hero team-section division">
+				<div class="container">
+
+
+					<!-- SECTION TITLE -->	
+					<div class="row justify-content-center">	
+						<div class="col-md-10 col-lg-8">
+							<div class="section-title title-02 mb-75">	
+
+								<!-- Section ID -->	
+						 		<span class="section-id txt-upcase">Meet Our Partiners</span>
+
+								<!-- Title -->		
+								<h2 class="h2-xs">Channels & Integrations</h2>
+
+							</div>	
+						</div>
+					</div>
+
+
+					<!-- TEAM MEMBERS HOLDER -->	
+					<div class="team-members-wrapper text-center">
+						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+
+
+							<!-- TEAM MEMBER #1 -->
+							
+							{% for partiner in all_integrations  %}
+							<div class="col">
+								<div class="team-member wow fadeInUp">
+															
+									<!-- Team Member Photo -->
+									<div class="team-member-photo">
+										<img class="img-fluid" src="{{partiner.companyLogo.url}}" alt="team-member-foto">
+									</div>
+																																					
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+										
+										
+										<p class="p-lg tm-social"><a href="#" class="text-secondary">{{partiner.description}}</a></p>
+									</div>	
+								
+								</div>									
+							</div>	<!-- END TEAM MEMBER #1 -->
+							{% endfor %}
+							
+							
+							
+
+							
+							
+							
+							
+										
+							
+							
+
+						</div>   <!-- End row -->
+					</div>	<!-- TEAM MEMBERS HOLDER -->	   
+
+
+				</div>	    <!-- End container -->
+			</section>	<!-- END TEAM-1 -->
+
+
+
+
+			<!-- TESTIMONIALS-3
+			
+
+			
+
+			<!-- DIVIDER LINE -->
+			<hr class="divider">
+
+
+
+
+			<!-- FAQs-2
+			
+
+{% endblock content %}

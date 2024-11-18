@@ -1,0 +1,191 @@
+{% extends 'default/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Business Manager | App
+
+{% endblock title %}
+
+
+		{% block content %}
+
+        <div class="page-wrapper">
+
+            <!-- Page Content-->
+            <div class="page-content-tab">
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                
+                                <h4 class="page-title">Dashboard</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- end page title end breadcrumb -->
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="card overflow-hidden">
+                                <div class="row g-0">
+                                    <div class="col-md-6 col-lg-3 border-b border-e border-bo">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col">
+                                                    <div class="media">
+                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
+                                                            <i data-feather="tag" class="align-self-center text-muted icon-sm"></i>  
+                                                        </div>
+                                                        <div class="media-body align-self-center ms-2"> 
+                                                            <p class="text-dark mb-1 fw-semibold">New Accounts</p>                                                            
+                                                            <p class="mb-0 text-truncate text-muted">Business Sign-up</p>                                                                                   
+                                                        </div><!--end media body-->
+                                                    </div><!--end media-->                                                    
+                                                </div><!--end col-->
+                                                <div class="col-auto align-self-center">
+                                                    <h4 class="my-1">{{unverified_business_total}}</h4>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body-->                                            
+                                    </div> <!--end col--> 
+                                    <div class="col-md-6 col-lg-3 border-b border-e border-bo">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">                                                
+                                                <div class="col">
+                                                    <div class="media">
+                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
+                                                            <i data-feather="package" class="align-self-center text-muted icon-sm"></i>  
+                                                        </div>
+                                                        <div class="media-body align-self-center ms-2"> 
+                                                            <p class="text-dark mb-1 fw-semibold">Active Accounts</p>                                                            
+                                                            <p class="mb-0 text-truncate text-muted">verified Accounts</p>
+                                                        </div><!--end media body-->
+                                                    </div><!--end media-->                                                    
+                                                </div><!--end col-->
+                                                <div class="col-auto align-self-center">
+                                                    <h4 class="my-1">{{verified_business}}</h4>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body-->                                            
+                                    </div> <!--end col-->                         
+                                    <div class="col-md-6 col-lg-3 border-b border-e">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col">  
+                                                    <div class="media">
+                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
+                                                            <i data-feather="zap" class="align-self-center text-muted icon-sm"></i>
+                                                        </div>
+                                                        <div class="media-body align-self-center ms-2"> 
+                                                            <p class="text-dark mb-1 fw-semibold">Account Upgrades </p>                                                             
+                                                            <p class="mb-0 text-truncate text-muted">Requested Upgrade</p>
+                                                        </div><!--end media body-->
+                                                    </div><!--end media-->                                                    
+                                                </div><!--end col-->
+                                                <div class="col-auto align-self-center">
+                                                    <h4 class="my-1">{{all_upgrades}}</h4>                                                     
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body-->                                            
+                                    </div> <!--end col--> 
+                                    <div class="col-md-6 col-lg-3 ps-lg-0">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">                                                
+                                                <div class="col">
+                                                    <div class="media">
+                                                        <div class="bg-light-alt d-flex justify-content-center align-items-center thumb-md  rounded-circle">
+                                                            <i data-feather="lock" class="align-self-center text-muted icon-sm"></i> 
+                                                        </div>
+                                                        <div class="media-body align-self-center ms-2"> 
+                                                            <p class="text-dark mb-1 fw-semibold">Suspended</p>                                                      
+                                                            <p class="mb-0 text-truncate text-muted">Billing  Terminated</p>
+                                                        </div><!--end media body-->
+                                                    </div><!--end media-->                                                     
+                                                </div><!--end col-->
+                                                <div class="col-auto align-self-center">
+                                                    <h4 class="my-1">{{suspended_qaccounts}}</h4> 
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body-->                                            
+                                    </div> <!--end col-->
+                                </div><!--end row--> 
+                            </div><!--end card-->
+                        </div><!--end col-->           
+                    </div><!--end row-->
+                    <div class="row">  
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">                      
+                                            <h4 class="card-title">Tickets Status</h4>                      
+                                        </div><!--end col-->                                        
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                                <div class="card-body">                                                                 
+                                    <div class="">
+                                        <div id="Tickets_Status" class="apex-charts"></div>
+                                    </div>  
+                                </div><!--end card-body-->                                
+                            </div><!--end card-->   
+                        </div> <!--end col--> 
+                        <div class="col-lg-4">
+                            <div class="card">   
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">                      
+                                            <h4 class="card-title">Customer Satisfaction</h4>                      
+                                        </div><!--end col-->                                       
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->  
+                                <div class="card-body">
+                                    <div class="position-absolute bottom-50 start-50 translate-middle mb-n2">
+                                        <h3 class="mb-0">94.5%</h3>
+                                        <p class="mb-0 text-uppercase fw-semibold text-muted">Happiness</p>
+                                    </div> 
+                                    <div id="ana_device" class="apex-charts mb-2"></div>  
+                                    <ul class="list-inline mb-0 text-center">
+                                        <li class="list-inline-item mb-2 mb-lg-0 fw-semibold">
+                                            <i class="far fa-grin-stars text-primary font-16 align-middle me-1"></i>Excellent
+                                        </li>
+                                        <li class="list-inline-item mb-2 mb-lg-0 fw-semibold">
+                                            <i class="far fa-smile me-1 mb-lg-0 font-16 align-middle" style="color: #fdb5c8;"></i>Very Good
+                                        </li>
+                                        <li class="list-inline-item mb-2 fw-semibold">
+                                            <i class="far fa-meh text-info me-1 font-16 align-middle"></i>Good
+                                        </li>
+                                        <li class="list-inline-item fw-semibold">
+                                            <i class="far fa-frown  me-1 font-16 align-middle" style="color: #c693ff;"></i>Fair
+                                        </li>
+                                    </ul>  
+                                    <hr class="hr-dashed">                                                                   
+                                    <div class="media">
+                                        <span class="thumb-sm justify-content-center d-flex align-items-center bg-soft-warning rounded-circle me-2">MT</span>                                    
+                                        <div class="media-body align-self-center">
+                                            <p class="text-muted mb-0">Seven Billing Accounts have been suspended... 
+                                                <a href="#" class="text-primary">Read more</a>
+                                            </p>                                           
+                                        </div><!--end media-body-->
+                                    </div>
+                                </div><!--end card-body-->    
+                            </div><!--end card-->
+                        </div><!--end col--> 
+                    </div><!--end row-->
+              
+                <!--Start Footer-->
+                <!-- Footer Start -->
+                <footer class="footer text-center text-sm-start">
+                    &copy; <script>
+                        document.write(new Date().getFullYear())
+                    </script> PangoTalk<span class="text-muted d-none d-sm-inline-block float-end"> by Cardava Tech</span>
+                </footer>
+                <!-- end Footer -->                
+                <!--end footer-->
+            </div>
+            <!-- end page content -->
+        </div>
+        
+		{% endblock content %}
+		

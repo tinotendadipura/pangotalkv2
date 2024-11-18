@@ -1,0 +1,307 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Add Category
+{% endblock title %}
+
+{% block content %}
+		<div class="vd jd tto vv oq ar ri" style = "background:#eef1f499;">
+
+                    <!-- Page header -->
+                    <div class="_y js jn rw qa">
+
+                        <!-- Left: Title -->
+                        <div class="rw _a">
+                            <div class="hidden _m"> <form class="td"> <label for="action-search" class="tc">Search</label>
+							<input id="action-search" class="tn mf kn" type="search" placeholder="Search…" style="padding-right: 500px;height:45px;">
+							
+							<button class="tp tm tg kp" type="submit" aria-label="Search"> <svg class="ue on ap db yu kv ml-3 mr-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"> <path d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"></path> <path d="M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z"></path> </svg> </button> </form> </div>
+						</div>
+
+                        <!-- Right: Actions -->
+                        <div class="sq fa _j fm ji fy"> <div class="table-items-action hidden"> <div class="flex items-center"> 
+						<div class="hidden tnn text-sm gz mr-2 co"><span class="table-items-count"></span> items selected</div>
+						<button class="btn bg-white border-slate-200 hover--border-slate-300 yl xb">Delete</button> </div>
+						</div>
+
+						
+						
+						
+						
+						
+						<div class="nz">
+                                        <!-- Start -->
+                                        <div x-data="{ modalOpen: false }">
+                                            <button class="btn hb xs yo" @click.prevent="modalOpen = true" aria-controls="feedback-modal">
+													<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+		
+											
+											<span style = "padding: 5px;">Create Coupons</span></button>
+                                            <!-- Modal backdrop -->
+                                            <div class="th tm bg-slate-900 pb nm wi" x-show="modalOpen" x-transition:enter="wr wh wf" x-transition:enter-start="opacity-0" x-transition:enter-end="bv" x-transition:leave="wr wh wa" x-transition:leave-start="bv" x-transition:leave-end="opacity-0" aria-hidden="true" x-cloak=""></div>
+                                            <!-- Modal dialog -->
+                                            <div id="feedback-modal" class="th tm nm lq flex items-center rf justify-center fe vd jd" role="dialog" aria-modal="true" x-show="modalOpen" x-transition:enter="wr wc wf" x-transition:enter-start="opacity-0 a_" x-transition:enter-end="bv ax" x-transition:leave="wr wc wf" x-transition:leave-start="bv ax" x-transition:leave-end="opacity-0 a_" x-cloak="">
+                                                <div class="bg-white rounded by lj aa oq ok" @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                                                    <!-- Modal header -->
+                                                    <div class="mn vm cx border-slate-200">
+                                                        <div class="flex fg items-center">
+                                                            <div class="g_ text-slate-800">Add Coupon</div>
+                                                            <button class="yu xm" @click="modalOpen = false">
+                                                                <div class="tc">Close</div>
+                                                                <svg class="ue on db">
+                                                                    <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal content -->
+                                                    <div class="mn mr">
+                                                        
+                                                        <div class="ls">
+														<form method ="POST" enctype= "multipart/form-data" >
+														{% csrf_token %}
+														
+																											  
+													  <style>
+								.upload-box{
+								font-size:12px;
+								background:white;
+								border-radius:5px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								width:40px;
+								height: 30px;
+								outline:none;
+								
+								}
+								
+								::-webkit-file-upload-button{
+								
+								color:white;
+								background:#416093;
+								padding:5px;
+								border:none;
+								border-radius:6px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								outline:none;
+								}
+								::-webkit-file-upload-button:hover{
+								background:#344868;
+								}
+								</style>
+								<div class="block text-sm gk rx" >
+								<label class="block text-sm gk rx" for="card-expiry">Coupon Banner Image<span class="yl"></span></label>
+								<input type ="file" class="
+								upload-box
+								" style="width: 450px;" name = "coupon_image">
+
+                                        </input>
+								</div>
+														
+														
+														<div>
+                                                <label class="block text-sm gk rx" for="name">Campaign Name <span class="yl">*</span></label>
+                                               <input name="campaignName" class="tn oq" type="text">
+                                                         </div>
+														 
+														 
+													 
+														
+														<div>
+                                                <label class="block text-sm gk rx" for="name">Start Date <span class="yl">*</span></label>
+                                               <input  class="tn oq" type="datetime-local" id = "startdate" name ="StartDate">
+                                                         </div>
+														<br>
+														<div>
+                                                <label class="block text-sm gk rx" for="name">Coupon Validity Time<span class="yl">*</span></label>
+                                               <input  class="tn oq" type="datetime-local" id = "startdate" name = "validDate">
+                                                         </div>	
+                                                            
+															<br>
+															<div>
+                                                <label class="block text-sm gk rx" for="name">Discount Percentage <span class="yl">*</span></label>
+                                               <input name = "percent" class="tn oq" type="Number">
+                                                         </div>
+														 
+														 
+												<div>
+                                                <label class="block text-sm gk rx" for="name">Minimum Amount <span class="yl">*</span></label>
+                                               <input name = "minimum_amount" class="tn oq" type="text">
+                                                         </div>	
+                                                      
+												
+													  
+
+                                                   <div>
+                                                <label class="block text-sm gk rx" for="name">Usage Limit <span class="yl">*</span></label>
+                                               <input name = "Usage_limit" class="tn oq" type="Number">
+                                                         </div>	
+                                              														 
+                                                            <div>
+                                            <label class="block text-sm gk rx" for="default">Products Category</label>
+                                            <select id="country" class="tn oq" name = "category">
+												<option value = "">---Category---</option>
+												{% for category in all_category %}
+												<option value = "{{category.category}}">{{category.category}}</option>
+												
+												{% endfor %}
+                                </select>
+                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="mn mr ck border-slate-200">
+                                                        <div class="flex flex-wrap justify-end lt">
+                                                            <button class="tt border-slate-200 hover--border-slate-300 ys" @click="modalOpen = false">Cancel</button>
+                                                            <button class="tt hb xs yo" type="Submit">Generate Coupons</button>
+                                                        </div>
+                                                    </div>
+													</form>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <!-- End -->
+                                    </div>
+                          
+
+
+
+						</div>
+
+                    </div>
+
+                    
+                    <!-- Filters -->
+                    
+
+                    <div class="bg-white by rounded-sm border border-slate-200 ry">
+					<header class="mn mr"> <h2 class="g_ text-slate-800">All Coupons <span class="yu gk">({{total_coupons}})</span></h2> 
+					</header> <div x-data="handleSelect">
+					<div class="lz"> 
+					<table class="av oq lg lb"> 
+					<thead class="gb gq text-slate-500 hq ck border-slate-200"> 
+					<tr> <th class="v_ wk xe vm co ut"> 
+					<div class="flex items-center"> 
+					<label class="inline-flex"> 
+					<span class="tc">Select all</span>
+					<input id="parent-checkbox" class="to" type="checkbox" @click="toggleAll"> </label>
+					</div> </th> <th class="v_ wk xe vm co"> <div class="g_ gh">CODE</div> </th>
+					<th class="v_ wk xe vm co"> <div class="g_ gh">START DATE</div> </th> 
+					<th class="v_ wk xe vm co"> <div class="g_ gh">END DATE</div> </th> 
+					<th class="v_ wk xe vm co"> <div class="g_ gh">CAMPAIGNS NAME</div> </th> 
+
+					<th class="v_ wk xe vm co"> <div class="g_">PERCENTAGE</div> </th> 
+					<th class="v_ wk xe vm co"> <div class="g_">USAGE LIMITS</div> </th> 
+					
+					<th class="v_ wk xe vm co"> <div class="g_ gh">STATUS</div> </th> 
+					<th class="v_ wk xe vm co"> <div class="g_ gh">ACTION</div> </th> 
+					 </tr> </thead> 
+					
+					<tbody class="text-sm" x-data="{ open: false }"> 
+					
+					{% for coupon in current_page %}
+					<tr> 
+					<td class="v_ wk xe vm co ut"> 
+					<div class="flex items-center"> 
+					<label class="inline-flex"> 
+					<span class="tc">Select</span> 
+					<input class="table-item to" type="checkbox" @click="uncheckParent">
+					</label>
+					</div>
+					</td> 
+					<td class="v_ wk xe vm co"> 
+					<div class="flex items-center text-slate-800">
+					<div class="ua ol ap flex items-center justify-center hy rounded-full mr-2 _f"> 
+							<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+		
+					</div> <div class="gk yj">{{coupon.couponCode}}</div>
+					</div> </td> <td class="v_ wk xe vm co"> <div>{{coupon.startactualdate.date}}</div> </td> 
+					<td class="v_ wk xe vm co"> <div class="gk text-slate-800">{{coupon.endactuallDate.date}}</div> </td>
+					<td class="v_ wk xe vm co"> <div class="gk">{{coupon.campaignName}}</div> </td>
+					
+					<td class="v_ wk xe vm co"> 
+					<center>
+					<div class="gk text-slate-800">{{coupon.percentage}}%</div> 
+					</center>
+					</td> 
+					
+			      <td class="v_ wk xe vm co"> 
+					<center>
+					<div class="gk text-slate-800">{{coupon.Usage_limit }}</div> 
+					</center>
+					</td> 
+					
+					
+					<td class="v_ wk xe vm co"> 
+					{% if current_time > coupon.endactuallDate%}
+					<div class="gb inline-flex gk pt yp rounded-full gp vk mt">Expired</div>
+					{% else %}
+					
+		
+                                        <!-- Start -->
+                    <div class="gb inline-flex gk hz yf rounded-full gp vk mt">Active Coupon</div>
+                                        <!-- End -->
+                                
+					{% endif %}
+					</td> 
+					
+					
+					<td class="v_ wk xe vm co ut"> <div class="lv">
+
+					<a href = "{% url 'promo/customer-coupon/delete' coupon.couponCode %}" class="yl xb rounded-full"> <span class="tc">Delete</span> <svg class="uu of db" viewBox="0 0 32 32"> <path d="M13 15h2v6h-2zM17 15h2v6h-2z"></path> <path d="M20 9c0-.6-.4-1-1-1h-6c-.6 0-1 .4-1 1v2H8v2h1v10c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V13h1v-2h-4V9zm-6 1h4v1h-4v-1zm7 3v9H11v-9h10z"></path> </svg> </a> </div> </td>
+					</tr> 
+					
+					
+					{% endfor %}
+					</tbody>
+					</table> 
+					</div>
+					</div>
+					</div>
+
+                    <!-- Pagination -->
+                    <div class="ie">
+                        <div class="flex fh _z jn js">
+						<nav class="rw _a _e" role="navigation" aria-label="Navigation"> 
+						<ul class="flex justify-center">
+						<li class="ml-3 first--ml-0">
+						
+						<a class=" 
+						
+						{% if current_page.has_previous %}
+						btn bg-white border-slate-200 hover--border-slate-300 text-indigo-500
+						{% else %}
+						btn bg-white border-slate-200 yv fr
+						{%endif %}
+						" 
+						{% if current_page.has_previous %}
+						href="?page={{current_page.previous_page_number}}" 
+						{% else %}
+
+						{% endif %}
+						>&lt;- Previous</a> </li> 
+						<li class="ml-3 first--ml-0"> 
+						<a class="
+						
+						
+						{% if current_page.has_next %}
+						btn bg-white border-slate-200 hover--border-slate-300 text-indigo-500
+						{% else %}
+						btn bg-white border-slate-200 yv  	fr
+						{%endif %}
+						
+						" 
+						{% if current_page.has_next %}
+						href="?page={{current_page.next_page_number}}"
+						{% else %}
+						
+						{% endif %}
+						>Next -&gt;</a> </li> </ul> </nav> <div class="text-sm text-slate-500 gp jy">Page <span class="gk ys">{{current_page.number}}</span></span> of <span class="gk ys">{{current_page.paginator.num_pages}}</span></div> </div>
+                    </div>
+
+                </div>
+
+{% endblock content %}

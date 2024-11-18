@@ -1,0 +1,80 @@
+/*
+Theme Name: Novaro
+Theme URI: http://jthemes.com/wp/novaro
+Author: Jthemes 
+Author URI: http://themeforest.net/user/jthemes
+Description: Novaro is a pixel perfect Landing Pages Big Pack. It comes with a number of unique elements, layouts and pages that you can easily use to create stunning websites.
+Version: 1.2.3
+Requires at least: 4.7
+Requires PHP: 7.1
+Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready
+Text Domain: novaro
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+.admin-bar .hidden-nav {
+    margin-top: -100px !important;
+}
+
+.admin-bar .primary-menu,
+.admin-bar .tra-menu,
+.admin-bar .transparent-menu,
+.admin-bar .navbar.scroll.hidden-nav,
+.admin-bar .dark-menu {
+    margin-top: 32px;
+}
+
+.admin-bar .navbar.scroll.hidden-nav {
+    margin-top: 32px !important;
+}
+
+@media (max-width: 782px) {
+    .admin-bar .fixed-top {
+        margin-top: 46px;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-bar .fixed-top.scroll {
+        margin-top: 0;
+    }
+    .admin-bar .navbar.scroll.hidden-nav {
+        margin-top: 0px !important;
+    }
+}
+
+@media (min-width: 783px) {
+    .admin-bar .navbar.white-menu.navbar-light {
+        margin-top: 32px;
+    }
+}
+
+.media-list .depth-3 .children,
+.media-list .depth-2 .children,
+.media-list .depth-1 .children {
+    margin-left: 45px;
+}
+
+.footer-widgets-off .bottom-footer {
+    margin-top: 0;
+}
+
+@media (max-width: 991px) {
+    #hero-18 {
+        margin-top: 0;
+    }
+}
+
+.footer-widgets-off {
+    padding-top: 0;
+}
+.single-widget .tagcloud a{
+    font-size: 14px !important;
+    line-height: 1 !important;
+    padding: 7px 15px;
+}
+
+#newsletter-1 .input-group {
+    display: inline;
+}

@@ -1,0 +1,114 @@
+ {% extends 'chat/messaging/base.html' %}
+ 
+ {% load static %}
+ 
+ {% block title %}
+ 
+ PangoTalk Chat
+ 
+ {% endblock title %}
+ 
+ 
+ {% block content %}
+ <main class="main">
+
+            <!-- Chats Page Start -->
+            <div class="chats">
+                <div class="d-flex flex-column justify-content-center text-center h-100 w-100">
+                    <div class="container">
+                        <div class="avatar avatar-lg mb-2">
+                            <img class="avatar-img" src="{%static './chat/assets/media/avatar/4.png'%}" alt="">
+                        </div>
+
+                        <h5>Welcome, {{info.firstName}}!</h5>
+                        <p class="text-muted">Please select a chat to Start messaging.</p>
+
+                        <button class="btn btn-outline-primary no-box-shadow" type="button" data-toggle="modal" data-target="#startConversation">
+                            Start a conversation
+                        </button>
+                    </div>
+                </div>
+            </div>
+           
+
+        </main>
+        <!-- Main End -->
+
+        <!-- App Add-ons Start -->
+		      
+		<!-- App Add-ons End -->
+
+        <div class="backdrop"></div>
+
+        <!-- All Modals Start -->
+
+        <!-- Modal 1 :: Start a Conversation-->
+        <div class="modal modal-lg-fullscreen fade" id="startConversation" tabindex="-1" role="dialog" aria-labelledby="startConversationLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-dialog-zoom">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="startConversationLabel">New Chat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0 hide-scrollbar">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Search Start -->
+                            <form class="form-inline w-100 p-2 border-bottom">
+                                <div class="input-group w-100 bg-light">
+                                    <input type="text" class="form-control form-control-md search border-right-0 transparent-bg pr-0" placeholder="Search">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text transparent-bg border-left-0" role="button">
+                                            <!-- Default :: Inline SVG -->
+                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                            </svg>   
+                                            
+                                            <!-- Alternate :: External File link -->
+                                            <!-- <img class="injectable hw-20" src="./../../assets/media/heroicons/outline/search.svg" alt=""> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Search End -->
+                        </div>
+
+                        <div class="col-12">
+                                <!-- List Group Start -->
+                                <ul class="list-group list-group-flush">
+								{% for customer in customers %}
+
+                                <!-- List Group Item Start -->
+                                <li class="list-group-item">
+                                    <div class="media">
+                                        <div class="avatar avatar-online mr-2">
+                                            <img src="../../assets/media/avatar/1.png" alt="">
+                                        </div>
+
+                                        <div class="media-body">
+                                            <h6 class="text-truncate">
+                                                <a href="{% url 'account/user/chat' customer.customer_ID %}" class="text-reset">{{customer.firstName}} {{customer.last_Name}}</a>
+                                            </h6>
+
+                                            <p class="text-muted mb-0">Online</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- List Group Item End -->
+                              {% endfor %}
+                               
+                            </ul>
+                            <!-- List Group End -->
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+		
+		  
+ 
+ {% endblock content %}

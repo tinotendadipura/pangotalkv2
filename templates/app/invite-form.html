@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>
+	
+	User Invite
+	
+	</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="{%static './app/style.a49749f4fb5cff923e10.css'%}" rel="stylesheet">
+<script src="{%static './app/jquery-3.6.0.min.js'%}" ></script>
+
+</head>
+
+
+<body class="gm bf hy ys">
+
+    <script>
+        if (localStorage.getItem('sidebar-expanded') == 'true') {
+            document.querySelector('body').classList.add('sidebar-expanded');
+        } else {
+            document.querySelector('body').classList.remove('sidebar-expanded');
+        }
+    </script>    
+
+    <main class="bg-white">
+
+        <div class="td flex">
+
+            <!-- Content -->
+            <div class="oq qw">
+
+                <div class="oj or flex fh wd">
+
+                                            <div class="flex items-center fg op vd jd tto">
+                            <!-- Logo -->
+                            <a class="block" href="/">
+                                <img  src="{%static './app/icons/icon-logo.png'%}" style="height:60px;padding-top: 10px;" alt="User upload"/>
+                            </a>
+                            <div class="text-sm">
+                                
+                            </div>
+                        </div>
+                    <div class="as ri oq vd vv">
+        
+                        <h1 class="text-3xl text-slate-800 font-bold rb">Create your Account ✨</h1>
+                        <!-- Form -->
+						
+                        <form method = "POST">
+						{% csrf_token %}
+                            <div class="ln">
+							{% include 'app/messages.html' %}
+                                <div>
+                                    <label class="block text-sm gk rx" for="email">Email Address <span class="yl">*</span></label>
+                                    <input id="email" class="tn oq" type="email" disabled value = "{{invite_info.email}}" name = "email">
+                                </div>
+                                <div>
+                                    <label class="block text-sm gk rx" for="name">First Name<span class="yl">*</span></label>
+                                    <input id="name" class="tn oq" type="text" value = "{{invite_info.firstName}}" name ="firstName">
+                                </div>
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="name">Last Name<span class="yl">*</span></label>
+                                    <input id="name" class="tn oq" type="text" value = "{{invite_info.last_Name}}" name = "lastName">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm gk rx" for="password">Password</label>
+                                    <input id="password" class="tn oq" type="password" autocomplete="on" name = "password1">
+                                </div>
+								
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="password">Confirm Password</label>
+                                    <input id="password" class="tn oq" type="password" autocomplete="on" name = "password2">
+                                </div>
+                            </div>
+                            <div class="flex items-center fg ir">
+                                
+                                <button class="btn hb xs yo ml-3 co" type = "submit">Create Account</button>
+                            </div>
+                        </form>
+                        <!-- Footer -->
+                        
+        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Image -->
+            <div class="hidden qh tp tk ty tw qw" aria-hidden="true">
+                <img class="vr vi oq or" src="{%static './app/images/asset-12.png'%}" width="760" height="1024" alt="Authentication image">
+                <img class="tp ns tb fe ag st hidden tea" src="{%static './app/images/auth-decoration.png'%}" width="218" height="224" alt="Authentication decoration">
+            </div>
+
+        </div>
+
+    </main>
+
+<script src="{%static './app/main.f640b348fcfd37dfcd91.js'%}"></script>
+
+
+</html>

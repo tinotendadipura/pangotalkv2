@@ -1,0 +1,147 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Add Store
+{% endblock title %}
+
+{% block content %}
+
+
+
+
+            <main>
+                <div class="vd jd tto vv oq ar ri">
+
+                    <!-- Page header -->
+                    <div class="ry">
+
+                        <!-- Title -->
+                        <h1 class="gg zj text-slate-800 font-bold">Account Settings ✨</h1>
+
+                    </div>
+
+                    <div class="bg-white by rounded-sm ry">
+                        <div class="flex fh zt qo">
+
+                            <!-- Sidebar -->
+                            <div class="flex fp cn ta qh zp me mu cx zm zg border-slate-200 uz zh"> 
+							<div> <div class="gb g_ yu gq it">Business settings</div> 
+							
+                               {% include 'app/partials/_settings_nav.html' %}							
+
+							</div>
+
+							
+							</div>
+
+                            <!-- Panel -->
+                            <div class="ad">
+                                <form method = "POST" enctype= "multipart/form-data">
+								
+								{% csrf_token %}
+                                <!-- Panel body -->
+                                <div class="vs fz">
+                                    
+
+                                    <!-- Business Profile -->
+                                    <section>
+                                        <h3 class="gy yt text-slate-800 font-bold rx">Create Store</h3>
+                                        <div class="text-sm">Create a store or a branch in a different location.</div>
+                                        <div class="_y jn ln ju jl ig">
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="name">Branch Name</label>
+                                                <input  class="tn oq" type="text"  name = "branch_name">
+                                            </div>
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="business-id">Branch Adress </label>
+                                                <input  class="tn oq" type="text"  name = "branch_adress">
+                                            </div>
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="location">Branch City</label>
+                                                <input class="tn oq" type="text"  name = "branch_city">
+                                            </div>
+                                        </div>
+                                    </section>
+									
+									
+									<section>
+                                        <h3 class="gy yt text-slate-800 font-bold rx">Mobile Phone</h3>
+                                        <div class="text-sm">Add branch mobile number.</div>
+                                        <div class="_y jn ln ju jl ig">
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="name">Mobile Phone</label>
+                                                <input  class="tn oq" type="text"  name = "mobile_phone">
+                                            </div>
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="business-id">Other Phone </label>
+                                                <input  class="tn oq" type="text"  name = "other_phone">
+                                            </div>
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="location">Extra Mobile</label>
+                                                <input  class="tn oq" type="text"  name = "ExtraMobile">
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <!-- Email -->
+                                    <section>
+                                        <h3 class="gy yt text-slate-800 font-bold rx">Email</h3>
+                                        <div class="text-sm">Add branch email.</div>
+                                        <div class="flex flex-wrap ig">
+                                            <div class="mr-2">
+                                                <label class="tc" for="email">Business email</label>
+                                                <input id="email" class="tn" type="email" name = "email">
+                                            </div>
+                                            
+                                        </div>
+										
+
+                                    </section>
+									
+									
+									<section>
+                                        <h3 class="gy yt text-slate-800 font-bold rx">Location</h3>
+                                        <div class="text-sm">Add Longitude and Latitude.</div>
+                                        <div class="_y jn ln ju jl ig">
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="name">Latitude</label>
+                                                <input  class="tn oq" type="text"  name = "latitude">
+                                            </div>
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="business-id">Longitude </label>
+                                                <input  class="tn oq" type="text"  name = "longitude">
+                                            </div>
+                                            
+                                        </div>
+                                    </section>
+
+                                    <!-- Password -->
+                                    
+
+                                    <!-- Smart Sync -->
+                                    
+                                </div>
+
+                                <!-- Panel footer -->
+                                <footer>
+                                    <div class="flex fh vw vx ck border-slate-200">
+                                        <div class="flex lk">
+                                            <button class="btn border-slate-200 hover--border-slate-300 ys">Cancel</button>
+                                            <button class="btn hb xs yo ml-3" type = "submit">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </footer>
+
+                            </div>
+                         </form>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+      {% endblock content %}

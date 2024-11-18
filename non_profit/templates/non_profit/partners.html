@@ -1,0 +1,119 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Knowledge Base
+{% endblock title %}
+
+{% block content %}
+			
+            <main>
+                <div class="vd jd tto vv oq" style="
+    padding-left: 220px;
+">
+
+                    <!-- Page content -->
+                    <div class="ao ri flex fh tej tez tnb">
+
+                        <!-- Cart items -->
+                        <div class="rb teu">
+                            
+							
+                            <ul>
+							
+                            <div class="as ri teb">
+                            <div class="bg-white vl by rounded-sm border border-slate-200 tev tnu"style="width: 542px;">
+							<center>
+                                <div class="text-slate-800 g_ in">Create Content</div>
+								
+                            </center> 
+							<hr>
+							<!-- Order details -->
+								<br>
+								<form method = "POST" enctype= "multipart/form-data">
+								{% csrf_token %}
+                                <div class="rw">
+                                    <div>
+                                            <label class="block text-sm gk rx" for="default">Tittle</label>
+                                            <input  class="tn oq " type="text" name = "tittle">
+                                        </div>
+										
+										
+										
+                                    <div>
+                                    
+								
+								
+								
+								
+								
+								<br>
+								
+								<style>
+								.upload-box{
+								font-size:12px;
+								background:white;
+								border-radius:5px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								width:400px;
+								height: 30px;
+								outline:none;
+								
+								}
+								
+								::-webkit-file-upload-button{
+								
+								color:white;
+								background:#416093;
+								padding:5px;
+								border:none;
+								border-radius:6px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								outline:none;
+								}
+								::-webkit-file-upload-button:hover{
+								background:#344868;
+								}
+								</style>
+								<div class="block text-sm gk rx" >
+								<label class="block text-sm gk rx" for="card-expiry">Upload Media<span class="yl"></span></label>
+								<input type ="file" class="
+								upload-box
+								" style="width: 501px;" name = "media_file">
+
+                                        </input>
+								</div>
+								<br>
+                               
+                                </div>
+                               
+							   
+							   
+							   
+							   
+							   
+                                <div>
+                                            <label class="block text-sm gk rx" for="default">Caption</label>
+                                            <textarea  class="tn oq" type="textarea" style="
+                                              height: 118px;" name = "caption"></textarea>
+                                </div>
+								<br>
+								<div class="rw">
+                                    <button class="btn oq hb xs yo"  type ="submit" style ="background:#1351e5;">Post Media</button>
+                                </div>
+								</div>
+                                
+                                <div class="gb text-slate-500 gz gp"></div>
+                            </div>
+							</form>
+                        </div>
+						</div>
+
+                         </div>
+
+                </div>
+            </main>
+{% endblock content %}

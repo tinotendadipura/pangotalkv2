@@ -1,0 +1,303 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block title %}
+
+PangoTalk | Shopping Cart
+{% endblock title %}
+
+{% block content %}
+            <main>
+                <div class="vd jd tto vv oq">
+
+                    <!-- Page content -->
+                    <div class="ao ri flex fh tej tez tnb">
+
+                        <!-- Cart items -->
+                        <div class="rb teu">
+                            <div class="it">
+                                <div class="flex text-sm gk yu lt">
+                                    <span class="text-indigo-500">Review</span>
+                                    <span>-&gt;</span>
+                                    <span class="text-slate-500">Order</span>
+                                    <span>-&gt;</span>
+                                    <span class="text-slate-500">Check Out</span>
+                                </div>
+                            </div>
+                           <div class="bg-white by rounded-sm border border-slate-200 ry"> 
+                          <div x-data="handleSelect" >
+					<div class="as ri teb" > 
+					<table class="av oq lg lb"> 
+					<thead class="gb gq text-slate-500 hq ck border-slate-200"> 
+					<tr> 
+					<th class="v_ wk xe vm co ut"> 
+					<div class="flex items-center"> 
+					<label class="inline-flex"> 
+					<span class="tc">Select all</span> 
+					<input id="parent-checkbox" class="to" type="checkbox" @click="toggleAll"> </label>
+					</div> 
+					</th> 
+					<th class="v_ wk xe vm co"> 
+					<div class="g_ gh">Order</div>
+					</th> 
+					
+					<th class="v_ wk xe vm co">
+					<div class="g_ gh">Product</div> </th>
+					<th class="v_ wk xe vm co"> 
+					<div class="g_ gh">Amount</div> </th>
+					<th class="v_ wk xe vm co"> <div class="g_">Items</div> </th> 
+					
+					<th class="v_ wk xe vm co"> <div class="g_">Action</div> </th> 
+					<th class="v_ wk xe vm co"> <div class="g_"></div> </th> 
+					
+					
+					</tr> 
+					</thead> 
+					
+					
+					{% for order in customer_orders %}
+					<tbody class="text-sm" x-data="{ open: false }"> 
+					
+					
+					<tr> 
+					<td class="v_ wk xe vm co ut">
+					<div class="flex items-center"> 
+					<label class="inline-flex"> <span class="tc">Select</span>
+					<input class="table-item to" type="checkbox" @click="uncheckParent"> </label>
+					</div> </td>
+					 
+					<td class="v_ wk xe vm co"> 
+					<div class="flex items-center"> <div class="ua ol ap mr-2 _f"> 
+					<img class="rounded-full" src="{{order.product_image_url}}" width="40" height="40" alt="User 01"> 
+					</div>
+					<div class="gk text-slate-800">#{{order.order_ID}}</div> </div>
+					
+					
+					 </td> 
+					<td class="v_ wk xe vm co"> <div class="">{{order.product_title|truncatechars:20}}</div> </td> 
+					<td class="v_ wk xe vm co"> <div class="gh gk yg">${{order.total_Amount}}</div> </td>
+					<td class="v_ wk xe vm co"> <div class="gp">{{order.orderQuantity}}</div> </td> 
+					
+					
+					
+					<td class="v_ wk xe vm co ut"> 
+					<div class="lv"> 
+					
+					
+					
+					
+					
+					
+					
+					
+					<!-- Send Feedback -->
+                                    <div class="nz">
+                                        <!-- Start -->
+                                        <div x-data="{ modalOpen: false }">
+                                            <button class="yu xm rounded-full" @click.prevent="modalOpen = true" aria-controls="feedback-modal"> <span class="tc">Edit</span> 
+					<svg class="uu of db" viewBox="0 0 32 32"> 
+					<path d="M19.7 8.3c-.4-.4-1-.4-1.4 0l-10 10c-.2.2-.3.4-.3.7v4c0 .6.4 1 1 1h4c.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4l-4-4zM12.6 22H10v-2.6l6-6 2.6 2.6-6 6zm7.4-7.4L17.4 12l1.6-1.6 2.6 2.6-1.6 1.6z"></path>
+					</svg> </button>
+
+
+										   <!-- Modal backdrop -->
+                                            <div class="th tm bg-slate-900 pb nm wi" x-show="modalOpen" x-transition:enter="wr wh wf" x-transition:enter-start="opacity-0" x-transition:enter-end="bv" x-transition:leave="wr wh wa" x-transition:leave-start="bv" x-transition:leave-end="opacity-0" aria-hidden="true" x-cloak=""></div>
+                                            <!-- Modal dialog -->
+                                            <div id="feedback-modal" class="th tm nm lq flex items-center rf justify-center fe vd jd" role="dialog" aria-modal="true" x-show="modalOpen" x-transition:enter="wr wc wf" x-transition:enter-start="opacity-0 a_" x-transition:enter-end="bv ax" x-transition:leave="wr wc wf" x-transition:leave-start="bv ax" x-transition:leave-end="opacity-0 a_" x-cloak="">
+                                                <div class="bg-white rounded by lj aa oq ok" @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                                                    <!-- Modal header -->
+                                                    <div class="mn vm cx border-slate-200">
+                                                        <div class="flex fg items-center">
+                                                            <div class="g_ text-slate-800">Edit Order #{{order.order_ID}}</div>
+                                                            <button class="yu xm" @click="modalOpen = false">
+                                                                <div class="tc">Close</div>
+                                                                <svg class="ue on db">
+                                                                    <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal content -->
+													<form method = "POST">
+													{% csrf_token %}
+                                                    <div class="mn mr">
+                                                        <div class="text-sm">
+                                                            <div class="gk text-slate-800 it">{{order.product_title}}</div>
+                                                        </div>
+                                                        <div class="ls">
+                                                            <div>
+                                                                <label class="block text-sm gk rx" for="name">Price <span class="yl">*</span></label>
+                                                                <input id="name" class="tn oq v_ mt" type="text"  disabled value = "{{order.total_Amount}}" name = "price" required="">
+                                                            </div>
+															
+															
+                                                            <div>
+                                                                <label class="block text-sm gk rx" for="email">Quantity/ Items <span class="yl">*</span></label>
+                                                                <input id="email" class="tn oq v_ mt" type="number" value = "{{order.orderQuantity}}" name = "items" required="">
+																<input id="email" class="tn oq v_ mt" type="text" hidden value = "{{order.order_ID}}" name = "order_ID" required="">
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="mn mr ck border-slate-200">
+                                                        <div class="flex flex-wrap justify-end lt">
+                                                            <button class="tt border-slate-200 hover--border-slate-300 ys" @click="modalOpen = false">Cancel</button>
+                                                            <button class="tt hb xs yo" type = "submit">Save Changes</button>
+                                                        </div>
+                                                    </div>
+													
+													</form>
+													
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <!-- End -->
+                                    </div>
+                                    
+					
+					
+					
+					</td>
+					
+					<td class="v_ wk xe vm co ut"> 
+					<div class="lv"> 
+					
+					
+					
+
+					
+                     <div class="nz">
+					<!-- Start -->
+                                        <div x-data="{ modalOpen: false }">
+                                            <button class="yl xb  rounded-full" @click.prevent="modalOpen = true" aria-controls="danger-modal{{order.order_ID}}">
+											<span class="tc">Delete</span> <svg class="uu of db" viewBox="0 0 32 32"> <path d="M13 15h2v6h-2zM17 15h2v6h-2z"></path> 
+					<path d="M20 9c0-.6-.4-1-1-1h-6c-.6 0-1 .4-1 1v2H8v2h1v10c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V13h1v-2h-4V9zm-6 1h4v1h-4v-1zm7 3v9H11v-9h10z"></path>
+					</svg> 
+											</button>
+                                            <!-- Modal backdrop -->
+                                            <div class="th tm bg-slate-900 pb nm wi" x-show="modalOpen" x-transition:enter="wr wh wf" x-transition:enter-start="opacity-0" x-transition:enter-end="bv" x-transition:leave="wr wh wa" x-transition:leave-start="bv" x-transition:leave-end="opacity-0" aria-hidden="true" x-cloak=""></div>
+                                            <!-- Modal dialog -->
+                                            <div id="danger-modal{{order.order_ID}}" class="th tm nm lq flex items-center rf justify-center fe vd jd" role="dialog" aria-modal="true" x-show="modalOpen" x-transition:enter="wr wc wf" x-transition:enter-start="opacity-0 a_" x-transition:enter-end="bv ax" x-transition:leave="wr wc wf" x-transition:leave-start="bv ax" x-transition:leave-end="opacity-0 a_" x-cloak="">
+                                                <div class="bg-white rounded by lj aa oq ok" @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                                                    <div class="vl flex lr">
+                                                        <!-- Icon -->
+                                                        <div class="ua ol rounded-full flex items-center justify-center ap pt">
+                                                            <svg class="ue on ap db yl" viewBox="0 0 16 16">
+                                                                <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 12c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm1-3H7V4h2v5z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div>
+                                                            <!-- Modal header -->
+                                                            <div class="in">
+                                                                <div class="gx g_ text-slate-800">Do you want to delete customer order {{order.order_ID}}?</div>
+                                                            </div>
+                                                            <!-- Modal content -->
+                                                            <div class="text-sm iv">
+                                                                <div class="li">
+																<div class="flex items-center"> <div class="ua ol ap mr-2 _f"> 
+					<img class="rounded-full" src="{{order.product_image_url}}" width="100" height="100" alt="User 01"> 
+					</div>
+                                                                    <p>{{order.product_title}}</p>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Modal footer -->
+                                                            <div class="flex flex-wrap justify-end lt">
+                                                                <button class="tt border-slate-200 hover--border-slate-300 ys" @click="modalOpen = false">Cancel</button>
+                                                                <button  onclick="location.href='{% url 'products/orders/delete' order.order_ID %}'" class="tt pr xa yo">Yes, Delete it</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+										</div>
+                     <!-- End -->
+					
+
+					</div> 
+					
+					
+					</td>
+					
+					 
+					
+					</tr> 
+					
+					</tbody> 
+					{% endfor %}
+					</table> 
+					
+					
+					</div> 
+					</div> 
+					
+							</div>
+							
+							<div class="ir gp ttf"> 
+							<a class="text-sm gk text-indigo-500 xd" href="{% url 'products/orders'%}">&lt;- Back To Orders</a> </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="as ri teb">
+                            <div class="bg-white vl by rounded-sm border border-slate-200 tev tnu"  style="
+    border-right-width: 30px;
+">
+                                <div class="text-slate-800 g_ in">Order Summary</div>
+                                <!-- Order details -->
+                                <ul class="rw">
+                                    <li class="text-sm oq flex fg vm cx border-slate-200">
+                                        <div>Customer:</div>
+                                        <div class="gk text-slate-800">{{current_customer.firstName}} {{current_customer.last_Name}}</div>
+                                    </li>
+									<li class="text-sm oq flex fg vm cx border-slate-200">
+                                        <div>Contact:</div>
+                                        <div class="gk ">+{{current_customer.code}} {{current_customer.phone}}</div>
+                                    </li>
+                                    
+                                    
+                                    <li class="text-sm oq flex fg vm cx border-slate-200">
+                                        <div>Total due (excluding Delivery)</div>
+                                        <div class="gk yf">${{all_order_balance}}0</div>
+                                    </li>
+									
+									<li class="text-sm oq flex fg vm cx border-slate-200">
+                                        <div><b>Total</b></div>
+                                        <div><b>${{all_order_balance}}0</b></div>
+                                    </li>
+                                </ul>
+                                <!-- Promo box -->
+                                <div class="rb">
+                                    <div class="flex items-center fg">
+                                        <label class="block text-sm gk rx" for="promo">Promo Code</label>
+                                        <div class="text-sm yu gz">optional</div>
+                                    </div>
+                                    <input id="promo" class="tn oq in" type="text">
+                                    <button class="btn oq hb xs yo kf kl kh ka bb" disabled="disabled">Apply Code</button>
+                                </div>
+                                <div class="rw">
+                                    <button class="btn oq hb xs yo" href="#0">Check Out - ${{all_order_balance}}0</button>
+                                </div>
+								
+                                
+                            
+							</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </main>
+			
+			
+
+
+       {% endblock content %}
+	   
+	   
+	   
+	   
+	   

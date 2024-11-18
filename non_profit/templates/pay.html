@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en">
+{% load static %}
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>
+	
+	Pay Invoice - {{all_invoice.Invoice_ID}}
+	
+	</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="{%static './app/style.a49749f4fb5cff923e10.css'%}" rel="stylesheet">
+<link href="{%static './app/emojionearea.min.css'%}" rel="stylesheet">
+<script src="{%static './app/jquery-3.6.0.min.js'%}" ></script>
+<script src="{%static './app/emojionearea.min.js'%}" ></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+</head>
+
+<body class="gm bf hy ys">
+
+    <script>
+        if (localStorage.getItem('sidebar-expanded') == 'true') {
+            document.querySelector('body').classList.add('sidebar-expanded');
+        } else {
+            document.querySelector('body').classList.remove('sidebar-expanded');
+        }
+    </script>
+
+    <!-- Page wrapper -->
+    <div class="flex ot lq">
+
+        <!-- Content area -->
+        <div class="td flex fh ac ce ct">
+
+            <!-- Site header -->
+            <header class="bg-white cx border-slate-200">
+                <div class="vd jd tto">
+                    <div class="flex items-center fg op sn">
+
+                        <!-- Logo -->
+                        <a class="block" href="/">
+                            <img  src="{%static './app/icons/icon.png'%}" style="width:32px;height:32px;" width="80" height="80" alt="User upload"/> 
+                        </a>
+
+                        <a class="block rounded-full hy text-slate-500 hover--text-slate-600" href="/">
+                            <span class="tc">Back</span>
+                            <svg width="32" height="32" viewBox="0 0 32 32">
+                                <path class="db" d="M15.95 14.536l4.242-4.243a1 1 0 111.415 1.414l-4.243 4.243 4.243 4.242a1 1 0 11-1.415 1.415l-4.242-4.243-4.243 4.243a1 1 0 01-1.414-1.415l4.243-4.242-4.243-4.243a1 1 0 011.414-1.414l4.243 4.243z"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+				{% include 'app/messages.html' %} 
+            </header>
+
+            
+            <main>
+
+                <div class="td gt">
+                    <div class="tp tm pa lq" aria-hidden="true">
+                        <img class="vr or oq wt bq bm" src="{%static './app/images/pay-bg.jpg' %}" width="460" height="180" alt="Pay background">
+                    </div>
+                    <div class="td vd jd tto aa ri">
+                        
+                        <img class="cp by" src="{%static './app/images/pay-bg.jpg' %}" width="460" height="180" alt="Pay background">
+                    </div>
+                </div>
+
+                <div class="td vd jd tto ge aa ri" x-data="{ card: true }">
+                    <div class="bg-white ma mc cd by">
+
+                        <!-- Card header -->
+                        <div class="gp rb">
+                            <div class="in">
+                                <img class="sr inline-flex rounded-full" src="{%static './app/icons/pango-background.jpg' %}" width="64" height="64" alt="User">
+                            </div>
+                            <h1 class="gy yt text-slate-800 g_ in">Make Payment</h1>
+                            <div class="text-sm">
+                                Pay Invoice : INV-{{Invoice_ID}}
+                            </div>
+                        </div>
+
+                        <!-- Toggle -->
+                        <div class="flex justify-center rb">
+                            <div class="td flex oq vh hq rounded">
+                                <span class="tp tm m-1 pointer-events-none" aria-hidden="true">
+                                    <span class="tp tm uv bg-white rounded border border-slate-200 bw fe wr wu wc" :class="card ? 'translate-x-0' : 'aj'"></span>
+                                </span>
+                                <button class="td ac text-sm gk vh wu wc" @click.prevent="card = true">Bank Transfer</button>
+                                <button class="td ac text-sm gk vh wu wc" @click.prevent="card = false">Online Payment</button>
+                            </div>
+                        </div>
+
+                        <!-- Card form -->
+                        <div x-show="card">
+						   <form method = "POST">
+						   
+						   {% csrf_token %}
+                            <div class="ln">
+                                <!-- Card Number -->
+                                <div>
+                                    <label class="block text-sm gk rx" for="card-nr">Account Number <span class="yl">*</span></label>
+                                    <input  class="tn oq" type="text" placeholder="Account Number" name="AccountNumber"  id="AccountNumber">
+                                </div>
+                                <!-- Expiry and CVC -->
+                                <div>
+                                    <label class="block text-sm gk rx" for="card-nr">Bank Name <span class="yl">*</span></label>
+                                    <input  class="tn oq" type="text" placeholder="Name of Bank" name="BankName">
+                                </div>
+								
+								
+								<div class="flex lr">
+                                    <div class="ac">
+                                        <label class="block text-sm gk rx" for="card-expiry">Amount <span class="yl">*</span></label>
+                                        <input  class="tn oq" type="text" name="amount" placeholder = "0.00">
+                                    </div>
+                                    <div class="ac">
+                                        <label class="block text-sm gk rx" for="card-cvc">Currency <span class="yl">*</span></label>
+                                        <input  class="tn oq" type="text"  value="USD" disabled name="currency">
+                                    </div>
+                                </div>
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="card-name">Billing Cycle / Months <span class="yl">*</span></label>
+                                    <select name="billingCycle" class="tn oq">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									</select>
+                                </div>
+								
+                                <!-- Name on Card -->
+                                <div>
+                                    <label class="block text-sm gk rx" for="card-name">Date <span class="yl">*</span></label>
+                                    <input  class="tn oq" type="text" name="date" placeholder="02/10/2022">
+                                </div>
+                                <!-- Email -->
+                                <div>
+                                    <label class="block text-sm gk rx" for="card-email">Reference Code <span class="yl">*</span></label>
+                                    <input  class="tn oq" type="text" name = "reference" placeholder="Reference">
+                                </div>
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="card-email">Card Name <span class="yl">*</span></label>
+                                    <input id="card-email" class="tn oq" type="text" name="CardName" placeholder="Name and Surname /Business Name ">
+                                </div>
+                            </div>
+                            <!-- Form footer -->
+                            <div class="ir">
+                                <div class="rw">
+                                    <button class="btn oq hb xs yo" type = "submit">Submit Payment</button>
+                                </div>
+                                
+                            </div>
+							
+							</form>
+                        </div>
+
+                        <!-- PayPal form -->
+                        <div x-show="!card" x-cloak="">
+                            <div>
+                                <div class="rw">
+                                    <button class="btn oq hb xs yo" href="#0">Coming Soon! </button>
+                                </div>
+                                <div class="gb text-slate-500 gz gp"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+
+        </div>
+
+    </div>
+
+<script src="{%static './app/main.f640b348fcfd37dfcd91.js'%}"></script>
+
+</html>

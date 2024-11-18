@@ -1,0 +1,15 @@
+{% extends 'admin/base.html'  %}
+{% load static %}
+
+{% block branding %}
+<div class="item-img" >
+    <img style=" width:100px; height:95px;"  alt="teacher2" src="{%static './main/wp-content/themes/startit/assets/img/logo.png'%} ">
+       </div>
+
+{% endblock branding %}
+
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+{% endblock extrastyle %}

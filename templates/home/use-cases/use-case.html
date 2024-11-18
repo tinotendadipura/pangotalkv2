@@ -1,0 +1,155 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block tittle %}
+		
+		
+		
+{% endblock tittle %}
+
+{% block content %}
+
+
+			<!-- SINGLE PROJECT-1
+			============================================= -->
+			<section id="project-1" class="bg-snow wide-60 inner-page-hero single-project division">
+				<div class="container">
+					<div class="row">
+
+
+						<!-- PROJECT DISCRIPTION -->
+						<div class="col-lg-10 offset-lg-1">
+							<div class="project-description">
+
+
+								<!-- PROJECT TITLE -->
+								<div class="project-title">
+
+									<!-- Title -->	
+									<h2 class="h2-xl">{{current_usecase.tittle}}</h2>
+
+									<!-- Project Data -->
+									
+
+								</div>
+
+
+								<!-- PROJECT TEXT -->
+								<div class="project-txt">
+
+									<!-- Image -->
+					 				<div class="project-inner-img mb-50">
+										<img class="img-fluid" src="{{current_usecase.banner_image.url}}" alt="project-preview" />
+									</div>
+
+									<!-- Text -->			
+									<p class="p-lg">
+									
+									{{current_usecase.paragraph_1}}
+									</p>
+
+									<!-- Small Title -->
+									<h5 class="h5-md mt-25 mb-20">{{current_usecase.paragraph_2_tittle}}</h5>
+
+									<!-- Text -->
+									<p class="p-lg">
+									
+                                     {{current_usecase.paragraph_2_description_1}}
+									</p>
+
+									<!-- Text -->
+									<p class="p-lg">
+									
+                                {{current_usecase.paragraph_2_description_2}}
+									</p>
+
+									<!-- PROJECT IMAGES -->
+									<div class="row d-flex align-items-center project-inner-img">
+
+										<!-- IMAGE #1 -->	
+										<div class="col-md-6">								
+											<div class="project-image top-img">
+												<div class="hover-overlay"> 
+													<a class="image-link" href="{{current_usecase.paragraph_2_image_1.url}}" title="">
+														<img class="img-fluid" src="{{current_usecase.paragraph_2_image_1.url}}" alt="p_image" />
+														<div class="item-overlay"></div>
+													</a>
+												</div>			
+											</div>	
+										</div>
+
+										<!-- IMAGE #2 -->	
+										<div class="col-md-6">								
+											<div class="project-image">
+												<div class="hover-overlay"> 
+													<a class="image-link" href="{{current_usecase.paragraph_2_image_2.url}}" title="">
+														<img class="img-fluid" src="{{current_usecase.paragraph_2_image_2.url}}" alt="p_image" />
+														<div class="item-overlay"></div>
+													</a>
+												</div>			
+											</div>	
+										</div>
+
+									</div>	<!-- END PROJECT IMAGES -->
+
+									<!-- Small Title -->
+									<h5 class="h5-md mb-20">{{current_usecase.paragraph_3_tittle}}</h5>
+
+									<!-- List -->	
+									<ul class="simple-list">
+
+										<li class="list-item">
+											<p class="p-md">
+											{{current_usecase.paragraph_3_description}}
+											</p>
+										</li>
+
+										
+
+									</ul>
+
+									<!-- IMAGE -->							
+									<div class="project-image project-inner-img video-preview">
+										
+										<!-- Play Icon --> 
+										<a class="video-popup1" href="https://www.youtube.com/embed/SZEflIVnhH8">				
+											<div class="video-btn video-btn-xl bg-pink ico-90">	
+												<div class="video-block-wrapper"><span class="flaticon-play-button"></span></div>
+											</div>
+										</a>
+
+										<!-- Preview Image --> 
+					 					<img class="img-fluid" src="{{current_usecase.paragraph_3_image.url}}" alt="video-preview">
+
+									</div>	
+
+									<!-- Small Title -->
+									<h5 class="h5-md mt-25 mb-20">{{current_usecase.paragraph_4_tittle}}</h5>
+
+									<!-- Text -->
+									<p class="p-lg">
+									
+									{{current_usecase.paragraph_4_description}}
+									</p>
+
+									<!-- List -->
+									
+
+								</div>	<!-- END PROJECT TEXT -->
+
+
+								
+							</div>
+						</div>	<!-- END PROJECT DISCRIPTION -->
+
+
+					</div>	  <!-- End row -->
+				</div>	   <!-- End container -->	
+			</section>	<!-- END SINGLE PROJECT-1 -->
+
+
+
+	
+		
+{% endblock content %}
+

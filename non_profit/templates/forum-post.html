@@ -1,0 +1,171 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Forum Post
+{% endblock title %}
+
+{% block content %}
+            <main>
+                <div class="vd jd tto vv zy oq ar ri">
+
+                    <div class="tnr">
+
+                        <!-- Left + Middle content -->
+                        <div class="qd ac">
+
+                            <!-- Left content -->
+                            <div class="oq qk ry qf"> 
+							<div class="jq qt qy zv zd ta"> <div class="zw"> 
+							<div class="flex fg items-center qh"> 
+							<header class="rb"> <h1 class="gg zj text-slate-800 font-bold">Forum ✨</h1> </header>
+							<div class="tni rb"> <button class="btn q_ hb xs yo">Create Post</button> </div>
+							</div> <div class="flex fp cn ta qh zp vd zh rl"> <div> 
+							<div class="gb g_ yu gq it j_">Menu</div>
+							<ul class="flex fp qh rk ql"> 
+							<li class="sa ql qc">
+							<a class="flex items-center vk vg rounded co bg-white" href="#0">
+							<svg class="ue on ap db text-indigo-500 mr-2" viewBox="0 0 16 16">
+							<path d="M10 16h4c.6 0 1-.4 1-.998V6.016c0-.3-.1-.6-.4-.8L8.6.226c-.4-.3-.9-.3-1.3 0l-6 4.992c-.2.2-.3.5-.3.799v8.986C1 15.6 1.4 16 2 16h4c.6 0 1-.4 1-.998v-2.996h2v2.996c0 .599.4.998 1 .998Zm-4-5.99c-.6 0-1 .399-1 .998v2.995H3V6.515L8 2.32l5 4.194v7.488h-2v-2.995c0-.6-.4-.999-1-.999H6Z"></path> </svg>
+							<span class="text-sm gk text-indigo-500">Home</span> </a> </li> 
+							
+							<li class="sa ql qc"> <a class="flex items-center vk vg rounded co" href="#0"> 
+							<svg class="ue on ap db yu mr-2" viewBox="0 0 16 16">
+							<path d="M14.682 2.318A4.485 4.485 0 0 0 11.5 1 4.377 4.377 0 0 0 8 2.707 4.383 4.383 0 0 0 4.5 1a4.5 4.5 0 0 0-3.182 7.682L8 15l6.682-6.318a4.5 4.5 0 0 0 0-6.364Zm-1.4 4.933L8 12.247l-5.285-5A2.5 2.5 0 0 1 4.5 3c1.437 0 2.312.681 3.5 2.625C9.187 3.681 10.062 3 11.5 3a2.5 2.5 0 0 1 1.785 4.251h-.003Z"></path> </svg> 
+							<span class="text-sm gk ys">Reading List</span> </a> </li>
+							<li class="sa ql qc"> <a class="flex items-center vk vg rounded co" href="#0"> <svg class="ue on ap db yu mr-2" viewBox="0 0 16 16"> <path d="M5 9h11v2H5V9zM0 9h3v2H0V9zm5 4h6v2H5v-2zm-5 0h3v2H0v-2zm5-8h7v2H5V5zM0 5h3v2H0V5zm5-4h11v2H5V1zM0 1h3v2H0V1z"></path> </svg>
+							<span class="text-sm gk ys">Listings</span> </a> </li>
+							
+
+							</ul> </div> <div>
+
+							
+							</div>
+							</div> 
+							</div> 
+							</div> 
+							</div>
+
+                            <!-- Middle content -->
+                            <div class="ac qu ttz 2xl:mx-8">
+                                <div class="zw">
+
+                                    <!-- Forum entry -->
+                                     <article class="bg-white shadow-md rounded border border-slate-200 vl"> 
+									 <div class="in"> <ul class="inline-flex flex-wrap text-sm gk">
+									 <li class="flex items-center"> <a class="text-slate-500 xg" href="forum.html">Home</a>
+									 <svg class="on ue db yu rs" viewBox="0 0 16 16"> <path d="M6.6 13.4L5.2 12l4-4-4-4 1.4-1.4L12 8z"></path> 
+									 </svg> </li> 
+									 <li class="flex items-center">
+									 <a class="text-slate-500 xg" href="#0">Discussion</a> </li> 
+									 </ul> 
+									 </div>
+									 <header class="mj">
+									 <div class="flex fd lu it">
+									 <h2 class="gg text-slate-800 font-bold">{{info.topic}}</h2> 
+									 <div class="ap">
+									 <button class="gb g_ gp od up border border-slate-200 hover--border-slate-300 rounded-sm flex fh justify-center items-center"> 
+									 <svg class="inline-flex dx sl sc" width="12" height="6" xmlns="http://www.w3.org/2000/svg"> <path d="m0 6 6-6 6 6z"></path> </svg> 
+									 <div>{{info.up_vote_count}}</div> </button> 
+									 </div>
+									 </div> 
+									 <div class="flex flex-wrap text-sm">
+									  
+									 <div class="flex items-center wp wb xr wm wg wv"> <span class="text-slate-500">2h</span> </div>
+									 <div class="flex items-center wp wb xr wm wg wv"> <span class="text-slate-500">{{total_comment}} Comments</span> 
+									 </div>
+									 </div> 
+									 </header> 
+									 
+									
+									 <div class="ij"> <h3 class="g_ text-slate-800 rw">Comments</h3>
+									 <ul class="ld"> 
+									 
+									 {% for comment in info_comment %}
+									 <li class="td mf ld"> 
+									 <div class="flex fd"> 
+									 <div class="tp tk tb"> 
+									 <button class="gb g_ gh ur rounded-sm flex fh justify-center items-center xg">
+									 <svg class="inline-flex dx sl sc" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
+									 <path d="m0 6 6-6 6 6z"></path> </svg> 
+									 <div>{{comment.up_vote_count}}</div> 
+									 </button> 
+									 </div> 
+									 <div> 
+									 <div class="ad text-sm text-slate-800 li in">
+									 <p>{{comment.member_comment}}</p> </div>
+									 <div class="flex flex-wrap gb"> 
+									 
+									 <div class="flex items-center wp wb xr wm wg wv">
+									 <a class="gk text-slate-500 hover--text-slate-600" href="#0">Reply</a> 
+									 </div> <div class="flex items-center wp wb xr wm wg wv">
+									 <a class="gk text-slate-500 hover--text-slate-600" href="#0">Share</a>
+									 </div> </div> </div> </div> <ul class="ld"> <li class="td mf ld">
+									
+									 </li> </ul> 
+									 </li>
+
+                                      {% endfor %}
+									 <li class="td mf ld"> 
+									  <ul class="ld">
+									 <li class="td mf ld"> 
+								
+									 <ul class="ld"> 
+									 <li class="td mf ld">
+									 
+
+									 </li> </ul> </li> </ul> </li> 
+								
+									 </ul> <div class="gp ig"> <button class="text-sm gk text-indigo-500 xd">View More Comments</button> </div> </div> </article>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Right content -->
+                        <div class="oq hidden tnn tnf">
+						<div class="tee tet tep ttr ttn ta">
+						<div class="zw"> <div class="rb"> 
+						<button class="btn oq hb xs yo">Create Post</button>
+						</div> 
+						
+						<div class="ln"> 
+						<div class="hq va rounded border border-slate-200"> 
+						<div class="gb g_ yu gq rw">About the Author</div> 
+ 
+						
+						<div class="text-sm text-slate-500 gz">Building SquareApp 🚀</div>
+						</div> </div> <ul class="text-sm li"> <li>🤟 <span class="gk">1798</span> Karma</li> 
+						<li>🔥 <span class="gk">39</span> Posts</li> <li>✍️ <span class="gk">299</span> Comments</li>
+						</ul> 
+						<div class="ij"> 
+						<button class="tt oq bg-white border-slate-200 hover--border-slate-300 text-indigo-500 bb">Follow</button> 
+						</div> 
+						</div> 
+						<div class="hq va rounded border border-slate-200"> 
+						<div class="gb g_ yu gq rw">Popular Stories</div>
+						
+						<div class="ij"> 
+						<button class="tt oq bg-white border-slate-200 hover--border-slate-300 text-indigo-500 bb">View All</button> </div>
+						</div> 
+						</div>
+						
+						
+						</div> 
+						</div>
+						</div>
+
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+   {% load static %} 
+<head>
+      
+        <meta charset="utf-8" />
+                
+
+         <!-- App css -->
+         <link href="{%static './layer/assets/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css" />
+         <link href="{%static './layer/assets/css/icons.min.css'%}" rel="stylesheet" type="text/css" />
+         <link href="{%static './layer/assets/css/app.min.css'%}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body id="body" class="">
+        
+        <div class="page-wrapper">
+
+            <!-- Page Content-->
+            <div class="page-content-tab">
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                
+                                <h4 class="page-title">Broadcast History</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- end page title end breadcrumb -->
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-lg-4 col-xl-3">
+                                    <div class="card">                                        
+                                        <div class="card-body"> 
+                                            <span class="text-muted fw-semibold">Sent</span>  
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h2 class="font-18 my-1">0</h2> 
+                                                </div> <!--end col-->
+                                                <div class="col-auto">
+                                                    <span class="fw-semibold font-15">
+													
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+  <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+</svg>
+													</span>
+                                                </div> <!--end col-->
+                                            </div> <!--end row-->
+                                                                                                                                                           
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div><!--end col-->
+                                <div class="col-lg-4 col-xl-3">
+                                    <div class="card">                                        
+                                        <div class="card-body"> 
+                                            <span class="text-muted fw-semibold">Delivered</span>  
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h2 class="font-18 my-1">0</h2> 
+                                                </div> <!--end col-->
+                                                <div class="col-auto">
+                                                    <span class="fw-semibold font-15">
+													
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+													</span>
+                                                </div> <!--end col-->
+                                            </div> <!--end row-->
+                                                                                                                                                          
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div><!--end col-->
+                                <div class="col-lg-4 col-xl-3">
+                                    <div class="card">                                        
+                                        <div class="card-body"> 
+                                            <span class="text-muted fw-semibold">Read</span>  
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h2 class="font-18 my-1">0</h2> 
+                                                </div> <!--end col-->
+                                                <div class="col-auto">
+                                                    <span class="fw-semibold font-15"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+</svg></span>
+                                                </div> <!--end col-->
+                                            </div> <!--end row-->
+                                            
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div><!--end col-->
+                                <div class="col-lg-4 col-xl-3">
+                                    <div class="card">                                        
+                                        <div class="card-body"> 
+                                            <span class="text-muted fw-semibold">Sending
+</span>  
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h2 class="font-18 my-1">0</h2> 
+                                                </div> <!--end col-->
+                                                <div class="col-auto">
+                                                    <span class="fw-semibold font-15"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inboxes-fill" viewBox="0 0 16 16">
+  <path d="M4.98 1a.5.5 0 0 0-.39.188L1.54 5H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0A.5.5 0 0 1 10 5h4.46l-3.05-3.812A.5.5 0 0 0 11.02 1H4.98zM3.81.563A1.5 1.5 0 0 1 4.98 0h6.04a1.5 1.5 0 0 1 1.17.563l3.7 4.625a.5.5 0 0 1 .106.374l-.39 3.124A1.5 1.5 0 0 1 14.117 10H1.883A1.5 1.5 0 0 1 .394 8.686l-.39-3.124a.5.5 0 0 1 .106-.374L3.81.563zM.125 11.17A.5.5 0 0 1 .5 11H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0 .5.5 0 0 1 .5-.5h5.5a.5.5 0 0 1 .496.562l-.39 3.124A1.5 1.5 0 0 1 14.117 16H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .121-.393z"/>
+</svg></span></div> <!--end col-->
+                                            </div> <!--end row-->
+
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div><!--end col-->
+								
+								<div class="col-lg-4 col-xl-3">
+                                    <div class="card">                                        
+                                        <div class="card-body"> 
+                                            <span class="text-muted fw-semibold">Processing</span>  
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h2 class="font-18 my-1">0</h2> 
+                                                </div> <!--end col-->
+                                                <div class="col-auto">
+                                                    <span class="fw-semibold font-15"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+</svg></span></div> <!--end col-->
+                                            </div> <!--end row-->
+
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div><!--end col-->
+								<div class="col-lg-4 col-xl-3">
+                                    <div class="card">                                        
+                                        <div class="card-body"> 
+                                            <span class="text-muted fw-semibold">Failed</span>  
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h2 class="font-18 my-1">0</h2> 
+                                                </div> <!--end col-->
+                                                <div class="col-auto">
+                                                    <span class="fw-semibold font-15"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+</svg></span></div> <!--end col-->
+                                            </div> <!--end row-->
+                                            
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div><!--end col-->
+                                
+                            </div><!--end row-->                            
+                        </div>
+					</div><!--end row-->
+                    
+                     </div><!-- container -->
+
+<div class="col-lg-7">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">                      
+                                            <h4 class="card-title">Broadcast list</h4>                      
+                                        </div><!--end col-->
+                                        <div class="col-auto"> 
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   This Month<i class="las la-angle-down ms-1"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#">Today</a>
+                                                    <a class="dropdown-item" href="#">Last Week</a>
+                                                    <a class="dropdown-item" href="#">Last Month</a>
+                                                    <a class="dropdown-item" href="#">This Year</a>
+                                                </div>
+                                            </div>               
+                                        </div><!--end col-->
+                                    </div>  <!--end row-->                                  
+                                </div><!--end card-header-->
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table mb-0">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Broadcast Scheduled</th>
+                                                    <th>Recipients</th>
+                                                    <th>Failed</th>                                                    
+                                                    <th>Status</th>
+                                                    
+                                                </tr><!--end tr-->
+                                            </thead>
+        
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+													
+													Untitled_160620221225 2022-06-16 06:27 PM
+ 													</td>
+                                                    
+                                                    <td>0</td>
+                                                    <td> 0</td>
+                                                    <td>                                                       
+                                                       Completed
+                                                    </td>
+                                                </tr><!--end tr-->
+                                               
+											
+											</tbody>
+                                        </table>                    
+                                    </div>  
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div>
+                <!--Start Footer-->
+                <!-- Footer Start -->
+                
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+
+        <!-- Javascript  -->   
+
+         <!-- Javascript  -->   
+        <script src="{%static './layer/assets/plugins/apexcharts/apexcharts.min.js'%}"></script>
+        <script src="{%static './layer/assets/pages/helpdesk-tickets.init.js'%}"></script>
+        <!-- App js -->
+        <script src="{%static './layer/assets/js/app.js'%}"></script>
+
+
+    </body>
+    <!--end body-->
+
+</html>

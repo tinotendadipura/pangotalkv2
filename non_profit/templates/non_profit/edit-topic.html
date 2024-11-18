@@ -1,0 +1,92 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Add booking
+{% endblock title %}
+
+{% block content %}
+			
+            <main>
+                <div class="vd jd tto vv oq">
+
+                    <!-- Page content -->
+                    <div class="ao ri flex fh tej tez tnb">
+
+                        <!-- Cart items -->
+                        <div class="rb teu">
+                            
+							
+                            <ul>
+							
+                             <div class="bg-white vl by rounded-sm border " style="margin-left: 150px;width: 642px;">
+							 <form method  = "POST" enctype= "multipart/form-data">
+							 {% csrf_token %}
+							 <center>
+							 <h2 ><b>Edit Topic</b></h2>
+								
+							 </center>
+                            <div class="ln">
+							
+							
+							
+							<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Topic Title <span class="yl">*</span></label>
+                                     <input id="card-cvc" class="tn oq" type="text" placeholder="" name = "topic_tittle" value = "{{topic_details.topic_tittle}}">
+                                </div>
+								
+							
+                                <!-- Card Number -->
+                                
+                                
+                               	
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Category<span class="yl">*</span></label>
+                                    <select id="card-expiry" class="tn oq" type="text"   name = "category">
+										
+										<option value = "{{topic_details.category}}">{{topic_details.category}}</option>
+										<option value = "online">Select  Category</option>
+										{% for category in all_categories %}
+										<option value = "{{category.category}}">{{category.category}}</option>
+										{% endfor %}
+										
+										
+										
+										</select>
+                                </div>
+								
+								
+								
+								<div>
+                                    <label class="block text-sm gk rx" for="card-nr">Description <span class="yl">*</span></label>
+                                     <textarea id="card-cvc" class="tn oq" type="text" placeholder=""
+									  style="height: 108px;"
+									 name = "description"
+									 >{{topic_details.description }}</textarea>
+                                </div>
+								
+								
+								
+                            </div>
+                            <!-- Form footer -->
+                            <div class="ir">
+                                <div class="rw">
+                                    <button class="btn oq hb xs yo" type = "submit" style="background:#2563eb;">Update Topic</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+
+</form>
+						</div>
+
+                         </div>
+
+                </div>
+            </main>
+{% endblock content %}

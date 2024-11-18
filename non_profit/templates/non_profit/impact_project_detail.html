@@ -1,0 +1,259 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+{% block title %}
+PangoTalk | Add booking
+{% endblock title %}
+{% block content %}
+            <main>
+               <div class="vd jd tto vv oq">
+                  <!-- Page content -->
+                  <div class="ao ri flex fh tej tez tnb">
+                     <!-- Content -->
+                     <div>
+                        <div class="rb">
+                           <a class="tt me bg-white border-slate-200 hover--border-slate-300 ys" href="{% url 'main/account/non-profit/Work-and-impact' %}">
+                              <svg class="db yu mr-2" width="7" height="12" viewBox="0 0 7 12">
+                                 <path d="M5.4.6 6.8 2l-4 4 4 4-1.4 1.4L0 6z"></path>
+                              </svg>
+                              <span>Back To Projects List</span>
+                           </a>
+                        </div>
+                        <div class="text-sm g_ text-indigo-500 gq in">{{projects_detail.project_date }}</div>
+                        <header class="rw">
+                           <!-- Title -->
+                           <h1 class="gg zj text-slate-800 font-bold in">{{projects_detail.project_tittle }}</h1>
+                           <p>
+						   {{projects_detail.project_description }}
+						   
+						   </p>
+                        </header>
+                       
+					 
+                        <div>
+                           <h2 class="gy yt text-slate-800 font-bold in">Photos ({{total_media}})</h2>
+                           <div class="sq fc fk ru">
+						   {% for image in all_media %}
+						   
+						   
+						   
+						   <div class="nz">
+                                        <!-- Start -->
+                                        <div x-data="{ modalOpen: false }">
+                                            <button class="" @click.prevent="modalOpen = true" aria-controls="feedback-modal">
+													<img class="oq rounded-sm" src="
+							  
+							  {% if image.project_media  %}
+							  
+							  {{ image.project_media.url }}
+							  
+							  {% endif %}
+							  " width="203" height="152" >
+											
+											</button>
+                                            <!-- Modal backdrop -->
+                                            <div class="th tm bg-slate-900 pb nm wi" x-show="modalOpen" x-transition:enter="wr wh wf" x-transition:enter-start="opacity-0" x-transition:enter-end="bv" x-transition:leave="wr wh wa" x-transition:leave-start="bv" x-transition:leave-end="opacity-0" aria-hidden="true" x-cloak=""></div>
+                                            <!-- Modal dialog -->
+                                            <div id="feedback-modal" class="th tm nm lq flex items-center rf justify-center fe vd jd" role="dialog" aria-modal="true" x-show="modalOpen" x-transition:enter="wr wc wf" x-transition:enter-start="opacity-0 a_" x-transition:enter-end="bv ax" x-transition:leave="wr wc wf" x-transition:leave-start="bv ax" x-transition:leave-end="opacity-0 a_" x-cloak="">
+                                                <div class="bg-white rounded by lj aa oq ok" @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                                                    <!-- Modal header -->
+                                                    <div class="mn vm cx border-slate-200">
+                                                        <div class="flex fg items-center">
+                                                            <div class="g_ text-slate-800">Edit Image</div>
+															
+															
+
+                                                            <button class="yu xm" @click="modalOpen = false">
+                                                                <div class="tc">Close</div>
+                                                                <svg class="ue on db">
+                                                                    <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal content -->
+                                                    <div class="mn mr">
+                                                        
+                                                        <div class="ls">
+														<div class="mn mr ck border-slate-200">
+                                                        <div class="flex flex-wrap justify-end lt">
+                                                            
+															<a href = "{% url 'main/account/non-profit/Work-and-impact/project/media-delete' image.id project_ID %}">
+															<button class="btn oq hb xs yl"style = "background-color:#ffffff;" >
+                                            <svg class="ue on db ap" viewBox="0 0 16 16">
+                                                <path d="M5 7h2v6H5V7zm4 0h2v6H9V7zm3-6v2h4v2h-1v10c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1V5H0V3h4V1c0-.6.4-1 1-1h6c.6 0 1 .4 1 1zM6 2v1h4V2H6zm7 3H3v9h10V5z"></path>
+                                            </svg> Delete Image</button> 
+											</a>
+                                                        </div>
+                                                    </div>
+													</div>
+													</div>
+                                                    <!-- Modal footer -->
+                                                    
+													</form>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <!-- End -->
+                                    </div>
+                       
+						   
+						   
+						   
+						   
+						   
+						   
+						   
+
+							  
+                              {% endfor %}
+                           </div>
+                        
+						
+						
+
+						</div>
+						
+						
+						
+						
+						
+                        
+					 </div>
+                     <!-- Sidebar -->
+                     <div class="ln">
+                        <!-- 1st block -->
+                        <div class="bg-white vl by rounded-sm border border-slate-200 tev tnu">
+                           <div class="li">
+                              <div class="nz">
+                                        <!-- Start -->
+                                        <div x-data="{ modalOpen: false }">
+                                            <button class="btn oq hb xs yo" @click.prevent="modalOpen = true" aria-controls="feedback-modal">
+													<svg width="30px" height="30px" viewBox="-16 -16 64.00 64.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#f7f7f7" stroke="#f7f7f7"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>image-picture</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke-width="1.6960000000000002" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-360.000000, -99.000000)" fill="#000000"> <path d="M368,109 C366.896,109 366,108.104 366,107 C366,105.896 366.896,105 368,105 C369.104,105 370,105.896 370,107 C370,108.104 369.104,109 368,109 L368,109 Z M368,103 C365.791,103 364,104.791 364,107 C364,109.209 365.791,111 368,111 C370.209,111 372,109.209 372,107 C372,104.791 370.209,103 368,103 L368,103 Z M390,116.128 L384,110 L374.059,120.111 L370,116 L362,123.337 L362,103 C362,101.896 362.896,101 364,101 L388,101 C389.104,101 390,101.896 390,103 L390,116.128 L390,116.128 Z M390,127 C390,128.104 389.104,129 388,129 L382.832,129 L375.464,121.535 L384,112.999 L390,118.999 L390,127 L390,127 Z M364,129 C362.896,129 362,128.104 362,127 L362,126.061 L369.945,118.945 L380.001,129 L364,129 L364,129 Z M388,99 L364,99 C361.791,99 360,100.791 360,103 L360,127 C360,129.209 361.791,131 364,131 L388,131 C390.209,131 392,129.209 392,127 L392,103 C392,100.791 390.209,99 388,99 L388,99 Z" id="image-picture" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+											<span > Add Images</span></button>
+                                            <!-- Modal backdrop -->
+                                            <div class="th tm bg-slate-900 pb nm wi" x-show="modalOpen" x-transition:enter="wr wh wf" x-transition:enter-start="opacity-0" x-transition:enter-end="bv" x-transition:leave="wr wh wa" x-transition:leave-start="bv" x-transition:leave-end="opacity-0" aria-hidden="true" x-cloak=""></div>
+                                            <!-- Modal dialog -->
+                                            <div id="feedback-modal" class="th tm nm lq flex items-center rf justify-center fe vd jd" role="dialog" aria-modal="true" x-show="modalOpen" x-transition:enter="wr wc wf" x-transition:enter-start="opacity-0 a_" x-transition:enter-end="bv ax" x-transition:leave="wr wc wf" x-transition:leave-start="bv ax" x-transition:leave-end="opacity-0 a_" x-cloak="">
+                                                <div class="bg-white rounded by lj aa oq ok" @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                                                    <!-- Modal header -->
+                                                    <div class="mn vm cx border-slate-200">
+                                                        <div class="flex fg items-center">
+                                                            <div class="g_ text-slate-800">Upload Image</div>
+															
+															
+															
+															
+                                                            <button class="yu xm" @click="modalOpen = false">
+                                                                <div class="tc">Close</div>
+                                                                <svg class="ue on db">
+                                                                    <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal content -->
+                                                    <div class="mn mr">
+                                                        
+                                                        <div class="ls">
+														<form method ="POST" enctype= "multipart/form-data" >
+														{% csrf_token %}
+														
+																											  
+													  <style>
+								.upload-box{
+								font-size:12px;
+								background:white;
+								border-radius:5px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								width:40px;
+								height: 30px;
+								outline:none;
+								
+								}
+								
+								::-webkit-file-upload-button{
+								
+								color:white;
+								background:#416093;
+								padding:5px;
+								border:none;
+								border-radius:6px;
+								box-shadow:1px 1px 1px  #e6e6e6;
+								outline:none;
+								}
+								::-webkit-file-upload-button:hover{
+								background:#344868;
+								}
+								</style>
+								<div class="block text-sm gk rx" >
+								<label class="block text-sm gk rx" for="card-expiry">Attache Image<span class="yl"></span></label>
+								<input type ="file" class="
+								upload-box
+								" style="width: 450px;" name = "thumb_image">
+
+                                        </input>
+								</div>
+																									 
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="mn mr ck border-slate-200">
+                                                        <div class="flex flex-wrap justify-end lt">
+                                                            <button class="tt border-slate-200 hover--border-slate-300 ys" @click="modalOpen = false">Cancel</button>
+                                                            <button class="tt hb xs yo" type="Submit">Save Image</button>
+                                                        </div>
+                                                    </div>
+													</form>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <!-- End -->
+                                    </div>
+                          
+
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							  
+							 <a href = "{% url 'main/account/non-profit/Work-and-impact/project/delete' project_ID %}">
+                              <button class="btn oq hb xs yl"style = "background-color:#ffffff;">
+                                            <svg class="ue on db ap" viewBox="0 0 16 16">
+                                                <path d="M5 7h2v6H5V7zm4 0h2v6H9V7zm3-6v2h4v2h-1v10c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1V5H0V3h4V1c0-.6.4-1 1-1h6c.6 0 1 .4 1 1zM6 2v1h4V2H6zm7 3H3v9h10V5z"></path>
+                                            </svg>
+                                            <span class="r_">Delete Project</span>
+                                        </button>
+										</a>
+                           </div>
+                        </div>
+                        <!-- 2nd block -->
+                       
+					</div>
+                  </div>
+               </div>
+            </main>
+         {% endblock content %}

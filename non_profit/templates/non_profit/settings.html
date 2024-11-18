@@ -1,0 +1,135 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+PangoTalk | Account Settings
+{% endblock title %}
+
+{% block content %}
+
+
+
+
+            <main>
+                <div class="vd jd tto vv oq ar ri">
+
+                    <!-- Page header -->
+                    <div class="ry">
+
+                        <!-- Title -->
+                        <h1 class="gg zj text-slate-800 font-bold">Account Settings ✨</h1>
+
+                    </div>
+
+                    <div class="bg-white by rounded-sm ry">
+                        <div class="flex fh zt qo">
+
+                            <!-- Sidebar -->
+                            <div class="flex fp cn ta qh zp me mu cx zm zg border-slate-200 uz zh"> 
+							<div> <div class="gb g_ yu gq it">Business Manager</div> 
+							
+                               {% include 'app/partials/_settings_non_profit_nav.html' %}							
+
+							</div>
+
+							
+							</div>
+
+                            <!-- Panel -->
+                            <div class="ad">
+                                <form method = "POST" enctype= "multipart/form-data">
+								
+								{% csrf_token %}
+                                <!-- Panel body -->
+                                <div class="vs fz">
+                                    <h2 class="gg text-slate-800 font-bold id">Business Account</h2>
+
+                                    <!-- Picture -->
+                                    <section>
+                                        <div class="flex items-center">
+                                            <div class="mr-4">
+                                                <img class="uy os rounded-full" src="
+												{% if businessInfo.logo_image %}
+												{{businessInfo.logo_image.url}}
+												{% else %}
+												{%static './app/images/user-avatar-80.png'%}
+												{% endif %}
+												
+												" width="80" height="80" alt="User upload">
+                                            </div>
+                                            <input type ="file" name = "company_logo" class="tt hb xs yo"/>
+
+											
+                                        </div>
+                                    </section>
+
+                                    <!-- Business Profile -->
+                                    <section>
+                                        <h3 class="gy yt text-slate-800 font-bold rx">Business Profile</h3>
+                                        <div class="text-sm">Update and Manage your business profile</div>
+                                        <div class="_y jn ln ju jl ig">
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="name">Business Name</label>
+                                                <input id="name" class="tn oq" type="text" value="{{businessInfo.BusinessName}}" name = "business_name">
+                                            </div>
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="business-id">Business Adress</label>
+                                                <input id="business-id" class="tn oq" type="text" value="{{businessInfo.Business_adress}}" name = "business_adress">
+                                            </div>
+                                            <div class="_x">
+                                                <label class="block text-sm gk rx" for="location">Street Name</label>
+                                                <input id="location" class="tn oq" type="text" value="{{businessInfo.street_name}}" name = "street_name">
+                                            </div>
+                                        </div>
+                                    </section>
+									
+									
+									
+									   <!-- Email -->
+                                    <section>
+                                        <h3 class="gy yt text-slate-800 font-bold rx">Email</h3>
+                                        <div class="text-sm">This is your default business email.</div>
+                                        <div class="flex flex-wrap ig">
+                                            <div class="_x">
+                                                <label class="tc" for="email">Business email</label>
+                                                <input id="email" class="tn" type="email" name = "email" value="{{businessInfo.email}}">
+                                            </div>
+                                            
+                                        </div>
+                                    </section>
+
+                                    <!-- Password -->
+                                    <section>
+                                        <h3 class="gy yt text-slate-800 font-bold rx">Password</h3>
+                                        <div class="text-sm">You can reset your password.</div>
+                                        <div class="ig">
+                                            <a href= "{% url 'user/non-profit/account/profile/change/password' %}" class="btn border-slate-200 bw text-indigo-500">Set New Password</a>
+                                        </div>
+                                    </section>
+
+                                    <!-- Smart Sync -->
+                                    
+                                </div>
+
+                                <!-- Panel footer -->
+                                <footer>
+                                    <div class="flex fh vw vx ck border-slate-200">
+                                        <div class="flex lk">
+                                            <button class="btn border-slate-200 hover--border-slate-300 ys">Cancel</button>
+                                            <button class="btn hb xs yo ml-3" type = "submit">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </footer>
+
+                            </div>
+                         </form>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+      {% endblock content %}

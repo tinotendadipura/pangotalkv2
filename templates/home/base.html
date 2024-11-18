@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+
+<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="author" content="DSAThemes"/>	
+		<meta name="description" content="PangoTalk, whatsapp, whatsapp chatbot, whatsapp support,whatsapp commerce"/>
+		<meta name="keywords" content="PangoTalk, whatsapp, whatsapp chatbot, whatsapp support,whatsapp commerce">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+				
+  		<!-- SITE TITLE -->
+		<title>
+		{% block tittle %}
+		
+		
+		
+		{% endblock tittle %}
+		</title>
+							
+		<!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="152x152" href="{%static './app/icons/Pango Logo-s.png'%}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{%static './app/icons/Pango Logo-s.png'%}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{%static './app/icons/Pango Logo-s.png'%}">
+		<link rel="apple-touch-icon" href="{%static './app/icons/Pango Logo-s.png'%}">
+		<link rel="icon" href="{%static './app/icons/Pango Logo-s.png'%}" type="image/x-icon">
+
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+
+		<!-- BOOTSTRAP CSS -->
+		<link href="{%static './home/css/bootstrap.min.css'%}" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="{%static './home/css/flaticon.css'%}" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="{%static './home/css/menu.css'%}" rel="stylesheet">	
+		<link id="effect" href="{%static './home/css/dropdown-effects/fade-down.css'%}" media="all" rel="stylesheet">
+		<link href="{%static './home/css/magnific-popup.css'%}" rel="stylesheet">	
+		<link href="{%static './home/css/owl.carousel.min.css'%}" rel="stylesheet">
+		<link href="{%static './home/css/owl.theme.default.min.css'%}" rel="stylesheet">
+
+		<!-- ON SCROLL ANIMATION -->
+		<link href="{%static './home/css/animate.css'%}" rel="stylesheet">
+
+		<!-- TEMPLATE CSS -->
+		<link href="{%static './home/css/style.css'%}" rel="stylesheet"> 
+		
+		<!-- RESPONSIVE CSS -->
+		<link href="{%static './home/css/responsive.css'%}" rel="stylesheet">
+
+	</head>
+
+
+
+	<body>
+
+
+
+
+		<!-- PRELOADER SPINNER
+		============================================= -->	
+		<div id="loading" class="stateblue-loading">
+			<div id="loading-center">
+				<div id="loading-center-absolute">
+					<div class="object" id="object_one"></div>
+					<div class="object" id="object_two"></div>
+					<div class="object" id="object_three"></div>
+					<div class="object" id="object_four"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- PAGE CONTENT
+		============================================= -->	
+		<div id="page" class="page">
+
+
+
+
+			<!-- HEADER
+			============================================= -->
+			<header id="header" class="header tra-menu navbar-dark">
+				<div class="header-wrapper">
+
+
+					<!-- MOBILE HEADER -->
+				    <div class="wsmobileheader clearfix">	  	
+				    	<span class="smllogo"><img src="{%static './app/icons/Pangofinal.svg'%}" style="height:220px;" alt="mobile-logo"/></span>
+				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
+				 	</div>
+
+
+				 	<!-- NAVIGATION MENU -->
+				  	<div class="wsmainfull menu clearfix">
+	    				<div class="wsmainwp clearfix">
+
+
+	    					<!-- HEADER LOGO -->
+	    					<div class="desktoplogo"><a href="/" class="logo-black"><img src="{%static './app/icons/Pango-white-removebg.png'%}"  alt="header-logo"></a></div>
+	    					
+
+	    					<!-- MAIN MENU -->
+	      					<nav class="wsmenu clearfix">
+	        					<ul class="wsmenu-list nav-stateblue-hover">
+
+
+	        						<!-- MEGAMENU -->
+						          	<li aria-haspopup="true" class="mg_link"><a href="#">Products <span class="wsarrow"></span></a>
+	            						<div class="wsmegamenu w-75 clearfix">
+	             							<div class="container">
+	               								<div class="row">
+
+	               									<!-- MEGAMENU LINKS -->
+	               									<ul class="col-md-12 col-lg-3 link-list">
+													    <li><a href="{% url 'whatsapp-chatbot' %}">Whatsapp Chatbot</a></li>
+									                    <li class="fst-li"><a href="{% url 'team-inbox' %}">Team Inbox</a></li>
+									                    <li><a href="{% url 'help-center' %}">Help Center</a></li>
+									                          
+									                </ul>
+													
+													<ul class="col-md-12 col-lg-3 link-list">
+												       <li><a href="{% url 'manage-orders' %}">Manage Orders</a></li>
+									                    <li><a href="{% url 'Contact-manager' %}">Contact Manager</a></li>	
+														<li><a href="{% url 'knoledge-base' %}">Knoledge Base</a></li>	
+									                           
+									                </ul>
+
+									                <!-- MEGAMENU LINKS -->
+	               									<ul class="col-md-12 col-lg-3 link-list">
+									                    <li class="fst-li"><a href="{% url 'event-bookings' %}">Events & Booking</a></li>
+									                    
+									                    <li><a href="{% url 'product-catalogue' %}">Catalouge</a></li> 
+									                     
+														 
+									                                   
+									                </ul>
+													
+													<ul class="col-md-12 col-lg-3 link-list">
+									                       <li><a href="{% url 'promotions-coupons' %}">Promotions & Coupons</a></li>
+														 <li><a href="{% url 'live-translation' %}">Live Translation</a></li>
+														 
+														 
+									                                   
+									                </ul>
+
+									                
+                
+								                </div>  <!-- End row -->	
+								            </div>  <!-- End container -->	
+								        </div>  <!-- End wsmegamenu -->	
+								    </li>	<!-- END MEGAMENU -->
+
+
+	        						
+
+
+							    	
+						          	<!-- DROPDOWN MENU -->
+						          	
+
+
+						          	<!-- SIMPLE NAVIGATION LINK -->
+							    	<li class="nl-simple" aria-haspopup="true"><a href="{% url 'integrations' %}">Integrations</a></li>
+
+
+						          	<!-- SIMPLE NAVIGATION LINK -->
+							    	
+									
+									<li aria-haspopup="true" class="mg_link"><a href="#">Pricing <span class="wsarrow"></span></a>
+	            						<div class="wsmegamenu w-75 clearfix">
+	             							<div class="container">
+	               								<div class="row">
+
+	               									<!-- MEGAMENU LINKS -->
+	               									<ul class="col-md-12 col-lg-6 link-list">
+													    <li><a href="{% url 'pricing-ecommerce-plans' %}">Whatsapp Ecommerce</a></li>
+									                    <li class="fst-li"><a href="{% url 'pricing-non-profit-plans' %}">Non-Profit | Government</a></li>
+									                   
+									                          
+									                </ul>
+													
+													
+
+									                <!-- MEGAMENU LINKS -->
+	               									
+                
+								                </div>  <!-- End row -->	
+								            </div>  <!-- End container -->	
+								        </div>  <!-- End wsmegamenu -->	
+								    </li>	<!-- END MEGAMENU -->
+
+
+	        						
+
+
+                                    <li class="nl-simple" aria-haspopup="true"><a href="{% url 'accounts/login' %}">Login</a></li>
+								    <!-- HEADER BUTTON -->
+								    <li class="nl-simple" aria-haspopup="true">
+								    	<a href="{% url 'account/user/signup' %}" class="btn btn-stateblue tra-grey-hover last-link">Sign Up Free</a>
+								    </li> 
+
+
+									<!-- HEADER SOCIAL LINKS 													
+									<li class="nl-simple white-color header-socials ico-20 clearfix" aria-haspopup="true">
+										<span><a href="#" class="ico-facebook"><span class="flaticon-facebook"></span></a></span>
+										<span><a href="#" class="ico-twitter"><span class="flaticon-twitter"></span></a></span>
+										<span><a href="#" class="ico-instagram"><span class="flaticon-instagram"></span></a></span>
+										<span><a href="#" class="ico-dribbble"><span class="flaticon-dribbble"></span></a></span>	
+									</li> -->	
+
+
+	        					</ul>
+	        				</nav>	<!-- END MAIN MENU -->
+
+
+	    				</div>
+	    			</div>	<!-- END NAVIGATION MENU -->
+
+
+				</div>     <!-- End header-wrapper -->
+			</header>	<!-- END HEADER -->
+
+
+
+
+	{% block content %}
+	
+   
+   
+   
+   
+   {% endblock content %}
+
+
+
+			<!-- CALL TO ACTION-11
+			============================================= -->
+			<section id="cta-11" class="cta-section division">
+				<div class="container">
+					<div class="bg-tra-purple cta-11-wrapper">
+						<div class="row d-flex align-items-center">
+
+
+							<!-- CALL TO ACTION TEXT -->
+							<div class="col-lg-7 col-lg-7">
+								<div class="cta-11-txt">
+
+									<!-- Title -->	
+									<h2 class="h2-xs">Ready to Join Pango?</h2>
+
+									<!-- Text -->
+									<p class="p-lg">
+									Embrace the power  of conversational commerce.Let Pango Do the Talking.PangoTalk unlocking the power of whatsapp business.
+									</p>
+
+									<!-- Button -->
+									<a href="{% url 'account/user/signup' %}" class="btn btn-stateblue tra-stateblue-hover">Get Started Now</a>
+
+								</div>
+							</div>
+
+
+							<!-- CALL TO ACTION BUTTON -->
+							<div class="col-lg-5">
+								<div class="text-end">
+									<div class="cta-11-img text-center">
+										<img class="img-fluid" src="{%static './home/images/Improve-customer-satisfaction.png'%}" alt="cta-image">
+									</div>	
+								</div>
+							</div>
+
+
+						</div>
+					</div>    <!-- End row -->
+				</div>	   <!-- End container -->	
+			</section>	<!-- END CALL TO ACTION-11 -->
+
+
+
+
+			<!-- FOOTER-4
+			============================================= -->
+			<footer id="footer-4" class="footer division">
+				<div class="container">
+
+
+					<!-- FOOTER CONTENT -->
+					<div class="row">	
+
+
+						<!-- FOOTER INFO -->
+						<div class="col-lg-3">
+							<div class="footer-info mb-40">
+								<img class="footer-logo" src="{%static './app/icons/Pango-white-removebg.png'%}" alt="footer-logo">
+							</div>	
+						</div>	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3 col-lg-2 col-lg-2 col-xl-2 offset-xl-1">
+							<div class="footer-links mb-40">
+							
+								<!-- Title -->
+								<h6 class="h6-xl">About</h6>
+
+								<!-- Footer Links -->
+								<ul class="foo-links text-secondary clearfix">
+									<li><p class="p-md"><a href="#">About Us</a></p></li>	
+									
+									<li><p class="p-md"><a href="#">Press & Media</a></p></li>
+									<li><p class="p-md"><a href="#">Advertising</a></p></li>						
+								</ul>
+
+							</div>
+						</div>
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3 col-lg-2">
+							<div class="footer-links mb-40">
+							
+								<!-- Title -->
+								<h6 class="h6-xl">Discover</h6>
+
+								<!-- Footer List -->
+								<ul class="foo-links text-secondary clearfix">							
+									<li><p class="p-md"><a href="#">Our Blog</a></p></li>										
+									<li><p class="p-md"><a href="#">Plans & Pricing</a></p></li>
+									<li><p class="p-md"><a href="#">Testimonials</a></p></li>
+													
+								</ul>
+
+							</div>
+						</div>
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3 col-lg-2">
+							<div class="footer-links mb-40">
+												
+								<!-- Title -->
+								<h6 class="h6-xl">Support</h6>
+
+								<!-- Footer List -->
+								<ul class="foo-links text-secondary clearfix">
+									<li><p class="p-md"><a href="#">FAQs</a></p></li>
+																			
+									<li><p class="p-md"><a href="#">Live Chatting</a></p></li>	
+									<li><p class="p-md"><a href="#">Contact Us</a></p></li>								
+								</ul>
+
+							</div>	
+						</div>	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3 col-lg-3 col-xl-2">
+							<div class="footer-links mb-40">
+												
+								<!-- Title -->
+								<h6 class="h6-xl">Connect With Us</h6>
+
+								<!-- Social Links -->	
+								<ul class="footer-socials text-secondary ico-25 text-center clearfix">		
+									<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+									<li><a href="#"><span class="flaticon-twitter"></span></a></li>
+									<li><a href="#"><span class="flaticon-github"></span></a></li>
+									<li><a href="#"><span class="flaticon-youtube"></span></a></li>
+								</ul>
+
+							</div>	
+						</div>	
+
+
+					</div>	<!-- END FOOTER CONTENT -->
+
+
+					<hr>
+
+
+					<!-- BOTTOM FOOTER -->
+					<div class="bottom-footer">
+						<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+
+
+							<!-- FOOTER COPYRIGHT -->
+							<div class="col">
+								<div class="footer-copyright">
+									<p>&copy; 2022 PangoTalk. All Rights Reserved</p>
+								</div>
+							</div>
+
+
+							<!-- BOTTOM FOOTER LINKS -->
+							<div class="col">
+								<ul class="bottom-footer-list text-secondary text-end">
+									<li class="first-li"><p><a href="#">Privacy Policy</a></p></li>
+									<li><p><a href="#">Terms of Use</a></p></li>
+
+								</ul>
+							</div>
+
+
+						</div>  <!-- End row -->
+					</div>	<!-- BOTTOM FOOTER -->
+
+
+				</div>
+			</footer>	<!-- FOOTER-4 -->
+
+
+
+
+		</div>	<!-- END PAGE CONTENT -->	
+			
+
+
+
+		<!-- EXTERNAL SCRIPTS
+		============================================= -->	
+		<script src="{%static './home/js/jquery-3.6.0.min.js'%}"></script>
+		<script src="{%static './home/js/bootstrap.min.js'%}"></script>	
+		<script src="{%static './home/js/modernizr.custom.js'%}"></script>
+		<script src="{%static './home/js/jquery.easing.js'%}"></script>
+		<script src="{%static './home/js/jquery.appear.js'%}"></script>
+		<script src="{%static './home/js/jquery.scrollto.js'%}"></script>	
+		<script src="{%static './home/js/menu.js'%}"></script>
+		<script src="{%static './home/js/imagesloaded.pkgd.min.js'%}"></script>
+		<script src="{%static './home/js/isotope.pkgd.min.js'%}"></script>
+		<script src="{%static './home/js/owl.carousel.min.js'%}"></script>
+		<script src="{%static './home/js/jquery.magnific-popup.min.js'%}"></script>
+		<script src="{%static './home/js/quick-form.js'%}"></script>	
+		<script src="{%static './home/js/request-form.js'%}"></script>	
+		<script src="{%static './home/js/jquery.validate.min.js'%}"></script>
+		<script src="{%static './home/js/jquery.ajaxchimp.min.js'%}"></script>	
+		<script src="{%static './home/js/wow.js'%}"></script>
+				
+		<!-- Custom Script -->		
+		<script src="{%static './home/js/custom.js'%}"></script>
+
+
+
+	</body>
+
+
+
+
+</html>

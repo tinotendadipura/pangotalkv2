@@ -1,0 +1,160 @@
+{% extends 'non_profit/base.html' %}
+{% load static %}
+
+
+{% block title %}
+
+PangoTalk | Account Billing Plans
+{% endblock title %}
+
+{% block content %}
+            <main>
+                <div class="vd jd tto vv oq ar ri">
+
+                    <!-- Page header -->
+                    <div class="ry">
+
+                        <!-- Title -->
+                        <h1 class="gg zj text-slate-800 font-bold">Account Settings ✨</h1>
+
+                    </div>
+
+                    <div class="bg-white by rounded-sm ry">
+                        <div class="flex fh zt qo">
+
+                            <!-- Sidebar -->
+                            <div class="flex fp cn ta qh zp me mu cx zm zg border-slate-200 uz zh"> 
+							<div> <div class="gb g_ yu gq it">Business settings</div> 
+							
+                               {% include 'app/partials/_settings_non_profit_nav.html' %}							
+
+							</div>
+
+							
+							</div>
+
+                            <!-- Panel -->
+                            <div class="ad">
+
+                                <!-- Panel body -->
+                                <div class="vs fz">
+  
+
+                                    <!-- Plans -->
+                                    <section>
+                                        <div class="ry">
+                                            <h2 class="gg text-slate-800 font-bold rw">Plans</h2>
+                                            <div class="text-sm">This workspace’s {{current_plan.Plan_Name}} Plan is set to <strong class="gk">${{current_plan.Price}}</strong> per month and will renew on <strong class="gk">{{businessInfo.next_billing_date}}</strong>
+											.</div>
+                                        </div>
+
+                                        <!-- Pricing -->
+                                        <div x-data="{ annual: true }">
+                                            <!-- Toggle switch -->
+                                            <div class="flex items-center lu rb">
+                                                <div class="text-sm text-slate-500 gk">Monthly</div>
+                                                <div class="tf">
+                                                    <input type="checkbox" id="toggle" class="tc" x-model="annual">
+                                                    <label class="pf" for="toggle">
+                                                        <span class="bg-white bw" aria-hidden="true"></span>
+                                                        <span class="tc">Pay annually</span>
+                                                    </label>
+                                                </div>
+                                                <div class="text-sm text-slate-500 gk">Annually <span class="yg"></span></div>
+                                            </div>
+                                            <!-- Pricing tabs -->
+                                            <div class="sq ff fb">
+											
+										
+												  <div class="td nk ttk bg-white shadow-md rounded-sm border border-slate-200">
+                                                    <div class="tp tk tb tw om hx" aria-hidden="true"></div>
+                                                    <div class="mn gn mc cx border-slate-200">
+                                                        <header class="flex items-center in">
+                                                            <div class="ur oo rounded-full ap p_ dt dh rk">
+                                                                <svg class="ur oo db yo" viewBox="0 0 24 24">
+                                                                    <path d="M12 17a.833.833 0 01-.833-.833 3.333 3.333 0 00-3.334-3.334.833.833 0 110-1.666 3.333 3.333 0 003.334-3.334.833.833 0 111.666 0 3.333 3.333 0 003.334 3.334.833.833 0 110 1.666 3.333 3.333 0 00-3.334 3.334c0 .46-.373.833-.833.833z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h3 class="gx text-slate-800 g_">Standard</h3>
+                                                        </header>
+                                                        <div class="text-sm in">Ideal for individuals that need a custom solution with custom tools.</div>
+                                                        <!-- Price -->
+                                                        <div class="text-slate-800 font-bold rw">
+                                                            <span class="gg">$</span><span class="text-3xl" x-text="annual ? '{{current_plan.Price}}' : '{{current_plan.Price}}'">{{current_plan.Price}}</span><span class="text-slate-500 gk text-sm">/mo</span>
+                             
+														</div>
+                                                        <!-- CTA -->
+                                                        
+														<button class="btn border-slate-200 hy yu oq fr flex items-center" disabled="disabled">
+                                                            <svg class="w-3 h-3 ap db mr-2" viewBox="0 0 12 12">
+                                                                <path d="M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z"></path>
+                                                            </svg>
+                                                            <span>Current Plan</span>
+                                                        </button>
+														
+
+                                                    </div>
+                                                    <div class="mn mw gr">
+                                                        <div class="gb text-slate-800 g_ gq rw">What's included</div>
+                                                        <!-- List -->
+                                                        <ul>
+                                                            
+                                                            <li class="flex items-center mt">
+                                                                <svg class="w-3 h-3 ap db yg mr-2" viewBox="0 0 12 12">
+                                                                    <path d="M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z"></path>
+                                                                </svg>
+                                                                <div class="text-sm">{{current_plan.Plan_Name}}</div>
+                                                            </li>
+															
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+												
+											
+											</div>
+                                        </div>
+                                    </section>
+
+                                    
+									
+									
+									<!-- Contact Sales -->
+                                    <section>
+                                        <div class="mn vm ph border hh rounded-sm gp tnj tnr tnm tny tng">
+                                            <div class="text-slate-800 g_ in tnt">Looking for different configurations?</div>
+                                            <button class="btn hb xs yo">Contact Sales</button>
+                                        </div>
+                                    </section>
+
+                                    <!-- FAQs -->
+                                    <section>
+                                        <div class="rc">
+                                            <h2 class="gg text-slate-800 font-bold">FAQs</h2>
+                                        </div>
+                                        <ul class="ld">
+                                            <li>
+                                                <div class="g_ text-slate-800 rx">
+                                                    How do I get support if I face any issues with Pangotalk?
+                                                </div>
+                                                <div class="text-sm">
+                                                    If you encounter any issues, you can reach out to our customer support team via email at support@pangotalk.com or through the live chat available on our website.
+                                                </div>
+                                            </li>
+                                          
+									   </ul>
+                                    </section>
+                                    
+                                </div>
+
+                                <!-- Panel footer -->
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+       {% endblock content %}

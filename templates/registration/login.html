@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+
+
+<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="author" content="DSAThemes"/>	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+				
+  		<!-- SITE TITLE -->
+		<title>PangoTalk  Login</title>
+							
+		<!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+
+		<!-- BOOTSTRAP CSS -->
+		<link href="{%static './register/logins/css/bootstrap.min.css'%}" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="{%static './register/logins/css/flaticon.css'%}" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="{%static './register/logins/css/menu.css'%}" rel="stylesheet">	
+		<link id="effect" href="{%static './register/logins/css/dropdown-effects/fade-down.css'%}" media="all" rel="stylesheet">
+		<link href="{%static './register/logins/css/magnific-popup.css'%}" rel="stylesheet">	
+		<link href="{%static './register/logins/css/owl.carousel.min.css'%}" rel="stylesheet">
+		<link href="{%static './register/logins/css/owl.theme.default.min.css'%}" rel="stylesheet">
+
+		<!-- ON SCROLL ANIMATION -->
+		<link href="{%static './register/logins/css/animate.css'%}" rel="stylesheet">
+
+		<!-- TEMPLATE CSS -->
+		<link href="{%static './register/logins/css/style.css'%}" rel="stylesheet"> 
+		
+		<!-- RESPONSIVE CSS -->
+		<link href="{%static './register/logins/css/responsive.css'%}" rel="stylesheet">
+
+	</head>
+
+
+
+	<body>
+
+
+
+
+		<!-- PRELOADER SPINNER
+		============================================= -->	
+		<div id="loading" class="skyblue-loading">
+			<div id="loading-center">
+				<div id="loading-center-absolute">
+					<div class="object" id="object_one"></div>
+					<div class="object" id="object_two"></div>
+					<div class="object" id="object_three"></div>
+					<div class="object" id="object_four"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- PAGE CONTENT
+		============================================= -->	
+		<div id="page" class="page">
+
+
+
+
+			<!-- SIGN IN PAGE
+			============================================= -->
+			<section id="login-1" class="login-section division">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3">	
+
+
+							<!-- SIGN IN FORM -->
+							<div class="register-form">
+							{% if messages %}
+								 
+								 <h1>{{message}}</h1>
+
+							{% endif %}
+							 <div id="error-message" class="error-message"></div>
+                              <form name="signinform" class="row sign-in-form" id="login-form">
+							
+								
+								{% csrf_token %}
+                                 
+								 
+									<!-- Title-->
+									<div class="col-md-12">
+										<div class="register-form-title">
+											<h3 class="h3-xs">Log in to PangoTalk</h3>
+											<p class="p-lg">Don't have an account? <a href="{% url 'account/user/signup' %}" class="skyblue-color">Sign up</a></p>
+										</div>
+									</div>
+
+									<!-- Form Input -->	
+									<div class="col-md-12">
+										<input id="username" class="form-control email" type="email" name="username" placeholder="example@example.com"> 
+									</div>
+										
+									<!-- Form Input -->	
+									<div class="col-md-12">
+										<div class="wrap-input">
+											<span class="btn-show-pass ico-20"><span class="flaticon-visible eye-pass"></span></span>
+											<input id="password" class="form-control password" type="password" name="password" placeholder="Password"> 
+										</div>
+									</div>
+
+									<!-- Form Submit Button -->	
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-md btn-skyblue tra-black-hover submit">Log In</button>
+									</div> 
+
+									<!-- Form Data  -->	
+									<div class="col-md-12">
+										<div class="d-flex justify-content-around align-items-center form-data">
+
+											<!-- Checkbox -->
+											<div class="form-check">
+											    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+											    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+											 </div>
+
+											 <!-- Forgot Password Link -->
+											 <p class="forgot-password"><a href="{% url 'reset_password' %}">Forgot your password?</a></p>
+
+										</div>
+									</div>
+
+									<!-- Login Separator -->
+									
+																																														
+								</form>	
+							</div>	<!-- END SIGN IN FORM -->
+
+
+							<!-- SIGN IN FORM NOTICE -->
+							<div class="sign-in-notice text-center">
+								<p>By clicking “Log in”, you agree to our <a href="">Terms</a> and that you have read our 
+								   <a href=""> Privacy Policy</a> 
+								</p>
+							</div> 
+
+
+							<!-- SIGN IN PAGE FOOTER -->
+							<div class="sign-in-footer text-center">
+								<p>Copyright <script>
+                                        document.write(new Date().getFullYear())
+                                    </script> PangoTalk. All Rights Reserved</p>
+							</div>
+
+
+						</div>
+			 		</div>	   <!-- End row -->	
+			 	</div>	   <!-- End container -->		
+			</section>	<!-- END SIGN IN PAGE -->
+
+
+
+
+		</div>	<!-- END PAGE CONTENT -->
+
+
+
+    <script>
+        $(document).ready(function(){
+            $('#login-form').on('submit', function(e){
+                e.preventDefault(); // Prevent the default form submission
+
+                const username = $('#username').val();
+                const password = $('#password').val();
+                const csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+
+                $.ajax({
+                    url: '/api/login/',
+                    type: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrfToken
+                    },
+                    data: JSON.stringify({
+                        username: username,
+                        password: password
+                    }),
+                    contentType: 'application/json',
+                    success: function(response){
+                        if(response.redirect_url){
+                            window.location.href = response.redirect_url;
+                        } else {
+                            $('#error-message').text('Login successful, but no redirect URL provided.');
+                        }
+                    },
+                    error: function(xhr){
+                        if(xhr.responseJSON && xhr.responseJSON.detail){
+                            $('#error-message').text(xhr.responseJSON.detail);
+                        } else {
+                            $('#error-message').text('An error occurred during login.');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+		<!-- EXTERNAL SCRIPTS
+		============================================= -->	
+		<script src="{%static './register/logins/js/jquery-3.6.0.min.js'%}"></script>
+		<script src="{%static './register/logins/js/bootstrap.min.js'%}"></script>	
+		<script src="{%static './register/logins/js/modernizr.custom.js'%}"></script>
+		<script src="{%static './register/logins/js/jquery.easing.js'%}"></script>
+		<script src="{%static './register/logins/js/jquery.appear.js'%}"></script>
+		<script src="{%static './register/logins/js/jquery.scrollto.js'%}"></script>	
+		<script src="{%static './register/logins/js/menu.js'%}"></script>
+		<script src="{%static './register/logins/js/imagesloaded.pkgd.min.js'%}"></script>
+		<script src="{%static './register/logins/js/isotope.pkgd.min.js'%}"></script>
+		<script src="{%static './register/logins/js/owl.carousel.min.js'%}"></script>
+		<script src="{%static './register/logins/js/jquery.magnific-popup.min.js'%}"></script>
+		<script src="{%static './register/logins/js/quick-form.js'%}"></script>	
+		<script src="{%static './register/logins/js/request-form.js'%}"></script>	
+		<script src="{%static './register/logins/js/jquery.validate.min.js'%}"></script>
+		<script src="{%static './register/logins/js/jquery.ajaxchimp.min.js'%}"></script>	
+		<script src="{%static './register/logins/js/wow.js'%}"></script>
+				
+		<!-- Custom Script -->		
+		<script src="{%static './register/logins/js/custom.js'%}"></script>
+
+		
+
+
+	</body>
+
+
+</html>

@@ -1,0 +1,275 @@
+{% extends 'default/base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block title %}
+Manage  | Account Configuration
+
+{% endblock title %}
+
+
+		{% block content %}
+        <div class="page-wrapper">
+
+            <!-- Page Content-->
+            <div class="page-content-tab">
+
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="float-end">
+                                    
+                                </div>
+                                <h4 class="page-title">Account Configuration</h4>
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- end page title end breadcrumb -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="thead-light">
+                                            <tr>
+											    <th>Company</th>
+                                                <th>Billing Plan</th>
+                                                
+												
+                                                <th>Bot Name</th>                                                    
+                                                <th>Partiner Web</th>
+												<th>Username</th>
+												<th>Status</th>
+												
+												<th class="text-right">Action</th>
+                                            </tr><!--end tr-->
+                                            </thead>
+        
+                                            <tbody>
+                                         {% for mycofig in config  %}
+                                            <tr>
+                                                
+                                                <td>{{mycofig.BusinessName}}</td>
+                                                <td>{{mycofig.BillingPlan}}</td>
+                                                
+                                                
+                                                <td>{{mycofig.bot_name}}</td>
+												<td>{{mycofig.partiner_web}}<span style = "color:#f60b4c;">
+												<td>{{mycofig.username}}</td>
+												<td>
+												{% if mycofig.account_config_status == False %}
+												<span class="badge rounded-pill bg-warning">Account Pending.. <i data-feather="repeat"></i></span>
+												{% else %}
+												<span class="badge rounded-pill bg-success">Configuration Active <i data-feather="check-circle"></i></span>
+												{% endif %}
+												</td>
+												
+												
+												</span></td>
+												<td>                                                       
+                                                    <button type="button" class="btn btn-de-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalSend{{mycofig.business_ID}}"><i data-feather="settings" class="align-self-center icon-xs me-2"></i>Settings</button>
+                                                    <a href="#"><i class="las la-trash-alt text-secondary font-16"></i></a>
+                                                </td>
+												
+                                            </tr><!--end tr-->
+											
+											     <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalSend{{mycofig.business_ID}}" tabindex="-1" aria-labelledby="exampleModalSendLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+										<form method = "POST">
+										{% csrf_token %}
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h6 class="modal-title m-0" id="exampleModalDefaultSend">{{mycofig.BusinessName}}</h6>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+												
+												
+                                                    <div class="mb-2">
+                                                        <label for="cryptocurrency">Billing Plan</label>              
+                                                        <select class="form-select" aria-label="Default select example" name = "billing_plan">
+                                                           <option value="{{mycofig.BillingPlan}}">{{mycofig.BillingPlan}}</option>
+                                                            <option value="BASIC">BASIC</option>
+                                                            <option value="PREMIUM">PREMIUM</option>
+															<option value="PLUS">PLUS</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-2">
+                                                        <label for="cryptocurrency">Business Category</label>              
+                                                        <select class="form-select" aria-label="Default select example" name = "category">
+                                                           <option value="{{mycofig.businessCategory}}">{{mycofig.businessCategory}}</option>
+                                                            <option value="RETAIL AND ECOMM">RETAIL AND ECOMM</option>
+                                                            <option value="CAR RENTAL">CAR RENTAL</option>
+															<option value="CAR REPAIR">CAR REPAIR</option>
+															<option value="DRIVING SCHOOL">DRIVING SCHOOL</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class=" mb-2">
+                                                        <label for="toaddress">Bot EndPoint</label> 
+                                                        <div class="input-group">                                                            
+                                                            <span class="input-group-text" id="QUcode"><i class="fas far fa-compass"></i></span>
+                                                            <input type="text" class="form-control" value="{{mycofig.bot_endpoint}}" aria-label="Scancode" name = "bot_url">
+                                                        </div>
+                                                    </div>
+													
+													<div class=" mb-2">
+                                                        <label for="toaddress">Bot APIKey</label> 
+                                                        <div class="input-group">                                                            
+                                                            <span class="input-group-text" id="QUcode"><i class="fas fa-hands-helping"></i></span>
+                                                            <input type="text" class="form-control" value="{{mycofig.bot_apiKey}}" aria-label="Scancode" name = "bot_apiKey">
+                                                        </div>
+                                                    </div>
+													
+													<div class=" mb-2">
+                                                        <label for="toaddress">Bot Name</label> 
+                                                        <div class="input-group">                                                            
+                                                            <span class="input-group-text" id="QUcode"><i class="fab fa-napster"></i></span>
+                                                            <input type="text" class="form-control" value="{{mycofig.bot_name}}" aria-label="Scancode" name = "bot_name">
+                                                        </div>
+                                                    </div>
+													
+													
+													
+													
+													<div class=" mb-2">
+                                                        <label for="toaddress">FB PageID</label> 
+                                                        <div class="input-group">                                                            
+                                                            <span class="input-group-text" id="QUcode"><i class="fas fa-qrcode"></i></span>
+                                                            <input type="text" class="form-control" value="{{mycofig.fb_page_id}}" aria-label="Scancode" name = "page_id">
+                                                        </div>
+                                                    </div>
+													
+													<div class=" mb-2">
+                                                        <label for="toaddress">Web Partiner</label> 
+                                                        <div class="input-group">                                                            
+                                                            <span class="input-group-text" id="QUcode"><i class="fas fa-link"></i></span>
+                                                            <input type="text" class="form-control" value="{{mycofig.partiner_web}}" aria-label="Scancode" name = "web_url">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="mb-2">
+                                                                <label for="toaddress">Username</label> 
+                                                                <div class="input-group">
+                                                                    <span class="input-group-text" id="US-dollor"><i class="far fa-smile"></i></span>
+                                                                    <input type="text" class="form-control" name = "username" value="{{mycofig.username}}" aria-label="US-dollor">
+																	<input type="hidden" class="form-control" name = "business_ID" value="{{mycofig.business_ID}}" aria-label="US-dollor" >
+                                                                </div>
+                                                            </div>
+                                                        </div><!--end col-->
+                                                        <div class="col-md-6">
+                                                            <div class="mb-2">
+                                                                <label for="BTC">Password</label> 
+                                                                <div class="input-group">
+                                                                    <span class="input-group-text" id="BTC-coin"><i class="fas fa-lock"></i></span>
+                                                                    <input type="text" class="form-control" value="{{mycofig.password}}" aria-label="BTC-coin" name = "password">
+                                                                </div>
+                                                            </div>                                                            
+                                                        </div><!--end col-->
+                                                    </div><!--end row-->
+                                                    
+                                                </div><!--end modal-body-->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-de-danger btn-sm" data-bs-dismiss="modal">Close</button>
+                                                    <button class="btn btn-de-primary btn-sm" type="submit">Save Changes</button>
+                                                </div><!--end modal-footer-->
+                                            </div><!--end modal-content-->
+											</form>
+											
+                                        </div><!--end modal-dialog-->
+                                    </div><!--end modal-->                                    
+
+                                	
+											
+                                            {% endfor %}                             
+                                            </tbody>
+                                        </table>                    
+                                    </div>
+
+                                    								
+                                    <div class="row">
+                                        <div class="col">
+                                           
+                                        </div><!--end col-->      
+                                        <div class="col-auto">
+                                            <nav aria-label="...">
+                                                <ul class="pagination pagination-sm mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                    </li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">Next</a>
+                                                    </li>
+                                                </ul><!--end pagination-->
+                                            </nav><!--end nav-->       
+                                         </div> <!--end col-->                               
+                                    </div><!--end row-->                                              
+                                </div><!--end card-body--> 
+                            </div><!--end card--> 
+                        </div> <!--end col-->                               
+                    </div><!--end row--> 
+
+                </div><!-- container -->
+
+                <!--Start Rightbar-->
+                <!--Start Rightbar/offcanvas-->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="Appearance" aria-labelledby="AppearanceLabel">
+                    <div class="offcanvas-header border-bottom">
+                      <h5 class="m-0 font-14" id="AppearanceLabel">Appearance</h5>
+                      <button type="button" class="btn-close text-reset p-0 m-0 align-self-center" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">  
+                        <h6>Account Settings</h6>
+                        <div class="p-2 text-start mt-3">
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="settings-switch1">
+                                <label class="form-check-label" for="settings-switch1">Auto updates</label>
+                            </div><!--end form-switch-->
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="settings-switch2" checked>
+                                <label class="form-check-label" for="settings-switch2">Location Permission</label>
+                            </div><!--end form-switch-->
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="settings-switch3">
+                                <label class="form-check-label" for="settings-switch3">Show offline Contacts</label>
+                            </div><!--end form-switch-->
+                        </div><!--end /div-->
+                        <h6>General Settings</h6>
+                        <div class="p-2 text-start mt-3">
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="settings-switch4">
+                                <label class="form-check-label" for="settings-switch4">Show me Online</label>
+                            </div><!--end form-switch-->
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="settings-switch5" checked>
+                                <label class="form-check-label" for="settings-switch5">Status visible to all</label>
+                            </div><!--end form-switch-->
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="settings-switch6">
+                                <label class="form-check-label" for="settings-switch6">Notifications Popup</label>
+                            </div><!--end form-switch-->
+                        </div><!--end /div-->               
+                    </div><!--end offcanvas-body-->
+                </div>
+                <!--end Rightbar/offcanvas-->
+                 <!--end Rightbar-->
+                 
+                <!--Start Footer-->
+                <!-- Footer Start -->
+                
+                <!-- end Footer -->                
+                <!--end footer-->
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+{% endblock content %}

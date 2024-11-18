@@ -1,0 +1,138 @@
+{% extends 'registration/subdomain-creating/base.html' %}
+    
+{% load static %}
+
+
+{% block title %}
+
+Setting Up  Account | Almost ready
+
+{% endblock title %} 
+
+
+ {% block content %}     
+           <!-- Page Content--><div class = "fund-wallet">
+            <div class="page-content" style = " background: #a54493;
+    background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
+    background: linear-gradient(to right, #185b9dba, #43cea2);  
+">
+                <div class="container-fluid" style= "
+    width: 100vw;
+    height: 100vh;
+    /* Optionally: to remove any default margin from the body */
+    margin: 0;
+    padding: 0;
+    /* Additional styling */
+    box-sizing: border-box; /* To include padding in the width/height calculation */
+    overflow: hidden;  " >
+	
+	
+	<style>
+    
+/* Importing Google Font styles in CSS (if not linked in HTML) */
+/* You can comment this out if you've already linked it in the HTML */
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+/* Container styling */
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Full screen height */
+    text-align: center;
+}
+
+
+
+/* Transitioning text styling */
+.transitioning-text {
+    font-size: 24px; /* Slightly larger size for better readability */
+    font-weight: 22; /* Bold */
+    font-family: 'Poppins', sans-serif; /* Choose 'Poppins' or 'Montserrat' */
+    color: #333;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+}
+
+/* Hidden state for fading out */
+.hidden {
+    opacity: 0;
+}
+
+    </style>
+	
+	
+	
+	
+	
+	
+	
+                    <!-- Page-Title -->
+                    <div class="row">
+<br>
+<br>
+                    </div><!--end row-->
+                    <!-- end page title end breadcrumb -->
+                    <div class="row">
+                        
+                       <center>
+						<div class="col-lg-4">
+                            <div class="card" style="border-radius: 15px; /* Controls the roundness of the corners */
+    padding: 20px;
+    color: white;">
+                                <div class="card-header">
+                                    <h4 class="card-title"><img src="{% static './app/icons/Pango-white-removebg.png'%}" width="150" alt="header-logo"></h4>
+                                </div><!--end card-header-->
+                                                                <div class="card-body">
+								<form method = "POST" id ="transfer-form" >
+								{% csrf_token  %}
+                                    <div class="accordion accordion-flush checkout-accordion" id="accordionFlushExample">
+                                        <div >
+										<img id="spinner" src="{%static './app/tengesa/default/assets/images/spinner.gif'%}" width="150">
+    <div class="spinner"></div>
+    <h3 class="transitioning-text" id="text-display">Pangotalk is taking off now...🚀</h3>
+</div>
+										<br>
+                                       
+							
+							
+							</div><!--end card-->
+                        </div><!--end col-->
+						</center>
+                    </div><!--end row-->
+
+                </div><!-- container -->
+				</div>
+<script>
+  
+  
+const messages = [
+    "Astronaut are you ready...?👨🏿‍🚀",
+    "dashboard almost ready, engaging full thrust 🚀",
+    "Pangotalk preparing to land...🌑🥳🥳"
+];
+
+let index = 0;
+const textDisplay = document.getElementById("text-display");
+
+function changeText() {
+    // Fade out the current text
+    textDisplay.classList.add("hidden");
+
+    // After fading out (1s delay), change the text and fade it back in
+    setTimeout(() => {
+        textDisplay.textContent = messages[index];
+        textDisplay.classList.remove("hidden");
+        index = (index + 1) % messages.length; // Loop through messages
+    }, 1000); // Matches the fade-out duration in CSS (1s)
+}
+
+// Change the text every 4 seconds (2s for visibility, 1s for fade out, 1s for fade in)
+setInterval(changeText, 4000);
+
+  </script>
+  
+  
+  
+  	{% endblock content %}
