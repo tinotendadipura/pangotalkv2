@@ -49,6 +49,7 @@ SHARED_APPS = [
     'django.contrib.humanize',
     'crispy_forms',
     'django_extensions',
+    'rest_framework',
    
     
     
@@ -60,7 +61,7 @@ TENANT_APPS = [
                 'corsheaders',
                 'pangotalkAPI.apps',
                 'import_export',
-                'rest_framework',
+                
                 'django_celery_results',
                 'django_celery_beat',
                 'send_mail_app',
