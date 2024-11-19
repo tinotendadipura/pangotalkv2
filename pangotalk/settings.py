@@ -30,7 +30,12 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localtest.me', '.localtest.me','localhost']
+if DEBUG == True:
+    ALLOWED_HOSTS = ['localtest.me', '.localtest.me','localhost']
+else:
+    ALLOWED_HOSTS = ['52.203.55.183', '.52.203.55.183']    
+
+
 
 TENANT_MODEL = "tenants.Client"  # app.Model
 TENANT_DOMAIN_MODEL = "tenants.Domain"  # app.Model
