@@ -49,13 +49,13 @@ SHARED_APPS = [
     'django.contrib.humanize',
     'crispy_forms',
     'django_extensions',
-    'rest_framework',
+    
    
     
     
 ]
 TENANT_APPS = [ 
-   
+                'rest_framework',
                 'chat',
                 'controlCentre',
                 'corsheaders',
