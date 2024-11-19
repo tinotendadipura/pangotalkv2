@@ -58,7 +58,7 @@ TENANT_APPS = [
                 'chat',
                 'controlCentre',
                 'corsheaders',
-                'pangotalkAPI.apps.KangooapiConfig',
+                'pangotalkAPI.apps',
                 'import_export',
                 'rest_framework',
                 'django_celery_results',
