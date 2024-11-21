@@ -29,7 +29,6 @@ from rest_framework.response import Response
 from .utils import render_to_pdf
 from io import BytesIO
 import pdfkit
-from .pdfGen import  MakePDF
 
 from django.core.files import File
 from .serializers import (ProductListingSerializer,
@@ -978,8 +977,7 @@ class  GenerateOrderInvoiceAPIView(generics.CreateAPIView):
             # receipt_file = BytesIO(pdf.content)
             # #receipt      = File(receipt_file,'pdf-test')
             
-            my_maker = MakePDF()
-            my_maker.subpdf_generator(business_ID,order_ID)
+           
             
             return Response('SUCCESS')
             
