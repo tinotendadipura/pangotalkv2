@@ -75,17 +75,19 @@ TENANT_APPS = [
 INSTALLED_APPS = SHARED_APPS + [ app for app in TENANT_APPS  if app not in SHARED_APPS ]
 
 MIDDLEWARE = [
-    'django_tenants.middleware.main.TenantMainMiddleware',  # django-tenants middleware
-    'corsheaders.middleware.CorsMiddleware',
+    
+    
     'django.middleware.security.SecurityMiddleware',
-    
     'django.contrib.sessions.middleware.SessionMiddleware',
-    
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_tenants.middleware.main.TenantMainMiddleware',  # django-tenants middleware
+    'corsheaders.middleware.CorsMiddleware',
+    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     #'app.middlewares.RedirectAuthenticatedUserToTenantMiddleware',
 ]
 CORS_ORIGIN_ALLOW_ALL = True
