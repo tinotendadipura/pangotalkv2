@@ -29,10 +29,8 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG == True:
-    ALLOWED_HOSTS = ['34.134.200.215', '.34.134.200.215','pangotalk.com','.pangotalk.com']
-else:
-    ALLOWED_HOSTS = ['52.203.55.183', '.52.203.55.183']    
+
+ALLOWED_HOSTS = ['pangotalk.com','.pangotalk.com']
 
 
 
@@ -80,8 +78,9 @@ MIDDLEWARE = [
     'django_tenants.middleware.main.TenantMainMiddleware',  # django-tenants middleware
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
+    
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
