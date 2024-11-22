@@ -214,7 +214,7 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
 
-   
+CSRF_TRUSTED_ORIGINS = ["https://pangotalk.com", "https://34.134.200.215"]   
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST    = 'mail.pangotalk.com'
