@@ -29,11 +29,11 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+CSRF_TRUSTED_ORIGINS = ['pangotalk.com','.pangotalk.com']
 
 ALLOWED_HOSTS = ['pangotalk.com','.pangotalk.com']
     
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-CSRF_TRUSTED_ORIGINS = []
 
 
 TENANT_MODEL = "tenants.Client"  # app.Model
