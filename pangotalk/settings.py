@@ -29,8 +29,10 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
-ALLOWED_HOSTS = ['pangotalk.com','.pangotalk.com']
+if DEBUG == True:
+    ALLOWED_HOSTS = ['pangotalk.com','.pangotalk.com']
+else:
+    ALLOWED_HOSTS = ['52.203.55.183', '.52.203.55.183']    
 
 
 
