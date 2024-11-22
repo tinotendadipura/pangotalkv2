@@ -30,7 +30,7 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 DEBUG = True
 
 if DEBUG == True:
-    ALLOWED_HOSTS = ['34.134.200.215', '.34.134.200.215','34.134.200.215']
+    ALLOWED_HOSTS = ['34.134.200.215', '.34.134.200.215','pangotalk.com','.pangotalk.com']
 else:
     ALLOWED_HOSTS = ['52.203.55.183', '.52.203.55.183']    
 
