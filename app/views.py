@@ -1808,11 +1808,11 @@ def business_category(request):
             company_domain = generate_subdomain(business_info.BusinessName)
             BusinessProfile.objects.filter(user =  curentUser).update(business_domain = company_domain)
             temp_company_domain =  company_domain
-            base_domain         = ".localtest.me:8000"
+            base_domain         = ".pangotalk.com"
             company_domain      = company_domain + base_domain
             
-            final_domain        = temp_company_domain + ".localtest.me"
-            subdomain_url               = f"http://localtest.me:8000"
+            final_domain        = temp_company_domain + ".pangotalk.com"
+            subdomain_url               = f"https://pangotalk.com"
             create_comapany_subdomain_task(temp_company_domain,  final_domain)
             return redirect(subdomain_url )
         

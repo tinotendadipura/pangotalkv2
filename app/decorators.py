@@ -190,11 +190,11 @@ def prevent_logged_in_access_to_public_tenant(view_func):
             try:
                 # Retrieve the user's BusinessProfile to get the subdomain
                 business_profile     =           BusinessProfile.objects.get(user=request.user)
-                user_subdomain       =           business_subdomain + '.localtest.me:8000'
+                user_subdomain       =           business_subdomain + '.pangotalk.com'
                 if host_subdomain    ==          business_profile.business_domain:
                     if host_domain   ==          user_subdomain:
-                        subdomain_url                 = f"http://{ business_subdomain}.localtest.me:8000/main/home/dashboard"
-                        non_profit_subdomain_url      = f"http://{ business_subdomain}.localtest.me:8000/main/home/xxxx"
+                        subdomain_url                 = f"http://{ business_subdomain}.pangotalk.com/main/home/dashboard"
+                        non_profit_subdomain_url      = f"http://{ business_subdomain}.pangotalk.com/main/home/xxxx"
 
                         if business_profile.category == 'RETAIL AND ECOMM':
             
@@ -239,7 +239,7 @@ def prevent_authenticated(view_func):
 
     def _wrapped_view(request, *args, **kwargs):
         # Define your public domain
-        public_domain = 'localtest.me:8000'  # Modify as needed
+        public_domain = 'pangotalk.com'  # Modify as needed
 
         # Check if the user is authenticated
         if request.user.is_authenticated:
@@ -253,8 +253,8 @@ def prevent_authenticated(view_func):
             try:
                 
                 
-                eccom_subdomain_url      = f"http://{ business_subdomain}.localtest.me:8000/main/home/dashboard"
-                none_profit_subdomain_url      = f"http://{ business_subdomain}.localtest.me:8000/main/home/dashboard/non-profit"
+                eccom_subdomain_url      = f"http://{ business_subdomain}.pangotalk.com/main/home/dashboard"
+                none_profit_subdomain_url      = f"http://{ business_subdomain}.pangotalk.com/main/home/dashboard/non-profit"
 
                 if business_profile.category == 'RETAIL AND ECOMM':
             
