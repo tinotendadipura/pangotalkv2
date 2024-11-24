@@ -572,7 +572,7 @@ class BusinessProfileDetailAPIView(generics.ListAPIView):
         
         
         if businessID is not None:
-            businessInfo = BannerImage.objects.filter(business_ID =  businessID)
+            businessInfo = BusinessProfile.objects.filter(business_ID =  businessID)
             
             
 
