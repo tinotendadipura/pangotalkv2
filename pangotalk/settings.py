@@ -250,6 +250,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-CSRF_TRUSTED_ORIGINS = ['pangotalk.com']
+CSRF_TRUSTED_ORIGINS = [' https://pangotalk.com']
 
 
