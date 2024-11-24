@@ -81,8 +81,8 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
-    'app.middle.DisableCSRFMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    #'app.middle.DisableCSRFMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -182,8 +182,8 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
 
 # CSRF and Session settings
-SESSION_COOKIE_DOMAIN = ".localtest.me"  # Allows sharing across subdomains
-CSRF_COOKIE_DOMAIN = ".localtest.me"     # Allows CSRF tokens across subdomains
+SESSION_COOKIE_DOMAIN = ".pangotalk.com"  # Allows sharing across subdomains
+CSRF_COOKIE_DOMAIN = ".pangotalk.com"     # Allows CSRF tokens across subdomains
 
 SESSION_COOKIE_SAMESITE = 'Lax'         # Default is 'Lax'; can be adjusted if needed
 CSRF_COOKIE_SAMESITE = 'Lax'            # Default is 'Lax'; can be adjusted if needed
@@ -212,9 +212,6 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 # LOGIN_REDIRECT_URL='home/dashboard'
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
-
-CSRF_TRUSTED_ORIGINS = ["https://pangotalk.com", "https://34.134.200.215"]   
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST    = 'mail.pangotalk.com'
 EMAIL_PORT     = '587'
@@ -229,7 +226,7 @@ EMAIL_USE_SSL   = False
 TENANT_MODEL          = "app.Client"
 TENANT_DOMAIN_MODEL   = "app.Domain"
 PUBLIC_SCHEMA_CONF    =  "urls.app"
-BASE_DOMAIN = 'localhost'
+BASE_DOMAIN = 'pangotalk.com'
 
 
 AWS_ACCESS_KEY_ID       = 'AKIA4IM3HKU7KT7R457N'
@@ -248,7 +245,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
-
+CSRF_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 CSRF_TRUSTED_ORIGINS = [' https://pangotalk.com']
 
