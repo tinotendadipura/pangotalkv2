@@ -30,7 +30,7 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 DEBUG = True
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-CSRF_TRUSTED_ORIGINS = ['pangotalk.com','.pangotalk.com']
+CSRF_TRUSTED_ORIGINS = ['pangotalk.com']
 
 ALLOWED_HOSTS = ['pangotalk.com','.pangotalk.com']
     
