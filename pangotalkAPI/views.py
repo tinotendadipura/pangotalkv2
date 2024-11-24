@@ -1132,11 +1132,11 @@ class LoginAPIView(APIView):
                 # Construct the subdomain URL (assuming localtest.me)
                 if business_profile.category == 'RETAIL AND ECOMM':
             
-                   subdomain_url = f"http://{subdomain}.localtest.me:8000/main/home/dashboard"
+                   subdomain_url = f"https://{subdomain}.pangotalk.com/main/home/dashboard"
         
                 if business_profile.category == 'NONE PROFIT':
             
-                   subdomain_url = f"http://{subdomain}.localtest.me:8000/main/home/dashboard/non-profit"
+                   subdomain_url = f"https://{subdomain}.pangotalk.com/main/home/dashboard/non-profit"
                 
                   # Modify for production
 
