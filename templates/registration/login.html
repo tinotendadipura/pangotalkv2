@@ -97,7 +97,7 @@
 
 							{% endif %}
 							 <div id="error-message" class="error-message"></div>
-                              <form name="signinform" class="row sign-in-form" id="login-form" method="POST">
+                              <form name="signinform" class="row sign-in-form" id="login-form">
 							
 								
 								{% csrf_token %}
@@ -177,6 +177,48 @@
 
 
 		</div>	<!-- END PAGE CONTENT -->
+
+
+
+    <script>
+        $(document).ready(function(){
+            $('#login-form').on('submit', function(e){
+                e.preventDefault(); // Prevent the default form submission
+
+                const username = $('#username').val();
+                const password = $('#password').val();
+                const csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+
+                $.ajax({
+                    url: '/api/login/',
+                    type: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrfToken
+                    },
+                    data: JSON.stringify({
+                        username: username,
+                        password: password
+                    }),
+                    contentType: 'application/json',
+                    success: function(response){
+                        if(response.redirect_url){
+                            window.location.href = response.redirect_url;
+                        } else {
+                            $('#error-message').text('Login successful, but no redirect URL provided.');
+                        }
+                    },
+                    error: function(xhr){
+                        if(xhr.responseJSON && xhr.responseJSON.detail){
+                            $('#error-message').text(xhr.responseJSON.detail);
+                        } else {
+                            $('#error-message').text('An error occurred during login.');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
 
 
 		<!-- EXTERNAL SCRIPTS

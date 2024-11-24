@@ -1862,27 +1862,7 @@ def signup_complete(request):
 
 
 def user_login(request):
-    if request.method == "POST":
-        try:
-          email      = request.POST.get('email','')
-          password   = request.POST.get('password','')
-          user       = authenticate(username = email ,password = password)
-          if user is not None:
-              messages.info(request, 'Welcome back {} '.format(email))
-              login(request, user)
-              
-              return redirect('/')
-
-
-          else:
-
-            messages.info(request, 'you have entered a wrong username or password.')
-            
-            
-        except Exception as exp:
-            print(exp)
-            return redirect('accounts/login')
-
+    
     
     return render(request,'registration/login.html')
 
