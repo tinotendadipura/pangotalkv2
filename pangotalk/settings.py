@@ -30,7 +30,7 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['pangotalk.com','.pangotalk.com']
+ALLOWED_HOSTS = ['*']
     
 
 
@@ -247,6 +247,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 CSRF_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-CSRF_TRUSTED_ORIGINS = [' https://pangotalk.com']
+CSRF_TRUSTED_ORIGINS = ['https://pangotalk.com','https://.pangotalk.com']
 
 
