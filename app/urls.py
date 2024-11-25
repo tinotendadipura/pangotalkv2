@@ -17,6 +17,7 @@ urlpatterns = [
      path('account/user/signup', views.signup, name='account/user/signup'),
      path('accounts/login',views.user_login,name="accounts/login"),
      path('logout', views.logout_view, name='logout'),
+     path('check-task-status/', views.check_task_status, name='check_task_status'),
 
 
     # password - reset

@@ -135,4 +135,21 @@ setInterval(changeText, 4000);
   
   
   
+  
+  <script>
+        function checkStatus() {
+            fetch('/check-task-status/')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'SUCCESS') {
+                        window.location.href = '/';  // Replace with actual dashboard route
+                    } else {
+                        setTimeout(checkStatus, 2000);  // Retry after 2 seconds
+                    }
+                });
+        }
+        setTimeout(checkStatus, 2000);  // Start polling after 2 seconds
+    </script>
+  
+  
   	{% endblock content %}

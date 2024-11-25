@@ -28,6 +28,11 @@ from django.http import JsonResponse
 import json
 import re
 
+
+from django.http import JsonResponse
+from celery.result import AsyncResult
+
+
 from . userInvite import SendInvite 
 from . emailmanager import InviteEmail
 from . models import (UserProfile,
@@ -1813,14 +1818,34 @@ def business_category(request):
             
             final_domain        = temp_company_domain + ".pangotalk.com"
             subdomain_url               = f"https://pangotalk.com"
+            user_id = request.user.id
             create_comapany_subdomain_task(temp_company_domain,  final_domain)
-            return redirect(subdomain_url )
+            task = create_comapany_subdomain_task.delay(user_id)
+            request.session['task_id'] = task.id
+
+            return redirect('account/user/business/setting-up-account')
         
         
         
             
     return render(request, 'registration/businessCatergory.html') 
 
+
+
+
+def check_task_status(request):
+    """
+    Checks the task status and redirects to the dashboard if completed
+    """
+    task_id = request.session.get('task_id')
+    if not task_id:
+        return JsonResponse({'error': 'No task found'}, status=400)
+
+    result = AsyncResult(task_id)
+    if result.state == 'SUCCESS':
+        return redirect('/')  # Replace 'dashboard' with your actual dashboard route
+    else:
+        return JsonResponse({'status': result.state})
 
 
 

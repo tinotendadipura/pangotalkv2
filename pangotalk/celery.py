@@ -1,23 +1,18 @@
 from __future__ import absolute_import, unicode_literals
 import os
-
 from celery import Celery
-from django.conf import settings
 
-
+# Set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pangotalk.settings')
 
 app = Celery('pangotalk')
-app.conf.enable_utc = False
 
-app.conf.update(timezone = 'Africa/Harare')
+# Using a string here means the worker doesn't have to serialize
+# the configuration object to child processes.
+# Namespace 'CELERY' means all celery-related configs in settings should be prefixed with 'CELERY_'.
+app.config_from_object('django.conf:settings', namespace='CELERY')
 
-app.config_from_object(settings, namespace='CELERY')
-
-
-
-# Celery Schedules - https://docs.celeryproject.org/en/stable/reference/celery.schedules.html
-
+# Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
 
 @app.task(bind=True)
