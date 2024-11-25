@@ -1819,8 +1819,8 @@ def business_category(request):
             final_domain        = temp_company_domain + ".pangotalk.com"
             subdomain_url               = f"https://pangotalk.com"
             user_id = request.user.id
-            create_comapany_subdomain_task(temp_company_domain,  final_domain)
-            task = create_comapany_subdomain_task
+            #create_comapany_subdomain_task(temp_company_domain,  final_domain)
+            task = create_comapany_subdomain_task.delay(temp_company_domain,  final_domain,user_id)
             request.session['task_id'] = task.id
 
             return redirect('account/user/business/setting-up-account')
