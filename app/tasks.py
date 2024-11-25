@@ -13,7 +13,7 @@ def test_func(self):
 
 
 @shared_task(bind=True)
-def create_comapany_subdomain_task(temp_company_domain,  final_domain):
+def create_comapany_subdomain_task(temp_company_domain,  final_domain,task_id):
     try:
         # excute this part once the page have loaded
         
