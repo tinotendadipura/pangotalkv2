@@ -65,8 +65,7 @@ TENANT_APPS = [
                 'pangotalkAPI.apps',
                 'import_export',
                 
-                'django_celery_results',
-                'django_celery_beat',
+                
                 'send_mail_app',
                 'billing',
                 'non_profit'
@@ -195,16 +194,12 @@ CSRF_COOKIE_SECURE = False
 
 
 # Celery settings
+# Celery settings
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
-
-CELERY_RESULT_BACKEND = 'django-db'
-
-#CELERY BEAT
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 # LOGIN_URL='login'
 # LOGOUT_URL='login'
