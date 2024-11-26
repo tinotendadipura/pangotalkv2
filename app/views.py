@@ -1811,7 +1811,7 @@ def business_category(request):
             curentUser = request.user
             business_info  = BusinessProfile.objects.get(user =  curentUser)
             company_domain = generate_subdomain(business_info.BusinessName)
-            BusinessProfile.objects.filter(user =  curentUser).update(business_domain = company_domain)
+            
             temp_company_domain =  company_domain
             base_domain         = ".pangotalk.com"
             company_domain      = company_domain + base_domain
@@ -1820,10 +1820,10 @@ def business_category(request):
             subdomain_url               = f"https://pangotalk.com"
             user_id = request.user.id
             #create_comapany_subdomain_task(temp_company_domain,  final_domain)
-            task = create_comapany_subdomain_task.delay(temp_company_domain,  final_domain)
-            request.session['task_id'] = task.id
-
-            return redirect('account/user/business/setting-up-account')
+            create_comapany_subdomain_task.delay(temp_company_domain,  final_domain)
+           
+            BusinessProfile.objects.filter(user =  curentUser).update(business_domain = company_domain, business_subdomain  = True)
+            return JsonResponse({'status': 'SUCCESS'})
         
         
         
@@ -1835,23 +1835,37 @@ def business_category(request):
 
 def check_task_status(request):
     """
-    Checks the task status and redirects to the dashboard if completed
+    Checks the business subdomain status and sends a JSON response if active.
     """
-    task_id = request.session.get('task_id')
-    if not task_id:
-        return JsonResponse({'error': 'No task found'}, status=400)
+    if request.method == 'GET':
+        business_ID = request.GET.get('business_ID')
 
-    result = AsyncResult(task_id)
-    if result.state == 'SUCCESS':
-        return redirect('/')  # Replace 'dashboard' with your actual dashboard route
-    else:
-        return JsonResponse({'status': result.state})
+        if not business_ID:
+            return JsonResponse({'error': 'Business ID is required'}, status=400)
+
+        # Query the BusinessProfile model
+        try:
+            business_profile = get_object_or_404(BusinessProfile, business_ID=business_ID)
+        except BusinessProfile.DoesNotExist:
+            return JsonResponse({'error': 'Business not found'}, status=404)
+
+        # Check if the business_subdomain is active
+        if business_profile.business_subdomain:
+            return JsonResponse({'status': 'SUCCESS'})
+        else:
+            return JsonResponse({'status': 'Business subdomain is inactive'})
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
 
 def loading_subdomain_setting_up(request):
+    current_user = request.user
+    user_info    = UserProfile.objects.get(user = current_user)
+    business_ID  = user_info.business_ID
+    context      = {'business_ID':business_ID}
     
-    return render(request,'app/default/creating_subdomain.html')
+    return render(request,'app/default/creating_subdomain.html', context)
 
     
     

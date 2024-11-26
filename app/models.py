@@ -158,6 +158,7 @@ class BusinessProfile(models.Model):
     form_completed  = models.BooleanField(default=False)
     account_authorisation_status  = models.BooleanField(default=False)
     account_suspended_status      = models.BooleanField(default=False)
+    business_subdomain            = models.BooleanField(default=False)
     dateadded                     = models.DateTimeField(default = timezone.now)
     
 
