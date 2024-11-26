@@ -1820,7 +1820,7 @@ def business_category(request):
             subdomain_url               = f"https://pangotalk.com"
             user_id = request.user.id
             #create_comapany_subdomain_task(temp_company_domain,  final_domain)
-            create_comapany_subdomain_task.delay(temp_company_domain,  final_domain)
+            create_comapany_subdomain_task(temp_company_domain,  final_domain)
            
             BusinessProfile.objects.filter(user =  curentUser).update(business_domain = company_domain)
             return redirect('account/user/business/setting-up-account')
