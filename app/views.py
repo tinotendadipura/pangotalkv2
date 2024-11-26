@@ -93,7 +93,7 @@ from . decorators import (
 
 import uuid
 from app.models import Client, Domain
-from .tasks import create_comapany_subdomain_task
+from send_mail_app.tasks import create_comapany_subdomain_task
 
 plan_Id = uuid.uuid1()
 customer_Id = str(plan_Id)
