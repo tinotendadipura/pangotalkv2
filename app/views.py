@@ -1823,7 +1823,7 @@ def business_category(request):
             create_comapany_subdomain_task(temp_company_domain,  final_domain)
            
             BusinessProfile.objects.filter(user =  curentUser).update(business_domain = company_domain)
-            return redirect('/')
+            return redirect(subdomain_url )
         
         
         
