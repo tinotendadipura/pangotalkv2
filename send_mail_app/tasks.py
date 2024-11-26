@@ -68,7 +68,7 @@ def billing_reminder_func(self,business_ID,invoice_id):
     
             
 
-def create_comapany_subdomain_task(temp_company_domain,  final_domain,task_id):
+def create_comapany_subdomain_task(temp_company_domain,  final_domain):
     try:
         # excute this part once the page have loaded
         
