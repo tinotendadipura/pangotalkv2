@@ -1822,7 +1822,7 @@ def business_category(request):
             #create_comapany_subdomain_task(temp_company_domain,  final_domain)
             create_comapany_subdomain_task.delay(temp_company_domain,  final_domain)
            
-            BusinessProfile.objects.filter(user =  curentUser).update(business_domain = company_domain, business_subdomain  = True)
+            BusinessProfile.objects.filter(user =  curentUser).update(business_domain = company_domain)
             return redirect('account/user/business/setting-up-account')
         
         
