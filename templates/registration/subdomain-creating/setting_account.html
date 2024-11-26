@@ -138,26 +138,35 @@ setInterval(changeText, 4000);
   
   <script>
   
-        document.addEventListener('DOMContentLoaded', () => {
-    const businessID = '{{business_ID}}';  // Replace with the actual business ID
+  function startCheckingTaskStatus(businessID) {
+  const url = `https://pangotalk.com/check-task-status/?business_ID=${businessID}`;
 
-    function checkStatus(business_ID) {
-        fetch(`/check-task-status/?business_ID=${business_ID}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'SUCCESS') {
-                    window.location.href = '/';  // Replace with actual dashboard route
-                } else {
-                    setTimeout(() => checkStatus(business_ID), 2000);  // Retry after 2 seconds
-                }
-            })
-            .catch(error => console.error('Error:', error));
-    }
+  // Function to send the request
+  function checkTaskStatus() {
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json(); // Assuming the response is JSON
+      })
+      .then((data) => {
+        console.log("Task status:", data);
+        // Handle the data received from the server
+      })
+      .catch((error) => {
+        console.error("Error fetching task status:", error);
+      });
+  }
 
-    // Start polling immediately when the page loads
-    checkStatus(businessID);
-	console.log('Check Status Worked')
-});
+  // Call the function every 2 seconds
+  setInterval(checkTaskStatus, 2000);
+}
+
+// Start the interval with a dynamic business ID
+const businessID = "f5db1c18-abde-11ef-a717-42010a800003"; // Replace with your dynamic ID
+startCheckingTaskStatus(businessID);
+
 
     </script>
   
