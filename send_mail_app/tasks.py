@@ -5,7 +5,7 @@ from app.models import Client, Domain
 
 
 from django.core.mail import send_mail
-from app.views import billing_invoices, business_category
+
 from pangotalk import settings
 from django.utils import timezone
 from datetime import timedelta
