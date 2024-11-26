@@ -253,8 +253,8 @@ def prevent_authenticated(view_func):
             try:
                 
                 
-                eccom_subdomain_url      = f"https://{ business_subdomain}.pangotalk.com/main/home/dashboard"
-                none_profit_subdomain_url      = f"https://{ business_subdomain}.pangotalk.com/main/home/dashboard/non-profit"
+                eccom_subdomain_url      = f"https://{business_subdomain}/main/home/dashboard"
+                none_profit_subdomain_url      = f"https://{business_subdomain}/main/home/dashboard/non-profit"
 
                 if business_profile.category == 'RETAIL AND ECOMM':
             
