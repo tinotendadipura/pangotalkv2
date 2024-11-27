@@ -22,6 +22,9 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_URL)
 
+from django.conf.urls import handler500
+
+handler500 = 'app.views.custom_500'
 admin.site.site_header ='PangoTalk'
 admin.site.index_title ='PangoTalk'
 admin.site.site_title = 'PangoTalk'
