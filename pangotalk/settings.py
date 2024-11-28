@@ -179,7 +179,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
-STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
+#STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
 # CSRF and Session settings
 SESSION_COOKIE_DOMAIN = ".pangotalk.com"  # Allows sharing across subdomains
 CSRF_COOKIE_DOMAIN = ".pangotalk.com"     # Allows CSRF tokens across subdomains
