@@ -25,7 +25,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{%static './app/icons/Pango Logo-s.png'%}">
     <link rel="shortcut icon" href="{%static './app/icons/Pango Logo-s.png'%}" />
 	</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4DZ45VE3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-T4DZ45VE3T');
+</script>
 <body class="gm bf hy ys" :class="{ 'sidebar-expanded': sidebarExpanded }" x-data="{ page: 'dashboard-main', sidebarOpen: false, sidebarExpanded: localStorage.getItem('sidebar-expanded') == 'true' }" x-init="$watch('sidebarExpanded', value => localStorage.setItem('sidebar-expanded', value))">
 
     <script>
