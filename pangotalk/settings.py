@@ -195,7 +195,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT= 'tino/pangotalkv2/media/'
+MEDIA_ROOT  = '/home/tino/pangotalkv2/media'
+
 
 #STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
 # CSRF and Session settings
