@@ -234,7 +234,7 @@ AWS_S3_VERIFY = True
 
 # Static and media file configuration
 
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
