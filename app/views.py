@@ -27,8 +27,8 @@ from pangotalk.settings import EMAIL_HOST
 from django.http import JsonResponse
 import json
 import re
-
-
+from django.db.models import Sum
+from datetime import date
 from django.http import JsonResponse
 from celery.result import AsyncResult
 
@@ -140,9 +140,15 @@ def main_dashboard(request):
     invoice_info        = BillingInvoice.objects.filter(business_ID = profile.business_ID)
     all_invoice         = BillingInvoice.objects.filter(business_ID = profile.business_ID).first()
     invoice_ID          = info.business_ID
-    
+    business_ID         = info.business_ID
+    today               = date.today()
+    daily_sales = (
+        Order.objects.filter(business_ID=business_ID, dateadded__date=today)
+        .aggregate(total_amount=Sum('total_Amount'))
+        .get('total_amount', 0)  # Default to 0 if no orders exist
+    )
     ordernotification_status = OrderNotification.objects.filter(business_ID = info.business_ID).first()
-    context = {"all_invoice":all_invoice,"invoice_ID":invoice_ID,"count_orders":count_orders,"businessInfo":businessInfo, "inbox_messages":inbox_messages,"ordernotification_status":ordernotification_status}
+    context = {"daily_sales":daily_sales,"all_invoice":all_invoice,"invoice_ID":invoice_ID,"count_orders":count_orders,"businessInfo":businessInfo, "inbox_messages":inbox_messages,"ordernotification_status":ordernotification_status}
     #send_mail_func.delay()
     business_ID = info.business_ID
     return render(request,'app/index.html',context)
