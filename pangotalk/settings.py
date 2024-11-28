@@ -209,7 +209,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 # Media URL
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
-
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 #STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
