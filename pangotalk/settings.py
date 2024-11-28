@@ -201,7 +201,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 # Google Cloud Storage
 GS_BUCKET_NAME = 'pangotalk-bucket'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    os.path.join(BASE_DIR, 'home/tino/pangotalkv2/static/pangotalk-7a4593f37a2d.json')
+    os.path.join(BASE_DIR, 'home/tino/pangotalkv2/static/register/pangotalk-7a4593f37a2d.json')
 )
 
 # Default file storage
