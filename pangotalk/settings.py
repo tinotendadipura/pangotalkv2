@@ -69,7 +69,7 @@ SHARED_APPS = [
     'django.contrib.humanize',
     'crispy_forms',
     'django_extensions',
-    'whitenoise.runserver_nostatic',
+    
     
    
     
@@ -95,7 +95,7 @@ MIDDLEWARE = [
     'django_tenants.middleware.main.TenantMainMiddleware',  # django-tenants middleware
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
