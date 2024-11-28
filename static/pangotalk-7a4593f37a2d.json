@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "pangotalk",
+  "private_key_id": "7a4593f37a2d8b652eec5e926cb1b9ddea01120b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQC4lURQzuAI+xRu\n7QKPkCizz/zK5krJ7mHeu6jGyH7aQ/7DtHzmCvv0zsRdt3NCplJTc5kg1TpIEr1d\nzw5eiuYTyP6HPu3MpWCU6KeVlRoPZ/Kvwek4vuuIu358D3Tw6KGvG6ot2qUBLrE5\nbfQR+zWgeNcYREKE8bS5pyZOvqQNSErFl2pSJ30y0jFM1IbP1YEUcdTmHNBXgAMJ\nTn++4GTJOPMvGbRhfltThg1B1Zi0uvVg654Cbov1rwWC7SXZvywFJKIJROc+J7YC\nbPUZbZtXpXZvrG2AvVDhZLSFXDRJtRyPJSm4l8L13v7BpMbuEbTVlplOYdMywkDe\nRFC1PREFAgMBAAECgf9CUk6sy2QA5yUwYM3s4RbP61Yg1YSa3wgPphET5DIWh4KP\nYBuRjIt7O8/jqUaz9H3Kyyj6Fk34ffZy/mXrVrA6/L0iSikN0iruiWWLbuEMFvxT\nmV0/8RVBMj9EfuLfV2GNp1Y+TjwD+Uc0aCcSxl8+Z2AU9elGFxtc3eEMLmsQayaX\nB3Z6YbN2ulP2qFwLMQ0cVrbbdJ8U1/ivtI8I/UZCM9dVyKAReQuDqGtQ6SKNL8Pl\nN4Ca5JX/KX3Wi6SoWUYyJwaJOpklhF1sMbMWoySntLMEELFSuV98hBurpOU2hHNE\n0HjUjEs1aUzpXrT1s4u1uO2/fOTfq/6d09xHMYECgYEA3rAuLKdcKXD7xcK8aVdX\nbDNFWI5MKCyI0qlujtJ6+lspFUT64pLK7IhcdkK1h4bl201k8PCLwdSUeNBupQ8p\np2aRXvJGwmDhNuRR4A2PPJAjeArX15ULc7vmHwZWmDZG6PVowUq7gIyngDm715+a\ns+l9mmM8F5x7C5ii9DsY4YECgYEA1DHa1KGIW9dHq1faRA8x4n+zNixjwebIqBqj\n1u2PpWQnPuTnCSO69O3ZwqvTttVE+5rhvIxPQ2i6YRhAxSeQAJ8+RWUL9tNmMSw6\nYHiKF9TG0TNX7L1m6oXGN9XlME2notMHBV2GAj3g9ei0m3O8VYtJo6si1SjPqzcw\nblHSaYUCgYAZdQKSUD+U7TmbDfwD/twbnnDbAslp/k1V59Cfuygb3rf/mncj16wj\nBiOr0Ux3RdCZFWvor1cKvYaLmShM7kLQxETyGbhFGFYmtEs31dT+E2w6mOK73moE\nvQI9obfchrfsgcGL90MgGvQ7EF6M8833q0WUlKuV92mJldVrHiZmAQKBgQCHq3CM\nrtLuVZCfPsZw6X4toRRGOM93dEUrJg1HKBDF4GkvT09gipXIcCLg0tfEeEtoyzg1\nQ0iSgu1XkxgmdgseOrKnz9l8cOFP40VX1PoGDqcnrroyxU59+BYqMPoejif2dRJy\nHb/GwyWIVMbU9YSe9TWaDZtxymwsvlaa0nnDuQKBgDmsyylqUWnvM439X0we+hq0\nEIC9BtQwntTX9A8SuZGTzvgEO/mZeknffVDnD/GWS0pbBkMHx1Jh+3e+UcNKY0uG\n3WztgROiqUGJcWdHN6VV91F3DEwty6au9/RB61aBs5KRoas/DSFSI3KjDAVUMW1i\nO3GarRRIVtMa9Y+8J6NZ\n-----END PRIVATE KEY-----\n",
+  "client_email": "pangotalk@pangotalk.iam.gserviceaccount.com",
+  "client_id": "113141425579862696094",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pangotalk%40pangotalk.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

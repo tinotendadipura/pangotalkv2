@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from pathlib import Path
+import os
+from google.oauth2 import service_account
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -193,9 +196,20 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-MEDIA_URL = '/media/'
 
-MEDIA_ROOT  = '/home/tino/pangotalkv2/media'
+
+# Google Cloud Storage
+GS_BUCKET_NAME = 'pangotalk-bucket'
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'home/tino/pangotalkv2/static/pangotalk-7a4593f37a2d.json')
+)
+
+# Default file storage
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+# Media URL
+MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+
 
 
 #STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
