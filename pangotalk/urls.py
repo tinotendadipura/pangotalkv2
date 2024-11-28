@@ -22,10 +22,13 @@ urlpatterns = [
 urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
 
-from django.conf.urls import handler500
+from django.conf.urls import handler404, handler500, handler403, handler400
 
-handler500 = 'app.views.custom_500_view'
-handler400 = 'app.views.custom_400_view'
+from app import views
+
+handler404 = views.error_404
+handler500 = views.error_500
+
 admin.site.site_header ='PangoTalk'
 admin.site.index_title ='PangoTalk'
 admin.site.site_title = 'PangoTalk'
