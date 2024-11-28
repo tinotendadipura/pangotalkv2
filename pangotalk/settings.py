@@ -38,6 +38,23 @@ ALLOWED_HOSTS = ['.pangotalk.com','pangotalk.com']
 TENANT_MODEL = "tenants.Client"  # app.Model
 TENANT_DOMAIN_MODEL = "tenants.Domain"  # app.Model
 
+
+AWS_ACCESS_KEY_ID       = 'AKIA4IM3HKU7KT7R457N'
+AWS_SECRET_ACCESS_KEY   = 'EOYupA3JbweeaOPQb72ivdeGDjstq8iMMgSLnH+6'
+AWS_STORAGE_BUCKET_NAME = 'pangotalk'
+AWS_S3_FILE_OVERWRITE   = False  # e.g., us-east-1
+AWS_DEFAULT_ACL         = None
+AWS_S3_REGION_NAME      = 'us-east-1'
+AWS_S3_USE_SSL = True
+AWS_S3_VERIFY = True
+
+# Static and media file configuration
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
 # Application definition
 
 SHARED_APPS = [
@@ -224,20 +241,6 @@ PUBLIC_SCHEMA_CONF    =  "urls.app"
 BASE_DOMAIN = 'pangotalk.com'
 
 
-AWS_ACCESS_KEY_ID       = 'AKIA4IM3HKU7KT7R457N'
-AWS_SECRET_ACCESS_KEY   = 'EOYupA3JbweeaOPQb72ivdeGDjstq8iMMgSLnH+6'
-AWS_STORAGE_BUCKET_NAME = 'pangotalk'
-AWS_S3_FILE_OVERWRITE   = False  # e.g., us-east-1
-AWS_DEFAULT_ACL         = None
-AWS_S3_REGION_NAME      = 'us-east-1'
-AWS_S3_USE_SSL = True
-AWS_S3_VERIFY = True
-
-# Static and media file configuration
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 CSRF_COOKIE_SECURE = True
