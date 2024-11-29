@@ -207,12 +207,12 @@ STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
 STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 
-# Default file storage
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-
 # Media URL
 
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+# Default file storage
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
 
 
 #STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
