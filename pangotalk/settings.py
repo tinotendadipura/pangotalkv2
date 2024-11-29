@@ -211,9 +211,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
 
-
-
-#STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
+STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
 # CSRF and Session settings
 SESSION_COOKIE_DOMAIN = ".pangotalk.com"  # Allows sharing across subdomains
 CSRF_COOKIE_DOMAIN = ".pangotalk.com"     # Allows CSRF tokens across subdomains
