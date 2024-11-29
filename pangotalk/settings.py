@@ -213,6 +213,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
 
+
 #STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
 # CSRF and Session settings
 SESSION_COOKIE_DOMAIN = ".pangotalk.com"  # Allows sharing across subdomains
@@ -264,4 +265,5 @@ SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 CSRF_TRUSTED_ORIGINS = ['https://pangotalk.com','https://.pangotalk.com']
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
