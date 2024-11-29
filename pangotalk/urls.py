@@ -5,6 +5,9 @@ from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView
 from django.conf import settings # new
 from  django.conf.urls.static import static #new
+from django.conf.urls import handler404, handler500, handler403, handler400
+
+from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,15 +19,9 @@ urlpatterns = [
     
      
     
-]+  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+]
 
- 
-urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
 
-from django.conf.urls import handler404, handler500, handler403, handler400
-
-from app import views
 
 handler404 = views.error_404
 handler500 = views.error_500
