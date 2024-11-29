@@ -204,7 +204,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 GS_BUCKET_NAME = 'pangotalk-bucket'
 GS_PROJECT_ID   = 'pangotalk'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    os.path.join(BASE_DIR, 'static/credetials.json')
+    os.path.join(BASE_DIR, 'credentials.json')
 )
 
 # Default file storage
