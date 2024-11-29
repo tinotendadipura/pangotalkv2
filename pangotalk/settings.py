@@ -198,7 +198,7 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 MEDIA__URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = '/home/tino/pangotalkv2/static'
 
 MEDIA_ROOT  = '/home/tino/pangotalkv2/media'
     
