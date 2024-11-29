@@ -202,6 +202,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Google Cloud Storage
 GS_BUCKET_NAME = 'pangotalk-bucket'
+GS_PROJECT_ID   = 'pangotalk'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.path.join(BASE_DIR, 'static/credetials.json')
 )
@@ -211,6 +212,9 @@ DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 # Media URL
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+MEDIA_ROOT = "media/"
+    
+UPLOAD_ROOT = 'media/uploads/'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
