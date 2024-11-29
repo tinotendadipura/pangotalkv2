@@ -202,12 +202,10 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.path.join(BASE_DIR, 'credentials.json')
 )
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
 STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
-# No need for STATIC_ROOT since GCS handles static files
-STATIC_ROOT = None
 
 # Default file storage
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
