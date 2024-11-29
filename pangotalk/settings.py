@@ -197,8 +197,10 @@ USE_TZ = False
 
 
 STATIC_URL = '/static/'
-MEDIA__URL = '/media/'
+MEDIA_URL = '/media/'
+
 STATIC_ROOT = '/home/tino/pangotalkv2/static'
+
 
 MEDIA_ROOT  = '/home/tino/pangotalkv2/media'
     
