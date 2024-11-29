@@ -34,7 +34,9 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['.pangotalk.com','pangotalk.com']
+ALLOWED_HOSTS = ['.pangotalk.com','pangotalk.com','localtest.me']
+#ALLOWED_HOSTS = ['localtest.me']
+    
     
 
 
@@ -201,7 +203,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 # Google Cloud Storage
 GS_BUCKET_NAME = 'pangotalk-bucket'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    os.path.join(BASE_DIR, 'pangotalk-7a4593f37a2d.json')
+    os.path.join(BASE_DIR, 'static/credetials.json')
 )
 
 # Default file storage
