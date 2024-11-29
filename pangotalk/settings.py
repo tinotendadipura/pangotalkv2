@@ -34,9 +34,7 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['.pangotalk.com','pangotalk.com','localtest.me']
-#ALLOWED_HOSTS = ['localtest.me']
-    
+ALLOWED_HOSTS = ['.pangotalk.com','pangotalk.com']
     
 
 
@@ -197,15 +195,22 @@ USE_TZ = False
 
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-
-STATIC_ROOT = '/home/tino/pangotalkv2/static'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 
-MEDIA_ROOT  = '/home/tino/pangotalkv2/media'
-    
+# Google Cloud Storage
+GS_BUCKET_NAME = 'pangotalk-bucket'
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'home/tino/pangotalkv2/credentials.json')
+)
 
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+# Default file storage
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+# Media URL
+
+MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+
 
 
 #STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
