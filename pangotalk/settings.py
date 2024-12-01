@@ -200,7 +200,7 @@ GS_BUCKET_NAME = 'pangotalk-bucket'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.path.join(BASE_DIR, 'credentials.json')
 )
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
 STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
