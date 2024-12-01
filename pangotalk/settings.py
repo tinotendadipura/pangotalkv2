@@ -198,7 +198,7 @@ import io
 # Google Cloud Storage
 GS_BUCKET_NAME = 'pangotalk-bucket'
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-   'home/tino/pangotalkv2/credentials.json')
+   '/home/tino/pangotalkv2/credentials.json')
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
