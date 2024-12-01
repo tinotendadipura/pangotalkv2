@@ -1995,8 +1995,8 @@ def message_balance(request):
 
 def error_404(request, exception):
    context = {}
-   return render(request,'404.html', context)
+   return render(request,'404.html', status=404)
 
 def error_500(request):
    context = {}
-   return render(request,'500.html', context)
+   return render(request,'500.html', status=500)
