@@ -203,12 +203,8 @@ STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
 # Set "static" folder
 STATICFILES_STORAGE = 'pangotalk.gcsUtils.Static'
 
-
-# Set "media" folder
-DEFAULT_FILE_STORAGE = 'pangotalk.gcsUtils.Media'
-
-
-
+MEDIA_URL = 'https://storage.googleapis.com/{GS_BUCKET_NAME}/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 # Add an unique ID to a file name if same file name exists
 GS_FILE_OVERWRITE = False
 
