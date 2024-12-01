@@ -190,27 +190,31 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-from google.oauth2.service_account import Credentials
+from google.oauth2 import service_account
 import json
 import io
 
 
 # Google Cloud Storage
 GS_BUCKET_NAME = 'pangotalk-bucket'
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-   '/home/tino/pangotalkv2/credentials.json')
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
-STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+# Set "static" folder
+STATICFILES_STORAGE = 'pangotalk.gcsUtils.Static'
 
 
-# Media URL
+# Set "media" folder
+DEFAULT_FILE_STORAGE = 'pangotalk.gcsUtils.Media'
 
-MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
-# Default file storage
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
+
+# Add an unique ID to a file name if same file name exists
+GS_FILE_OVERWRITE = False
+
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'credentials.json'),
+)
 
 
 #STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'

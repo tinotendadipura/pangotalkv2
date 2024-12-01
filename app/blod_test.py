@@ -1,8 +1,18 @@
-from google.cloud import storage
+from google.oauth2 import service_account
+import google.auth.transport.requests
 
-client = storage.Client()
-bucket = client.bucket("pangotalk-bucket")
-blob = bucket.blob("test.txt")
+# Path to your service account JSON file
+SERVICE_ACCOUNT_FILE = '/path/to/your-service-account.json'
 
-blob.upload_from_string("Hello, world!")
-print(f"File uploaded to: {blob.public_url}")
+# Authenticate
+credentials = service_account.Credentials.from_service_account_file(
+    SERVICE_ACCOUNT_FILE,
+    scopes=["https://www.googleapis.com/auth/cloud-platform"]
+)
+
+# Refresh and generate token
+request = google.auth.transport.requests.Request()
+credentials.refresh(request)
+
+# Print the access token
+print("Access Token:", credentials.token)
