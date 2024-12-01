@@ -207,7 +207,7 @@ STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 # Media URL
 
-MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/media'
+MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/files'
 # Default file storage
 DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
