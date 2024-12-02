@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 from pathlib import Path
 import os
-from google.oauth2 import service_account
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,7 +33,7 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 DEBUG =True
 
 
-ALLOWED_HOSTS = ['localtest.me','pangotalk.com']
+ALLOWED_HOSTS = ['.pangotalk.com','pangotalk.com']
     
 
 
@@ -235,8 +234,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 
-AWS_ACCESS_KEY_ID = 'AKIA4IM3HKU7HXSS2EG4'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = '--------'
+AWS_SECRET_ACCESS_KEY = '----------'
 AWS_STORAGE_BUCKET_NAME = 'pangotalk'
 AWS_S3_SIGNATURE_NAME = 's3v4',
 AWS_S3_REGION_NAME = 'us-east-1'
