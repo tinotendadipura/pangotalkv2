@@ -31,10 +31,10 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG =True
 
 
-ALLOWED_HOSTS = ['.pangotalk.com','pangotalk.com']
+ALLOWED_HOSTS = ['localtest.me','pangotalk.com']
     
 
 
@@ -42,25 +42,12 @@ TENANT_MODEL = "tenants.Client"  # app.Model
 TENANT_DOMAIN_MODEL = "tenants.Domain"  # app.Model
 
 
-#AWS_ACCESS_KEY_ID       = 'AKIA4IM3HKU7KT7R457N'
-#AWS_SECRET_ACCESS_KEY   = 'EOYupA3JbweeaOPQb72ivdeGDjstq8iMMgSLnH+6'
-#AWS_STORAGE_BUCKET_NAME = 'pangotalk'
-#AWS_S3_FILE_OVERWRITE   = False  # e.g., us-east-1
-#AWS_DEFAULT_ACL         = None
-#AWS_S3_REGION_NAME      = 'us-east-1'
-#AWS_S3_USE_SSL = True
-#AWS_S3_VERIFY = True
-
-# Static and media file configuration
-
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-#DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 # Application definition
 
 SHARED_APPS = [
+    
     'django_tenants',
     'app',
     'django.contrib.admin',
@@ -188,29 +175,6 @@ USE_L10N = True
 USE_TZ = False
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-from google.oauth2.service_account import service_account
-import json
-import io
-
-
-# Google Cloud Storage
-GS_BUCKET_NAME = 'pangotalk-bucket'
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-   '/home/tino/pangotalkv2/credentials.json')
-
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/static/'
-STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-
-
-# Media URL
-
-MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
-# Default file storage
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-
 
 
 #STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage'
@@ -266,3 +230,25 @@ CSRF_TRUSTED_ORIGINS = ['https://pangotalk.com','https://.pangotalk.com']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+
+
+
+
+
+AWS_ACCESS_KEY_ID = 'AKIA4IM3HKU7HXSS2EG4'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'pangotalk'
+AWS_S3_SIGNATURE_NAME = 's3v4',
+AWS_S3_REGION_NAME = 'us-east-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+# Static files settings
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Media files settings (optional)
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
