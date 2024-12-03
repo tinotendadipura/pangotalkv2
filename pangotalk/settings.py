@@ -33,7 +33,7 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 DEBUG =True
 
 
-ALLOWED_HOSTS = ['.pangotalk.com','pangotalk.com']
+ALLOWED_HOSTS = ['54.82.111.92','.pangotalk.com','pangotalk.com']
     
 
 
@@ -250,4 +250,4 @@ STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Media files settings (optional)
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'sdou 
