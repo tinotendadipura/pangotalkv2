@@ -33,7 +33,7 @@ SECRET_KEY = '!_@y-*=&qu=alggxs3d&hjbb58=f#)(ml+i^6evinx8q&a=+!j'
 DEBUG =True
 
 
-ALLOWED_HOSTS = ['54.82.111.92','.pangotalk.com','pangotalk.com']
+ALLOWED_HOSTS = ['54.165.224.166','.pangotalk.com','pangotalk.com']
     
 
 
